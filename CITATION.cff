@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Single-Centred Dyon Indices of the Z2 CHL Model Are Positive at Q^2 <= 2"
+authors:
+  - family-names: Bhattacharjee
+    given-names: Deep
+    orcid: "https://orcid.org/0000-0003-0466-750X"
+    affiliation: "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, India"
+repository-code: "https://github.com/creelie/Paper_5"
+license: MIT
