@@ -7,3 +7,5 @@ Paper and verification code by Deep Bhattacharjee.
 - `code/certificate/` — ball-arithmetic certificates (`pmin.py`, `gmono2.py`, `cert.py`, `analytic.py`, `analytic2.py`, `polar.py`) and their outputs.
 
 Proved: positivity for Q² ≤ 2 and for every charge of discriminant at most 800. All charges: proved under the stated Rademacher hypothesis R.
+
+DOI (all versions): [10.5281/zenodo.24094931](https://doi.org/10.5281/zenodo.24094931)
