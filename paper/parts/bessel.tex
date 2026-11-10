@@ -1,0 +1,70 @@
+\section{Facts on Bessel functions}\label{sec:bessel}
+
+All Bessel functions below have real order $\nu\ge\frac12$ and positive argument. We use
+\begin{equation}\label{eq:gdef}
+g(y)=\sqrt{2\pi y}\,e^{-y}I_{15/2}(y),\qquad \phi(y)=\frac{y\,g'(y)}{g(y)}.
+\end{equation}
+
+\begin{lemma}\label{lem:besselbasic}
+\begin{enumerate}
+\item[(i)] $I_\nu(z)/z^\nu$ is increasing; hence $I_\nu(z/\gamma)\le\gamma^{-\nu}I_\nu(z)$ for $\gamma\ge1$.
+\item[(ii)] $z\,I_\nu'(z)/I_\nu(z)$ is increasing in $z$. Consequently, for $0<c\le1$ the function $y\mapsto I_\nu(cy)/I_\nu(y)$ is nonincreasing.
+\item[(iii)] For $\nu'\ge\nu$, $z\,I_{\nu'}'(z)/I_{\nu'}(z)\le(\nu'-\nu)+z\,I_\nu'(z)/I_\nu(z)$.
+\item[(iv)] For fixed $z>0$, $I_\nu(z)$ is nonincreasing in $\nu\ge0$.
+\item[(v)] $I_\nu(z)\le\dfrac{(z/2)^\nu}{\Gamma(\nu+1)}e^{z^2/4}$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) $I_\nu(z)/z^\nu=2^{-\nu}\sum_k(z^2/4)^k/(k!\,\Gamma(\nu+k+1))$ has positive coefficients. (v) follows from the same series and $\Gamma(\nu+k+1)\ge\Gamma(\nu+1)$. For (ii) and (iii) we use the Weierstrass product $I_\nu(z)=\frac{(z/2)^\nu}{\Gamma(\nu+1)}\prod_{k\ge1}\big(1+z^2/j_{\nu,k}^2\big)$, where $0<j_{\nu,1}<j_{\nu,2}<\dots$ are the positive zeros of $J_\nu$ \cite[\S15.41]{Wat44}. It gives
+\[
+\frac{zI_\nu'(z)}{I_\nu(z)}=\nu+\sum_{k\ge1}\frac{2z^2}{j_{\nu,k}^2+z^2},
+\]
+each summand increasing in $z$, which is the first part of (ii). For the second, $\frac{d}{dy}\log\frac{I_\nu(cy)}{I_\nu(y)}=\frac1y\Big(\frac{cyI_\nu'(cy)}{I_\nu(cy)}-\frac{yI_\nu'(y)}{I_\nu(y)}\Big)\le0$. For (iii), the zeros $j_{\nu,k}$ increase with $\nu$ \cite[\S15.6]{Wat44}, so each summand for $\nu'$ is at most the one for $\nu$. (iv) is a theorem of Cochran \cite{Coc67}.
+\end{proof}
+
+\begin{lemma}\label{lem:gfacts}
+\begin{enumerate}
+\item[(i)] $0<g(y)<1$ for all $y>0$, and $g(y)\to1$ as $y\to\infty$.
+\item[(ii)] $\phi$ is positive and decreasing on $[3,\infty)$; in particular $g$ is increasing on $[3,\infty)$, and for $0<c\le1$ the ratio $g(cy)/g(y)$ is nondecreasing on $\{y:\ cy\ge3\}$.
+\item[(iii)] $y\,\phi(y)\le29$ for $y\ge30$; hence $g'(y)\le29/y^2$ there.
+\item[(iv)] $\sqrt{2\pi y}\,e^{-y}I_\nu(y)\le1$ for every $\nu\ge\frac{15}2$ and $y>0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+For half-integral order there is the closed form \cite[\S3.71]{Wat44}
+\begin{equation}\label{eq:halfint}
+g(y)=p\Big(-\frac1{2y}\Big)+e^{-2y}p\Big(\frac1{2y}\Big),\qquad p(w)=\sum_{k=0}^7\frac{(7+k)!}{k!\,(7-k)!}w^k ,
+\end{equation}
+which gives $g(y)\to1$. Write $r=I_{17/2}/I_{15/2}$; the recurrences give $\phi=8-y+yr$ and $\phi'=y-1-15r-yr^2$ (we use $I_\nu'=I_{\nu+1}+\frac\nu yI_\nu$ and $r'=1-\frac{16}yr-r^2$). On $[3,60]$ we enclose $\phi'$ on a cover of the interval by boxes, in ball arithmetic, by the mean value form $\phi'(c)+[-\frac h2,\frac h2]\,\phi''(\text{box})$; every enclosure is negative. On $[60,\infty)$ we use \eqref{eq:halfint}: with $w=1/2y$, the main part $w\,p'(-w)/p(-w)$ of $\phi$ has positive derivative in $w$ on $(0,\frac1{120}]$ (checked on $600$ subintervals), and the remaining part is $O(y^2e^{-2y})$ together with its derivative, which is far smaller. This proves that $\phi$ is decreasing on $[3,\infty)$, and $\phi(60)>0$ together with $\phi\to0^+$ gives positivity. Since $g$ increases on $[3,\infty)$ to the limit $1$, $g<1$ there; on $(0,3]$, (v) of Lemma~\ref{lem:besselbasic} gives $g(y)\le\sqrt{6\pi}\,(3/2)^{15/2}e^{9/4-3}/\Gamma(17/2)<0.01$. The monotonicity of $g(cy)/g(y)$ is (ii) of Lemma~\ref{lem:besselbasic} with $\phi$ in place of $zI'/I$. (iii) on $[30,60]$ is checked on a grid of step $0.05$ using that $\phi$ is decreasing, and on $[60,\infty)$ from the closed form, where $y\phi(y)\le\frac12p'(-w)/p(-w)+O(y^3e^{-2y})<28$. Finally (iv) follows from (i) and Lemma~\ref{lem:besselbasic}(iv).
+\end{proof}
+
+The following monotonicity in $x$ is what makes every bound of Section~\ref{sec:errors}, proved at the smallest admissible $x$, valid for all larger $x$.
+
+\begin{lemma}\label{lem:xmono}
+Let $x=\sqrt D/m$ and let $\mathcal E(D,m)$ be as in \eqref{eq:ext}. For a constant $0<c\le\pi\sqrt{t_0}$, each of the following ratios is a nonincreasing function of $x>0$:
+\[
+\frac{D^{-15/4}I_{15/2}(cx)}{\mathcal E(D,m)},\qquad\frac{D^{-4}I_8(cx)}{\mathcal E(D,m)},\qquad\frac{D^{-17/4}I_{17/2}(cx)}{\mathcal E(D,m)}.
+\]
+\end{lemma}
+
+\begin{proof}
+Up to constants, $\mathcal E=D^{-15/4}I_{15/2}(c_0x)$ with $c_0=\pi\sqrt{t_0}\ge c$, and $D=m^2x^2$. The first ratio is $I_{15/2}(cx)/I_{15/2}(c_0x)$, nonincreasing by Lemma~\ref{lem:besselbasic}(ii). The logarithmic derivative in $x$ of the second is
+\[
+\frac1x\Big(-\frac12+\frac{cxI_8'(cx)}{I_8(cx)}-\frac{c_0xI_{15/2}'(c_0x)}{I_{15/2}(c_0x)}\Big)\le\frac1x\Big(-\frac12+\frac12+\frac{cxI_{15/2}'(cx)}{I_{15/2}(cx)}-\frac{c_0xI_{15/2}'(c_0x)}{I_{15/2}(c_0x)}\Big)\le0
+\]
+by Lemma~\ref{lem:besselbasic}(iii) and (ii). The third is the same with $-1$ and $+1$.
+\end{proof}
+
+\begin{remark}
+In Lemma~\ref{lem:xmono} the extra power $D^{-1/4}$ of the shadow terms exactly compensates the higher order of the Bessel function. This is the level-two counterpart of the fact, used in \cite{BMa13,Ros24}, that the shadow terms of a mixed mock form grow at most like its principal-part terms.
+\end{remark}
+
+\begin{lemma}\label{lem:d1bound}
+For $n\ge-1$, $0<d_1(n)\le e^{2\pi\sqrt{2(n+1)}}$. More generally $d_1(n)\le P(q)\,q^{-(n+1)}$ for every $0<q<1$.
+\end{lemma}
+
+\begin{proof}
+Positivity is clear from the product. The second bound holds since $P(q)=\sum d_1(a)q^{a+1}$ has nonnegative coefficients. With $q=e^{-\tau}$, comparison of the sum with an integral gives $\sum_{k\ge1}-\log(1-e^{-k\tau})\le\int_0^\infty-\log(1-e^{-u\tau})\,du=\pi^2/6\tau$, so $\log P(e^{-\tau})\le8\cdot\frac{\pi^2}{6\tau}+8\cdot\frac{\pi^2}{12\tau}=\frac{2\pi^2}\tau$. Taking $\tau=\pi\sqrt{2/(n+1)}$ gives the first bound.
+\end{proof}

@@ -1,0 +1,131 @@
+\section{Bounds for the remaining terms}\label{sec:errors}
+
+Throughout this section $(m,n,\ell)$ is a reduced charge with $m\ge3$, $x=\sqrt D/m\ge x_0\ge1$, and all bounds are uniform in $\ell$ and in $x\ge x_0$. We write $B_\gamma(t;x)=(t/t_0)^{15/4}I_{15/2}(\pi x\sqrt t/\gamma)/I_{15/2}(\pi x\sqrt{t_0})$ and $u=e^{-\pi}$. By Lemma~\ref{lem:besselbasic}(i),(ii), $B_\gamma(t;x)$ is increasing in $t$ and nonincreasing in $x$, and $B_\gamma\le\gamma^{-15/2}B_1$.
+
+\subsection{Decomposition}
+Assume Hypothesis~\ref{hyp:R}. Then $d^*(m,n,\ell)=\frac12(-1)^\ell\sqrt i(\mathcal M+\mathcal K_2+\mathcal K_3)$, and Theorem~\ref{thm:model} splits this as
+\begin{equation}\label{eq:decomp}
+\frac{d^*(m,n,\ell)}{\mathcal E(D,m)}=|P(z)|^2-\mathcal X_{\rm miss}+\mathcal X_{\rm main}+\mathcal X_{rs}+\mathcal X_{T}+\mathcal X_{\gamma\ge2}+\mathcal X_{K_2}+\mathcal X_{K_3},
+\end{equation}
+where
+\begin{itemize}
+\item $\mathcal X_{\rm miss}=\sum d_1(a)d_1(b)e^{-\pi xS}\cos((a-b)\theta)$ over the pairs $a,b\ge-1$ not in $\mathcal L_m$;
+\item $\mathcal X_{\rm main}=\sum_{(a,b)\in\mathcal L_m}d_1(a)d_1(b)\big(\rho_{a,b}(x)-e^{-\pi xS}\big)\cos((a-b)\theta)$;
+\item $\mathcal X_{rs}$ is the contribution of the walls with $rs\ge2$ to the frame $S$ term with $\gamma=1$, divided by $\mathcal E$;
+\item $\mathcal X_T$ is the frame $T$ term with $\gamma=1$, divided by $\mathcal E$;
+\item $\mathcal X_{\gamma\ge2}$ collects the terms of $\mathcal M$ with $\gamma\ge2$, and $\mathcal X_{K_j}$ the term $\frac12(-1)^\ell\sqrt i\,\mathcal K_j$, divided by $\mathcal E$.
+\end{itemize}
+We bound each piece in absolute value.
+
+\subsection{Parametrising the walls}
+\begin{lemma}\label{lem:wallparam}
+The map sending a polar term $(\tilde\nu,\tilde\ell)$ with $0\le\tilde\ell<2m$ and a wall $G\in\mathcal W(m,\tilde\nu,\tilde\ell)$ to $(r,s,m_G,n_G)$ is injective. Given $(r,s,a,b)$ in its image, $\delta$ is the unique solution of
+\begin{equation}\label{eq:deltaeq}
+\sqrt{\delta^2+\frac a{mr^2}}+\sqrt{\delta^2+\frac b{ms^2}}=\frac1{rs},
+\end{equation}
+so $t=4m^2\delta^2$ is a function $t(r,s,a,b)$, and $\ell_G\le m-a-b$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:walls}(ii), $U=\sqrt{\delta^2+a/mr^2}$ and $W=\sqrt{\delta^2+b/ms^2}$, and $U+W=1/rs$; the left side of \eqref{eq:deltaeq} is increasing in $\delta^2$, which gives uniqueness, and $\ell_G=2mrs(UW+\delta^2)$ is then determined. The form $\phi\circ G$ has coefficients $(n_G,-\ell_G,m_G)$ up to the order of the variables, so it is determined; given $(r,s)$, the matrices $G$ are $\begin{psmallmatrix}p_0+kr&q_0+ks\\r&s\end{psmallmatrix}$, $k\in\ZZ$; for a fixed form $\phi\circ G$ the choice of $k$ shifts $\omega_0=\tilde\ell/2m$ by the integer $k$, that is, $\tilde\ell$ by $2mk$; the condition $0\le\tilde\ell<2m$ fixes $k$, and then $\phi=(\phi\circ G)\circ G^{-1}$ is determined. Finally $\ell_G=m-a-b-E_G\le m-a-b$ by Lemma~\ref{lem:walls}(iii).
+\end{proof}
+
+\subsection{The leading family}
+\begin{lemma}\label{lem:mainerr}
+Let $(a,b)\in\mathcal L_m$ with $S\ge1$, and put $c_0=\frac k{m+2}(t/t_0)^{7/2}$ and $\hat g_0=g(\pi x_0\sqrt t)/g(\pi x_0\sqrt{t_0})$. Then
+\[
+\sup_{x\ge x_0}\big|\rho_{a,b}(x)-e^{-\pi xS}\big|\le\max_{C\in\{c_0,\,c_0\hat g_0\}}\ \sup_{x\ge x_0}\big|Ce^{-\pi\Delta_sx}-e^{-\pi Sx}\big| .
+\]
+\end{lemma}
+
+\begin{proof}
+From $I_{15/2}(y)=g(y)e^y/\sqrt{2\pi y}$ one gets $\rho_{a,b}(x)=c_0\,\hat g(x)\,e^{-\pi\Delta_sx}$ with $\hat g(x)=g(\pi x\sqrt t)/g(\pi x\sqrt{t_0})$. Since $t\ge1$, $\pi x\sqrt t\ge3$, and Lemma~\ref{lem:gfacts}(ii) shows $\hat g_0\le\hat g(x)\le1$. The expression is affine in $\hat g$, so its modulus is at most the larger of the values at the two ends.
+\end{proof}
+
+The supremum of $|Ce^{-\alpha x}-e^{-\beta x}|$ on $[x_0,\infty)$ is attained at $x_0$ or at the unique critical point $x_*=\log(\beta/C\alpha)/(\beta-\alpha)$ when $x_*>x_0$, and is computed exactly. Summing,
+\begin{equation}\label{eq:Xmain}
+|\mathcal X_{\rm main}|\le\sum_{(a,b)\in\mathcal L_m,\ S\ge1}d_1(a)d_1(b)\max_{C}\sup_{x\ge x_0}\big|Ce^{-\pi\Delta_sx}-e^{-\pi Sx}\big|=:\epsilon_{\rm main}(m,x_0),
+\end{equation}
+\begin{equation}\label{eq:Xmiss}
+|\mathcal X_{\rm miss}|\le\sum_{(a,b)\notin\mathcal L_m}d_1(a)d_1(b)u^{x_0S}=:\epsilon_{\rm miss}(m,x_0).
+\end{equation}
+The pairs not in $\mathcal L_m$ have $S\ge m/2+2$ (if $t\le0$ then $(m+2-S)^2\le4ab\le(S-2)^2$) or $|a-b|\ge m$ (so $S\ge m$) or $k\le0$; we sum them exactly for $S\le4m+10$, and for larger $S$ use $\sum_{a+b=S-2}d_1(a)d_1(b)\le P(q_1)^2q_1^{-S}$ with $q_1=u^{x_0/2}$, by Lemma~\ref{lem:d1bound}.
+
+For large $m$ a coarser bound is convenient.
+
+\begin{lemma}\label{lem:mainS}
+Let $m\ge3$, $x_0=1$, $1\le S\le m+1$, and let $\eta_\pm$ be as in Lemma~\ref{lem:deltas}. Assume $S-\eta_-\ge1/\pi$. Then every $(a,b)\in\mathcal L_m$ with $a+b+2=S$ satisfies
+\[
+\sup_{x\ge1}\big|\rho_{a,b}(x)-e^{-\pi xS}\big|\le u^S\,\varphi(S,m),\qquad \varphi(S,m)=\epsilon_1+e^{\pi\eta_-}-1+\min(1,\pi\eta_+),
+\]
+where $\epsilon_1=\min\big(1,\ \frac{8S}m+\frac{29\pi(S+\eta_+)}{y_t^2g(y_t)}\big)$ with $y_t=\pi\sqrt{t_0-2mS}$ if $y_t\ge30$, and $\epsilon_1=1$ otherwise.
+\end{lemma}
+
+\begin{proof}
+Write $\rho=c_0\hat g\,e^{-\pi x\Delta_s}=c\,e^{\pi xy}e^{-\pi xS}$ with $c=c_0\hat g\le1$ and $y=S-\Delta_s\in[-\eta_+,\eta_-]$. Then $|ce^{\pi xy}-1|\le c|e^{\pi xy}-1|+(1-c)\le(e^{\pi x\eta_-}-1)+\min(1,\pi x\eta_+)+(1-c)$. First, $1-c\le(1-\frac k{m+2})+(1-(t/t_0)^{7/2})+(1-\hat g)$; here $1-\frac k{m+2}=\frac S{m+2}$, $1-(t/t_0)^{7/2}\le\frac72\cdot\frac{2mS}{t_0}\le\frac{7S}m$ by Lemma~\ref{lem:deltas}(i), and, with $z=\pi x\sqrt t\ge y_t$ and $z_0=\pi x\sqrt{t_0}$, Lemma~\ref{lem:gfacts}(ii),(iii) give
+\[
+1-\hat g\le\frac{g(z_0)-g(z)}{g(z)}\le\frac{29(z_0-z)}{z^2g(z)}\le\frac{29\pi x(S+\eta_+)}{\pi^2x^2t\,g(y_t)}\le\frac{29\pi(S+\eta_+)}{y_t^2g(y_t)}
+\]
+when $y_t\ge30$; trivially $1-c\le1$. Multiply by $e^{-\pi xS}$. The function $e^{-\pi xS}(e^{\pi x\eta_-}-1)=e^{-\pi x(S-\eta_-)}-e^{-\pi xS}$ is nonincreasing on $[1,\infty)$ as soon as $S/(S-\eta_-)\le e^{\pi\eta_-}$, which follows from $e^{\pi\eta_-}\ge1+\pi\eta_-$ and $S-\eta_-\ge1/\pi$; the function $xe^{-\pi xS}$ is decreasing for $x\ge1/\pi S$; and the bound for $1-c$ is nonincreasing in $x$. So the supremum is at most the value at $x=1$.
+\end{proof}
+
+\subsection{The other walls at \texorpdfstring{$\gamma=1$}{gamma=1}}
+Dividing \eqref{eq:gamma1S} restricted to $a_S^{\rm rest}$, and the frame $T$ term, by $\mathcal E$, and using $|W_{1,\delta}|=(2m)^{-1/2}$, Lemma~\ref{lem:wallparam} and the monotonicity of $B_1$,
+\begin{align}
+|\mathcal X_{rs}|&\le\frac1{m+2}\sum_{\substack{r,s\le2m,\ rs\ge2\\ a,b\ge-1}}(m-a-b)\,d_1(a)d_1(b)\,B_1\big(t(r,s,a,b);x_0\big)=:\epsilon_{rs},\label{eq:Xrs}\\
+|\mathcal X_T|&\le\frac{16}{m+2}\sum_{\substack{r,s\le2m\\ r\ \text{or}\ s\ \text{even}}}\ \sum_{a,b\in\frac12\ZZ}(m-a-b)\,w(r,s,a,b)\,B_1\big(t(r,s,a,b);x_0\big)=:\epsilon_T,\label{eq:XT}
+\end{align}
+where $w=d_1(a)d_1(2b)$ if $r$ is even and $w=d_1(2a)d_1(b)$ if $s$ is even. The ranges are finite by Lemma~\ref{lem:walls}(v): $a\le m/s^2$, $b\le m/r^2$. Only quadruples for which \eqref{eq:deltaeq} has a solution occur; in the certificate an upper bound for $\delta^2$ is found by bisection and then certified in ball arithmetic, and a quadruple is discarded only when the left side of \eqref{eq:deltaeq} exceeds $1/rs$ already at the least admissible $\delta^2$, again certified.
+
+For $m\ge101$ we use instead the following bound.
+
+\begin{lemma}\label{lem:rsbig}
+For $m\ge101$, with $c=\frac{m-1}{4(m+2)}$, $q=e^{-\pi c}$, $A_1=\frac m2-3-\frac2m$ and $g_0=g(\pi\sqrt{t_0})$,
+\[
+|\mathcal X_{rs}|+|\mathcal X_T|\le\frac{(2m+1)^2\big(P(q)^2+64\sqrt q\,P(q)P(\sqrt q)\big)e^{-\pi A_1/2}}{g_0}.
+\]
+\end{lemma}
+
+\begin{proof}
+For a wall with $rs\ge2$, Lemma~\ref{lem:walls}(vi) gives $\sqrt t\le\frac m2+5$, and $\sqrt{t_0}\ge m+2-\frac2m$, so $\Delta_s=\sqrt{t_0}-\sqrt t\ge A_1$. Also $\Delta_s\ge S(2m-S)/(2(m+2))$ with $S=a+b+2\le m+1$ (by Lemma~\ref{lem:walls}(ii), $a+b\le m(r^2U^2+s^2W^2)$, and on the segment $U+W=1/rs$ this convex function is at most $m\max(r^{-2},s^{-2})\le m$; $a+b=m$ is excluded since $\ell_G\le m-a-b$ must be positive), hence $\Delta_s\ge2cS$. So $e^{-\pi x\Delta_s}\le e^{-\pi A_1/2}q^S$. As in Lemma~\ref{lem:mainerr}, $B_1(t;x)\le(t/t_0)^{7/2}e^{-\pi x\Delta_s}g(\pi x\sqrt t)/g(\pi x\sqrt{t_0})\le e^{-\pi x\Delta_s}/g_0$. With $m-a-b\le m+2$, the sum over $(a,b)$ of $d_1(a)d_1(b)q^S$ is at most $P(q)^2$, the sum of $d_1(a)d_1(2b)q^{a+b+2}$ over $a\in\ZZ$, $b\in\frac12\ZZ$ is at most $\sqrt q\,P(q)P(\sqrt q)$, and there are at most $(2m)^2$ pairs $(r,s)$. The factor $64$ accounts for the factor $16$, the two parity types and a factor $2$ of room.
+\end{proof}
+
+\subsection{The terms with \texorpdfstring{$\gamma\ge2$}{gamma>=2}}
+Let $N_F(\gamma)$ be the number of $\delta$ with $(\gamma,\delta)\in\mathcal C_\gamma$ and frame $F$; then $N_I+N_T+N_S\le2\gamma$. Each term of $\mathcal M$ with $\gamma\ge2$, divided by $\mathcal E$, is at most $\frac{16}{m+2}|a_F|\cdot\sqrt{2m}\,|W|\cdot\gamma^{-1}B_\gamma(t;x)$, and $\sqrt{2m}|W|\le\sqrt{2\gcd(m,\gamma)}$ by Lemma~\ref{lem:weilbound}. Bounding $|a_S|$ and $|a_I|$ by the sums of the absolute values of their walls,
+\begin{equation}\label{eq:Xg2}
+\begin{split}
+|\mathcal X_{\gamma\ge2}|&\le\sum_{\gamma=2}^{G}\frac{\sqrt{2\gcd(m,\gamma)}}{\gamma}\big(N_S(\gamma)\Sigma_S(\gamma)+(N_I+N_T)(\gamma)\,\Sigma_T(\gamma)\big)\\
+&\quad+\frac{2\sqrt2\,(\Sigma_S(1)+\Sigma_T(1))}{6G^6}=:\epsilon_{\gamma\ge2},
+\end{split}
+\end{equation}
+where $\Sigma_S(\gamma)$ and $\Sigma_T(\gamma)$ are the sums \eqref{eq:Xrs} (including the leading family) and \eqref{eq:XT} with $B_1$ replaced by $B_\gamma$. The tail uses $B_\gamma\le\gamma^{-15/2}B_1$, $N\le2\gamma$, $\gcd(m,\gamma)\le\gamma$ and $\sum_{\gamma>G}\gamma^{-7}\le G^{-6}/6$. We take $G=12$.
+
+\begin{lemma}\label{lem:g2big}
+For $m\ge101$, with $q,g_0$ as in Lemma~\ref{lem:rsbig},
+\[
+|\mathcal X_{\gamma\ge2}|\le2^9\big(\zeta(7)-1\big)\sqrt2\,e^{-\pi\sqrt{t_0}/2}\,\frac{(2m+1)^2\big(P(q)^2+64\sqrt q\,P(q)P(\sqrt q)\big)}{g_0}.
+\]
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:besselbasic}(i), $I(z/\gamma)\le(2/\gamma)^{15/2}I(z/2)$ for $\gamma\ge2$. By Lemma~\ref{lem:gfacts}(i), $I(z/2)\le e^{z/2}/\sqrt{\pi z}$, and $I(z_0)=g(z_0)e^{z_0}/\sqrt{2\pi z_0}$, so $(t/t_0)^{15/4}I(z/2)/I(z_0)\le\sqrt2e^{-z_0/2}e^{-(z_0-z)/2}/g_0\le\sqrt2e^{-\pi\sqrt{t_0}/2}q^S/g_0$, using $(t/t_0)^{15/4}(t_0/t)^{1/4}\le1$ and $\Delta_s\ge2cS$ as before. Finally $\sum_{\gamma\ge2}2\gamma\cdot\sqrt{2\gamma}\,\gamma^{-1}(2/\gamma)^{15/2}=2^9\sum_{\gamma\ge2}\gamma^{-7}$.
+\end{proof}
+
+\subsection{The shadow terms}
+By \eqref{eq:fsum} and Lemma~\ref{lem:weilbound}, with $\psi_1=(2m)^{-1/2}$ and $\psi_\gamma=\sqrt{\gcd(m,\gamma)/m}$, and $D_0=m^2x_0^2$,
+\begin{align}
+|\mathcal X_{K_2}|&\le\sum_{\gamma\ge1}\sum_F\frac{N_F(\gamma)}2\cdot\frac{\sqrt{2m}\,|c_F|\,\psi_\gamma}{\sqrt\gamma}\Big(\frac{4m\mu_F}{D_0}\Big)^4\frac{I_{15/2}\big(2\pi x_0\sqrt{\mu_Fm}/\gamma\big)}{\mathcal E(D_0,m)},\label{eq:XK2}\\
+|\mathcal X_{K_3}|&\le\sum_{\gamma\ge1}\sum_F\frac{N_F(\gamma)}2\cdot\frac{|c_F|\,\psi_\gamma}{2\pi\gamma^2}\Big(\frac{4m\mu_F}{D_0}\Big)^{\frac{17}4}\cdot2\sqrt{\frac{\mu_F}m}\cdot\frac{4\pi^2m^2\gamma^2}3\cdot\frac{I_{15/2}\big(2\pi x_0\sqrt{\mu_Fm}/\gamma\big)}{\mathcal E(D_0,m)}.\label{eq:XK3}
+\end{align}
+Indeed, the arguments of $I_8$ and $I_{17/2}$ are $c\,x$ with $c\le2\pi\sqrt m\le\pi\sqrt{t_0}$, so by Lemma~\ref{lem:xmono} each term divided by $\mathcal E$ is largest at $x=x_0$; there $I_8,I_{17/2}\le I_{15/2}$ by Lemma~\ref{lem:besselbasic}(iv), the factor $(1-mu^2/\mu_F)^{17/4}$ is at most $1$, $I_{17/2}$ is increasing in its argument, and the interval of integration has length $2\sqrt{\mu_F/m}$. The certificate sums $\gamma\le G=12$ exactly and bounds the rest using $I_{15/2}(z/\gamma)\le\gamma^{-15/2}I_{15/2}(z)$, $N\le2\gamma$ and $\psi_\gamma\le1$, with $\sum_{\gamma>G}\gamma^{-7}\le G^{-6}/6$ for \eqref{eq:XK2} and $\sum_{\gamma>G}\gamma^{-13/2}\le\frac2{11}G^{-11/2}$ for \eqref{eq:XK3}.
+
+\begin{lemma}\label{lem:mockbig}
+For $m\ge101$, with $z_0=\pi\sqrt{t_0}$, $z_1=2\pi\sqrt m$ and $J=\sqrt{z_0/z_1}\,e^{z_1-z_0}/g(z_0)$,
+\[
+|\mathcal X_{K_2}|\le\frac{\sqrt{2m}\,\frac{17}{16}e^{2\pi\sqrt{2m+2}}(4/m)^4\zeta(7)J}{\frac{\pi}{\sqrt{2m}}\frac{m+2}{16}},\qquad |\mathcal X_{K_3}|\le\frac{\frac{17}{16}e^{2\pi\sqrt{2m+2}}\frac{1}{2\pi}(4/m)^{17/4}\frac2{\sqrt m}\frac{4\pi^2m^2}3\zeta(\frac{13}2)J}{\frac{\pi}{\sqrt{2m}}\frac{m+2}{16}}.
+\]
+\end{lemma}
+
+\begin{proof}
+Take $x_0=1$ in \eqref{eq:XK2}, \eqref{eq:XK3}. Use $|c_F|\le\hat f(m)\le e^{2\pi\sqrt{2m+2}}$ (Lemma~\ref{lem:d1bound}), $\mu_F\le1$, $\psi_\gamma\le1$, $N\le2\gamma$, $I_{15/2}(z_1/\gamma)\le\gamma^{-15/2}I_{15/2}(z_1)$, and $\mathcal E(m^2,m)\ge\frac\pi{\sqrt{2m}}\frac{m+2}{16}I_{15/2}(z_0)$. Finally $I_{15/2}(z_1)/I_{15/2}(z_0)\le J$ by Lemma~\ref{lem:gfacts}(i).
+\end{proof}

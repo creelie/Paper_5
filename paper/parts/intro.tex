@@ -1,0 +1,67 @@
+\title[Positive single-centred indices in the $\ZZ_2$ CHL model]{Positivity of Single-Centred Black Hole Indices\\ in the $\mathbb{Z}_2$ CHL Model}
+
+\author{Deep Bhattacharjee}
+\address{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India}
+\address{Formerly, University of Calcutta (Heramba Chandra College), 23/49 Gariahat Road, Golpark, Kolkata 700029, West Bengal, India}
+\email{d.bhattacharjee@erl-forschung.de}
+\email{itsdeep@live.com}
+\email{egspl@proton.me (GitHub-related contact; GitHub account creelie)}
+\urladdr{https://orcid.org/0000-0003-0466-750X}
+
+\begin{abstract}
+We prove Sen's positivity conjecture for single-centred quarter-BPS black holes of the $\ZZ_2$ CHL model for every charge with $Q^2\le2$ and for every charge of discriminant at most $\Dexact$. For all charges we reduce the conjecture to an explicit level-two Rademacher expansion of the dyon partition function and prove it under that hypothesis.
+
+\medskip\noindent\textbf{Keywords:} CHL model; single-centred black hole; dyon index; mock Jacobi form; Rademacher expansion.
+
+\smallskip\noindent\textbf{MSC 2020:} 11F50 (primary); 11F37, 11F30, 81T30, 83E30.
+
+\smallskip\noindent\textbf{PACS:} 11.25.-w; 04.70.Dy; 11.25.Mj; 02.10.De.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+A quarter-BPS dyon of $\mathcal N=4$ string theory in four dimensions carries an electric charge $Q$ and a magnetic charge $P$, and the protected index that counts such states is the helicity trace $B_6$. When the charges admit a single-centred black hole whose only hair are the zero modes of the broken supersymmetries, the twelve fermion zero modes fix the sign of the trace, and the horizon degrees of freedom contribute $-B_6>0$. Sen turned this observation into a conjecture about Fourier coefficients of Siegel modular forms \cite{Sen11}: the index $d^*(Q,P)$ of the single-centred black hole, extracted from the inverse of the dyon partition function with the contour of the attractor region, is positive.\footnote{Sen checked the sign on the charges of his Tables~1 to~5, for the heterotic string on $T^6$ and for the CHL models of orders $2,3,5,7$, and stated the conjecture for all charges in the cones (3.7)--(3.12) of \cite{Sen11}. The entropy function and attractor background behind the statement are reviewed in \cite{Sen08}.}
+
+For type~II string theory on $K3\times T^2$, where the partition function is the Igusa cusp form $\Phi_{10}$ \cite{DVV97,SSY06,GN97}, the conjecture has been settled in two steps. Bringmann and Murthy proved it for the two lowest magnetic charges $P^2=2,4$ by writing the finite parts of the first two Fourier--Jacobi coefficients of $1/\Phi_{10}$ through class numbers \cite{BM13}, using the decomposition into polar and finite parts of Dabholkar, Murthy and Zagier \cite{DMZ12}. Rossell\'o then proved positivity for all charges \cite{Ros24}: he wrote the single-centred index as a mixed Rademacher series, whose existence for $SL_2(\ZZ)$ goes back to Bringmann and Manschot \cite{BMa13} and was used for these black holes by Ferrari and Reys \cite{FR17}, and showed that one term of the series dominates all the others. The CHL models \cite{CHL95} are the $\ZZ_N$ orbifolds of type~IIB on $K3\times T^2$ in which the $\ZZ_N$ acts on $K3$ by a symplectic automorphism and on $T^2$ by a shift; their partition functions $\Phit_k$ are Siegel modular forms of weight $k$ for subgroups of $Sp(2,\ZZ)$ \cite{JS06,DJS06,DS06,DN07}.\footnote{For $N=2$ the model is the heterotic string on $T^6$ obtained from the $E_8\times E_8$ string by exchanging the two $E_8$ factors together with a half shift on a circle \cite{CHL95}; for the ten-dimensional $E_8\times E_8$ theory and its relation to M-theory see \cite{SBBT26}. Background on the involutions of $K3$ surfaces and on Calabi--Yau threefolds fibred by $K3$ surfaces, which underlie the dual type~II description, is in \cite{BN26,Bha22}.} Bhand, Sen and Singh showed that the Fourier--Jacobi coefficients of $1/\Phit_k$ are meromorphic Jacobi forms, split them into an Appell--Lerch polar part and a mock Jacobi finite part, and identified the single-centred index with the Fourier coefficients of the finite part on an explicit set of charges \cite[Theorem~5.4]{BSS25}. Cardoso, Nampuri and Rossell\'o computed the polar coefficients of these finite parts through continued fractions and wrote the immortal index as a Rademacher series, assuming that such an expansion holds at level $N$ \cite{CNR21}; Singh constructed a generating function for the single-centred index \cite{Sin26}. Neither result decides the sign.
+
+This paper treats the $\ZZ_2$ CHL model. It has $k=6$, duality group $\Gamma_1(2)$, and charges normalised so that $m=Q^2$, $n=P^2/2$ and $\ell=Q\cdot P$ are integers; the discriminant is $D=Q^2P^2-(Q\cdot P)^2=2mn-\ell^2$. Our results are three.
+
+\begin{mainthm}[first two rows]\label{thm:main}
+The single-centred index $d^*(Q,P)$ is positive for every charge with $Q^2\in\{1,2\}$, $P^2>0$ and $D>0$, and for every charge in the $\Gamma_1(2)$ orbit of such a charge.
+\end{mainthm}
+
+\begin{mainthm}[bounded discriminant]\label{thm:bounded}
+The single-centred index $d^*(Q,P)$ is positive for every charge with $0<D\le\Dexact$.
+\end{mainthm}
+
+\begin{mainthm}[all charges]\label{thm:all}
+Assume Hypothesis~\textup{\ref{hyp:R}}. Then $d^*(Q,P)>0$ for every charge with $D>0$.
+\end{mainthm}
+
+Theorem~\ref{thm:main} has a proof in the style of \cite{BM13}: a product formula identity puts the Fourier--Jacobi coefficient $\varphi_m$ of $1/\Phit_6$ into closed form for $m=1,2$, the theorem of Dabholkar, Murthy and Zagier expresses the mock part through Hurwitz class numbers, and an analysis of theta components gives the sign of every coefficient. The new ingredient at $Q^2=2$ is the factorisation
+\[
+J_2=\frac{16\,\theta_4(\sigma,v)^2}{\theta_4(\sigma)^6}\Big[\theta_2(\sigma)^2\big(\theta_3(\sigma)^4+3\theta_2(\sigma)^4\big)\theta_2(\sigma,v)^2-\theta_3(\sigma)^2\big(3\theta_3(\sigma)^4+\theta_2(\sigma)^4\big)\theta_3(\sigma,v)^2\Big]
+\]
+of the holomorphic part of the finite part (Proposition~\ref{prop:J2theta}), from which the signs of its theta components are manifest.
+
+Theorem~\ref{thm:bounded} rests on a reduction proved in Section~\ref{sec:reduction}. Every charge has, in its duality orbit or after the Fricke exchange of $Q^2$ and $P^2/2$, a representative with $m\le n$ and $0\le\ell\le m$, which lies in the set of Bhand, Sen and Singh where $d^*$ is a Fourier coefficient of $1/\Phit_6$ in a fixed chamber (Proposition~\ref{prop:reduction}). The Fricke exchange is an exact symmetry of the product formula (Lemma~\ref{lem:fricke}), a consequence of the identity $\fE(\frac\tau2)+\fE(\frac{\tau+1}2)=2\fE(\tau)$ between Eisenstein series of level two. For $D\le\Dexact$ there are finitely many such representatives, and we compute every one of them exactly.
+
+Theorem~\ref{thm:all} follows the strategy of \cite{Ros24}, transported to level two. Hypothesis~\ref{hyp:R} (Section~\ref{sec:hypothesis}) is an explicit formula for the finite-part coefficients: a vector-valued Rademacher series over the three cosets of $\Gamma^0(2)$ in $SL_2(\ZZ)$, with the principal parts at the two cusps given by sums over Farey walls (the parts (P0) and (P$\infty$)) and with the correction terms coming from the shadow of the mock Jacobi form. For $SL_2(\ZZ)$ such an expansion is a theorem \cite{BMa13}; for the weakly holomorphic part at level two it is Zuckerman's classical formula \cite{Zuc39}; for the mixed mock part at level two it has been stated \cite{CNR21} but, to our knowledge, not proved. We have checked it against the exact coefficients to relative precision $10^{-21}$ at $Q^2=1,2$ and $10^{-13}$ at $Q^2=3,4$, and we have checked its polar input on every polar coefficient with $Q^2\le10$ at one cusp and $Q^2\le14$ at the other (Section~\ref{ssec:evidence}).
+
+The mechanism behind Theorem~\ref{thm:all} is the following. Write $x=\sqrt D/m$ and $\theta=\pi\ell/m$, and let $\mathcal E(D,m)$ be the contribution of the most polar term at the cusp $0$, an explicit multiple of a Bessel function $I_{15/2}$. After the reduction one has $x\ge1$. The terms of the Rademacher series attached to the leading family of Farey walls, those with the matrix $\begin{psmallmatrix}1&0\\1&1\end{psmallmatrix}$, add up, after division by $\mathcal E$, to an approximation of
+\[
+|P(z)|^2,\qquad P(z)=\prod_{n\ge1}(1-z^n)^{-8}(1-z^{2n})^{-8},\qquad z=e^{-\pi x+i\theta},
+\]
+the squared modulus of the generating function of the degeneracies of the electric half-BPS states of the model (Theorem~\ref{thm:model}). The function $|P|^2$ stays above $0.538$ on the disc $|z|\le e^{-\pi}$, its minimum being attained at $z=-e^{-\pi}$ (Proposition~\ref{prop:pmin}, Figure~\ref{fig:pdisc}). Everything else, namely the error of the approximation, the remaining walls, the other two cusps of the coset sum, the terms with $\gamma\ge2$ and the mock corrections, is bounded by $0.347$ for $3\le Q^2\le100$ by a certificate in interval arithmetic and by $0.3382$ for $Q^2\ge101$ by explicit inequalities (Theorems~\ref{thm:cert} and~\ref{thm:analytic}); the margin is plotted in Figure~\ref{fig:margins}.
+
+The heterotic analogue of this picture is the dominance argument of \cite{Ros24}, whose model term is a single exponential; the point at level two is that the dominant contribution is not one term but a whole family, and the family resums to an eta quotient. What prevents the argument from being unconditional is only Hypothesis~\ref{hyp:R}: every estimate after it is proved.
+
+Section~\ref{sec:setup} recalls the partition function, the decomposition of Bhand, Sen and Singh and the auxiliary functions. Sections~\ref{sec:Q1} and~\ref{sec:Q2} prove Theorem~\ref{thm:main}. Section~\ref{sec:reduction} proves the reduction and Theorem~\ref{thm:bounded}. Section~\ref{sec:walls} studies the Farey walls, Section~\ref{sec:hypothesis} states Hypothesis~\ref{hyp:R} and its evidence, Section~\ref{sec:model} proves the eta-quotient picture, Section~\ref{sec:bessel} collects the needed facts on Bessel functions, Section~\ref{sec:errors} bounds every remaining term, and Section~\ref{sec:proofall} proves Theorem~\ref{thm:all}. Section~\ref{sec:values} compares the values with the product formula and with Sen's table. The appendices describe the exact computation and the interval certificates and list the margins.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\textwidth]{fig_walls.png}
+\caption{The Farey walls of a polar term at the cusp $0$, drawn as geodesics from $q/s$ to $p/r$ in the upper half-plane of $\omega=\tilde\ell/2m$. A matrix $G=\begin{psmallmatrix}p&q\\r&s\end{psmallmatrix}$ contributes to the polar coefficient at $(\tilde\ell,\nu)$ when its geodesic passes over the point $\omega_0+i\delta$ with $\omega_0=\tilde\ell/2m$ and $\delta=\sqrt{-\tilde D}/2m$ (Lemma~\ref{lem:walls}). The outer red geodesic is the leading family $r=s=1$; every other wall lies below height $\frac14+\frac5{2m}$.}\label{fig:wallsfig}
+\end{figure}

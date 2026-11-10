@@ -1,0 +1,8 @@
+{
+  "title": "Code and data for: Positivity of Single-Centred Black Hole Indices in the Z2 CHL Model",
+  "upload_type": "software",
+  "description": "LaTeX source, PDF, exact-arithmetic orbit computation and ball-arithmetic certificates for the paper on Sen's positivity conjecture for single-centred black hole indices of the Z2 CHL model. Positivity is proved for Q^2 <= 2 and for every charge of discriminant at most 800, and for all charges under an explicit level-two Rademacher hypothesis.",
+  "creators": [{"name": "Bhattacharjee, Deep", "orcid": "0000-0003-0466-750X", "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, India"}],
+  "keywords": ["CHL model", "single-centred black hole", "dyon index", "mock Jacobi form", "Rademacher expansion"],
+  "license": "MIT"
+}

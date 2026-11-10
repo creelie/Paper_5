@@ -1,0 +1,9 @@
+__pycache__/
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.toc
+main.pdf
+!code/certificate/*.out

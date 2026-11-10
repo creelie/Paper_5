@@ -1,0 +1,5 @@
+3 main=5.88e-6 miss=7.94e-29 rs2=2.40e-9 TI=1.08e-19 E2=1.58e-7 MK2=1.88e-11 MK3=6.59e-11 total=6.04e-6 margin 0.5380 3.5s
+4 main=5.46e-5 miss=1.19e-27 rs2=3.08e-13 TI=2.02e-19 E2=1.58e-7 MK2=2.50e-12 MK3=1.25e-11 total=5.47e-5 margin 0.5379 3.3s
+5 main=0.000287 miss=9.61e-27 rs2=3.73e-14 TI=7.45e-19 E2=1.58e-7 MK2=5.75e-13 MK3=3.81e-12 total=0.000287 margin 0.5377 3.1s
+6 main=0.000979 miss=6.14e-26 rs2=3.48e-11 TI=3.24e-18 E2=1.58e-7 MK2=1.90e-13 MK3=1.58e-12 total=0.000979 margin 0.5370 3.5s
+7 main=0.00243 miss=1.29e-21 rs2=1.64e-11 TI=6.16e-18 E2=1.58e-7 MK2=8.20e-14 MK3=8.27e-13 total=0.00243 margin 0.5356 3.3s
