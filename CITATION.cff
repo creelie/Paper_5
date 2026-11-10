@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
-title: "Single-Centred Dyon Indices of the Z2 CHL Model Are Positive at Q^2 <= 2"
+title: "Code and data for: Positivity of Single-Centred Black Hole Indices in the Z2 CHL Model"
 authors:
   - family-names: Bhattacharjee
     given-names: Deep

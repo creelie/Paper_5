@@ -1,8 +1,8 @@
 {
-  "title": "Single-Centred Dyon Indices of the Z2 CHL Model Are Positive at Q^2 <= 2",
+  "title": "Code and data for: Positivity of Single-Centred Black Hole Indices in the Z2 CHL Model",
   "upload_type": "software",
-  "description": "LaTeX source, PDF and exact-arithmetic verification code for the paper on Sen's positivity conjecture for the single-centred dyon index of the Z2 CHL model of N = 4 string theory, proved for every charge with Q^2 = 1 or 2 and its duality orbit.",
+  "description": "LaTeX source, PDF, exact-arithmetic orbit computation and ball-arithmetic certificates for the paper on Sen's positivity conjecture for single-centred black hole indices of the Z2 CHL model. Positivity is proved for Q^2 <= 2 and for every charge of discriminant at most 800, and for all charges under an explicit level-two Rademacher hypothesis.",
   "creators": [{"name": "Bhattacharjee, Deep", "orcid": "0000-0003-0466-750X", "affiliation": "Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, India"}],
-  "keywords": ["CHL model", "dyon degeneracy", "single-centred black hole", "mock Jacobi form", "Hurwitz class number"],
+  "keywords": ["CHL model", "single-centred black hole", "dyon index", "mock Jacobi form", "Rademacher expansion"],
   "license": "MIT"
 }

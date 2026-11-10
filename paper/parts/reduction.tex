@@ -1,0 +1,99 @@
+\section{Reduction to a fundamental set of charges}\label{sec:reduction}
+
+From now on $m$ is arbitrary. This section shows that the sign of $d^*$ has to be checked only on charges with $m\le n$ and $0\le\ell\le m$, and proves Theorem~\ref{thm:bounded}.
+
+\subsection{The Fricke symmetry of the product formula}
+The duality group $\Gamma_1(2)$ acts on the charges by $(Q,P)\mapsto(aQ+bP,\,cQ+dP)$ with $\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}\in\Gamma_1(2)$, that is, $c$ even and $a,d$ odd \cite[(5.17)--(5.19)]{BSS25}. It does not exchange $Q^2$ with $P^2/2$. The product formula has, however, an extra symmetry that does.
+
+\begin{lemma}\label{lem:fricke}
+Let $E(A,B,j)=\sum_{s=0}^1(-1)^{sB}c^{(A\bmod2,\,s)}_{j\bmod2}(2AB-j^2)$ be the exponent of the factor $1-x^A\e(B\rho)y^j$ in \eqref{eq:product}, where $x=\e(\sigma/2)$ and $A=2k'$. Then $E(A,B,j)=E(B,A,j)$ for all $A,B\ge0$ and $j$. Consequently
+\begin{equation}\label{eq:fricke}
+\Phit_6(\rho,\sigma,v)=\Phit_6\big(\tfrac\sigma2,\,2\rho,\,v\big)
+\end{equation}
+as formal products.
+\end{lemma}
+
+\begin{proof}
+If $A$ and $B$ have the same parity, the two sides are the same expression. Let $A$ be even and $B$ odd; then $2AB-j^2\equiv-j^2\pmod4$ and $AB/2\in\ZZ$, and
+\[
+E(A,B,j)=c^{(0,0)}(N)-c^{(0,1)}(N),\qquad E(B,A,j)=c^{(1,0)}(N)+c^{(1,1)}(N),\qquad N=2AB-j^2,
+\]
+both read off at an integral power of $q$. By \eqref{eq:genera},
+\[
+F^{(0,0)}-F^{(0,1)}=\tfrac23\pB-\tfrac23\pA\,\fE(\tau),\qquad F^{(1,0)}+F^{(1,1)}=\tfrac23\pB-\tfrac13\pA\big(\fE(\tfrac\tau2)+\fE(\tfrac{\tau+1}2)\big).
+\]
+Since $\fE(\tau)=1+24\sum\sigma_1^{\rm odd}(n)q^n$ and $\sigma^{\rm odd}_1(2k)=\sigma^{\rm odd}_1(k)$,
+\[
+\fE(\tfrac\tau2)+\fE(\tfrac{\tau+1}2)=2+48\sum_{k\ge1}\sigma_1^{\rm odd}(2k)q^k=2\fE(\tau),
+\]
+so $F^{(0,0)}-F^{(0,1)}=F^{(1,0)}+F^{(1,1)}$ identically, and the exponents agree. The prefactor $\e(\rho+\frac\sigma2+v)$ and the range $A,B\ge0$, $j<0$ if $A=B=0$, of the product are symmetric under $A\leftrightarrow B$, which gives \eqref{eq:fricke}.
+\end{proof}
+
+\begin{remark}
+The substitution $(\rho,\sigma)\mapsto(\sigma/2,2\rho)$ is the action on the Siegel upper half-space of the Fricke involution of $\Gamma_0(2)$; Persson and Volpato showed that the CHL models with a geometric symmetry are self-dual under the corresponding Fricke S-duality \cite{PV15}, and \eqref{eq:fricke} is its shadow on the partition function. We use only the elementary statement of Lemma~\ref{lem:fricke}.
+\end{remark}
+
+\subsection{A chamber shared by both orientations}
+For a charge $(m,n,\ell)$ and a point $(\rho_2,\sigma_2,v_2)$ of imaginary parts, let
+\[
+c(m,n,\ell;\rho_2,\sigma_2,v_2)=\int\frac{\e(-m\rho-n\frac\sigma2-\ell v)}{\Phit_6(\rho,\sigma,v)}\,d\rho_1\,d\sigma_1\,dv_1,
+\]
+the integral running over a period cell of the real parts. Sen showed \cite[\S4]{Sen07} that this number is locally constant in the imaginary parts and jumps only across the walls of marginal stability, which for the $\ZZ_2$ CHL model are the hyperplanes
+\begin{equation}\label{eq:wallsSen}
+j\,v_2+n_1\sigma_2-m_1\rho_2=0,\qquad j\ \text{odd},\quad m_1\in\ZZ,\quad n_1\in\tfrac12\ZZ,\quad m_1n_1=\tfrac{1-j^2}4,
+\end{equation}
+coming from the double zeros of $\Phit_6$ with vanishing coefficient of $\rho\sigma-v^2$.
+
+\begin{lemma}\label{lem:chamber}
+Let $\mathcal R=\{\rho_2,\sigma_2>0,\ 0<-v_2<\frac12\min(\rho_2,\frac{\sigma_2}2)\}$.
+\begin{enumerate}
+\item[(i)] $\mathcal R$ meets no wall \eqref{eq:wallsSen}, so $c_{\mathcal R}(m,n,\ell)=c(m,n,\ell;\rho_2,\sigma_2,v_2)$ does not depend on the point of $\mathcal R$.
+\item[(ii)] $c_{\mathcal R}(m,n,\ell)=c_{\mathcal R}(n,m,\ell)$.
+\item[(iii)] If $D=2mn-\ell^2>0$ and $0\le\ell\le2m$, then $c^F_m(n,\ell)=c_{\mathcal R}(m,n,\ell)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) For $j=\pm1$ one of $m_1,n_1$ vanishes and the wall is $|v_2|=|n_1|\sigma_2$ with $|n_1|\ge\frac12$, or $|v_2|=|m_1|\rho_2$ with $|m_1|\ge1$, or $v_2=0$; none meets $\mathcal R$. For $|j|\ge3$ the product $m_1n_1$ is negative, so $|n_1\sigma_2-m_1\rho_2|=|n_1|\sigma_2+|m_1|\rho_2\ge2\sqrt{|m_1n_1|\sigma_2\rho_2}=\sqrt{j^2-1}\,\sqrt{\sigma_2\rho_2}$, while on $\mathcal R$
+\[
+|j\,v_2|<\tfrac{|j|}2\min(\rho_2,\tfrac{\sigma_2}2)\le\tfrac{|j|}{2\sqrt2}\sqrt{\rho_2\sigma_2}<\sqrt{j^2-1}\,\sqrt{\rho_2\sigma_2}.
+\]
+(ii) The substitution of Lemma~\ref{lem:fricke} maps $\mathcal R$ to itself and exchanges the roles of $m$ and $n$.
+
+(iii) Let $\rho_2\to\infty$ inside $\mathcal R$ with $\sigma_2$ and $v_2$ fixed. The integral over $\rho_1$ picks out $\varphi_m$, and $c_{\mathcal R}(m,n,\ell)$ is the coefficient of $x^ny^\ell$ of $\varphi_m$ expanded in the strip $-\sigma_2<v_2<0$, where $|p|<|y|^{-1}<1$. Write $\varphi_m=\varphi^P_m+\varphi^F_m$ with \eqref{eq:polar}. The finite part is holomorphic in $v$, so its expansion does not depend on the strip. In the polar part, expand $\mathcal A_{2,m}$ in the strip: the term $s=0$ is $y(1-y)^{-2}=\sum_{k\ge1}k\,y^{-k}$, the terms $s\ge1$ contain only powers $y^{2ms+1+k}$ with $k\ge0$, and the terms $s\le-1$, rewritten through $(1-p^sy)^{-2}=p^{-2s}y^{-2}(1-p^{-s}y^{-1})^{-2}$, only powers $y^{2ms-1-k}$ with $k\ge0$. None of these exponents lies in $[0,2m]$, and the factor $1/g(\sigma/2)$ does not change the power of $y$. Hence the polar part contributes nothing at $y^\ell$ with $0\le\ell\le2m$.
+\end{proof}
+
+\subsection{Least representatives}
+\begin{lemma}\label{lem:leastA}
+Let $(m,n,\ell)$ be a charge with $m\ge1$, $|\ell|\le m$, $|\ell|\le n$ and $D=2mn-\ell^2>0$. Then it lies in the set $\mathcal A$ of \eqref{eq:setA}.
+\end{lemma}
+
+\begin{proof}
+For $m_1=0$ the bracket in \eqref{eq:setA} is $m^2(2s+1)^2\ge m^2$. Let $m_1\ne0$, so $|m_1|\ge2$, and let $d$ be the distance from $m_1\ell$ to the nearest odd multiple of $m$; the bracket is at least $d^2+m_1^2D$. If $|m_1\ell|\le m$, then $d\ge m-|m_1\ell|$ and
+\[
+d^2+m_1^2D\ \ge\ m^2-2m|m_1\ell|+m_1^2\ell^2+m_1^2(2mn-\ell^2)=m^2+2m|m_1|\big(|m_1|n-|\ell|\big)\ \ge\ m^2 .
+\]
+If $|m_1\ell|>m$, then $D\ge2m|\ell|-\ell^2\ge m|\ell|$ and $m_1^2D\ge m|m_1|\cdot|m_1\ell|>2m^2$.
+\end{proof}
+
+\begin{definition}
+A charge $(m,n,\ell)$ is \emph{reduced} if $1\le m\le n$, $0\le\ell\le m$ and $D=2mn-\ell^2>0$. For a reduced charge put $x=\sqrt D/m$ and $\theta=\pi\ell/m$. Since $D\ge2m^2-m^2$, every reduced charge has $x\ge1$.
+\end{definition}
+
+\begin{proposition}\label{prop:reduction}
+For every charge $(Q,P)$ with $D>0$ there is a reduced charge $(m',n',\ell')$ with the same discriminant and $\ell'\equiv Q\cdot P\pmod2$ such that
+\[
+d^*(Q,P)=(-1)^{\ell'+1}c^F_{m'}(n',\ell')=(-1)^{\ell'+1}c_{\mathcal R}(m',n',\ell').
+\]
+\end{proposition}
+
+\begin{proof}
+In the orbit of $(Q,P)$ choose a charge with least $m=Q^2$; since $D>0$ the form $f(a,b)=(aQ+bP)^2=a^2m+2ab\ell+2b^2n$ is positive definite, so the least value exists. The matrices $\begin{psmallmatrix}1&0\\c&1\end{psmallmatrix}$ with $c$ even fix $Q$ and send $\ell$ to $\ell+cm$; so we may assume $|\ell|\le m$. The matrices $\begin{psmallmatrix}1&\pm1\\0&1\end{psmallmatrix}$ send $m$ to $m\pm2\ell+2n$, and minimality gives $n\ge|\ell|$. By Lemma~\ref{lem:leastA} the charge lies in $\mathcal A$, so $d^*=(-1)^{\ell+1}c^F_m(n,\ell)$ by \eqref{eq:dstar}. The finite part is a mock Jacobi form, even in $v$, so $c^F_m(n,\ell)=c^F_m(n,|\ell|)$. If $m\le n$, the charge $(m,n,|\ell|)$ is reduced. If $n<m$, then $0\le|\ell|\le n$ and Lemma~\ref{lem:chamber} gives $c^F_m(n,|\ell|)=c_{\mathcal R}(m,n,|\ell|)=c_{\mathcal R}(n,m,|\ell|)=c^F_n(m,|\ell|)$, and $(n,m,|\ell|)$ is reduced. The shifts change $\ell$ by even multiples of $m$ and the sign change does not alter the parity, so $\ell'\equiv Q\cdot P\pmod2$.
+\end{proof}
+
+So for the rest of the paper we write $d^*(m,n,\ell)=(-1)^{\ell+1}c^F_m(n,\ell)$ for a reduced charge, and the conjecture is the statement $d^*(m,n,\ell)>0$ on reduced charges.
+
+\subsection{Bounded discriminant}
+\begin{proof}[Proof of Theorem~\textup{\ref{thm:bounded}}]
+A reduced charge with $D\le\Dexact$ has $m\le\sqrt D\le\lfloor\sqrt{\Dexact}\rfloor$ and $n=(D+\ell^2)/2m\le(D+m^2)/2m$, so there are finitely many. For each $\Gamma_1(2)$ orbit with $D\le\Dexact$ the program of Appendix~\ref{app:exact} finds a charge of least $Q^2$ satisfying \eqref{eq:setA} with $0\le\ell<2m$, and computes $c_{\mathcal R}(m,n,\ell)$ exactly from the product formula, in the cheaper of the two orientations allowed by Lemma~\ref{lem:chamber}. For $D\le\Dexact$ there are $\Norbits$ orbits; in every one of them $(-1)^{\ell+1}c_{\mathcal R}(m,n,\ell)>0$. By Lemma~\ref{lem:chamber}(iii) and \eqref{eq:dstar} these numbers are the single-centred indices.\footnote{Every orbit is found with all its representatives inside the computed box, and the program checks that they give the same value; at $Q^2=1,2$ it reproduces the closed formulas of Propositions~\ref{prop:Q1closed} and~\ref{prop:Q2closed}.}
+\end{proof}

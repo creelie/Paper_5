@@ -14,6 +14,8 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{hypothesis}{Hypothesis}
+\renewcommand{\thehypothesis}{R}
 
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\QQ}{\mathbb{Q}}
@@ -26,55 +28,17 @@
 \newcommand{\pA}{\phi_{-2,1}}
 \newcommand{\pB}{\phi_{0,1}}
 \newcommand{\e}{\mathbf e}
+\newcommand{\Dexact}{800}
+\newcommand{\Norbits}{22972}
+\newcommand{\Qmaxexact}{28}
+\newcommand{\zenodoDOI}{10.5281/zenodo.XXXXXXX}
 
 \setlength{\emergencystretch}{2.5em}
 \hbadness=2000
 \raggedbottom
 \begin{document}
 
-\title[Positive single-centred indices of the $\ZZ_2$ CHL model]{Single-Centred Dyon Indices of the $\mathbb{Z}_2$ CHL Model\\ Are Positive at $Q^2\le 2$}
-
-\author{Deep Bhattacharjee}
-\address{Formerly, Electro-Gravitational Space Propulsion Laboratory (EGSPL), Bhubaneswar, Odisha 751030, India}
-\address{Formerly, University of Calcutta (Heramba Chandra College), 23/49 Gariahat Road, Golpark, Kolkata 700029, West Bengal, India}
-\email{d.bhattacharjee@erl-forschung.de}
-\email{itsdeep@live.com}
-\email{egspl@proton.me (GitHub-related contact; GitHub account creelie)}
-\urladdr{https://orcid.org/0000-0003-0466-750X}
-
-\begin{abstract}
-In the $\ZZ_2$ CHL model of $\mathcal N=4$ string theory we prove Sen's conjecture that the index of a single-centred quarter-BPS black hole is positive, for every charge with $Q^2=1$ or $Q^2=2$ and positive discriminant and for every charge in its duality orbit. The proof writes the relevant mock Jacobi forms through theta functions, Eisenstein series and Hurwitz class numbers and reads off the sign of each coefficient.
-
-\medskip\noindent\textbf{Keywords:} CHL model; dyon degeneracy; single-centred black hole; mock Jacobi form; Hurwitz class number.
-
-\smallskip\noindent\textbf{MSC 2020:} 11F50 (primary); 11F37, 11F27, 81T30, 83E30.
-
-\smallskip\noindent\textbf{PACS:} 11.25.-w; 04.70.Dy; 11.25.Mj.
-\end{abstract}
-
-\maketitle
-
-\section{Introduction}\label{sec:intro}
-
-A quarter-BPS dyon of $\mathcal N=4$ string theory in four dimensions carries an electric charge $Q$ and a magnetic charge $P$, and the protected index that counts such states is the helicity trace $B_6$. When the charges admit a single-centred black hole whose only hair are the zero modes of the broken supersymmetries, the twelve fermion zero modes fix the sign of the trace, and the horizon degrees of freedom contribute $-B_6>0$. Sen turned this observation into a conjecture about Fourier coefficients of Siegel modular forms \cite{Sen11}: the index $d^*(Q,P)$ of the single-centred black hole, extracted from the inverse of the dyon partition function with the contour of the attractor region, is positive.\footnote{Sen checked the sign on the charges of his Tables~1 to~5, for the heterotic string on $T^6$ and for the CHL models of orders $2,3,5,7$, and stated the conjecture for all charges in the cones (3.7)--(3.12) of \cite{Sen11}.}
-
-For type~II string theory on $K3\times T^2$, where the partition function is $\Phi_{10}$ \cite{DVV97}, the conjecture has been settled in two steps. Bringmann and Murthy proved it for the two lowest magnetic charges $P^2=2,4$ by writing the finite parts of the first two Fourier--Jacobi coefficients of $1/\Phi_{10}$ through class numbers \cite{BM13}, using the decomposition into polar and finite parts of Dabholkar, Murthy and Zagier \cite{DMZ12}. Rossell\'o then proved positivity for all charges \cite{Ros24}. The CHL models \cite{CHL95} are the $\ZZ_N$ orbifolds of type~IIB on $K3\times T^2$ in which the $\ZZ_N$ acts on $K3$ by a symplectic automorphism and on $T^2$ by a shift; their partition functions $\Phit_k$ are Siegel modular forms of weight $k$ for subgroups of $Sp(2,\ZZ)$ \cite{JS06,DJS06,DN07}.\footnote{For $N=2$ the model is the heterotic string on $T^6$ obtained from the $E_8\times E_8$ string by exchanging the two $E_8$ factors together with a half shift on a circle \cite{CHL95}; for the ten-dimensional $E_8\times E_8$ theory and its relation to M-theory see \cite{SBBT26}. Background on the involutions of $K3$ surfaces and on Calabi--Yau threefolds fibred by $K3$ surfaces, which underlie the dual type~II description, is in \cite{BN26,Bha22}.} Bhand, Sen and Singh showed that the Fourier--Jacobi coefficients of $1/\Phit_k$ are meromorphic Jacobi forms, split them into an Appell--Lerch polar part and a mock Jacobi finite part, and identified the single-centred index with the Fourier coefficients of the finite part on an explicit set of charges \cite[Theorem~5.4]{BSS25}. The positivity conjecture for the CHL models remains open; Cardoso, Nampuri and Rossell\'o gave an exact formula for the immortal dyon index in these models \cite{CNR21}, and Singh constructed a generating function for the single-centred index \cite{Sin26}, but neither proves the sign.
-
-This paper proves the conjecture for the $\ZZ_2$ CHL model on the first two rows of electric charge. The model has $k=6$, duality group $\Gamma_1(2)$, and charges normalised so that $Q^2$, $P^2/2$ and $Q\cdot P$ are integers.
-
-\begin{mainthm}\label{thm:main}
-In the $\ZZ_2$ CHL model the single-centred index $d^*(Q,P)$ is positive for every charge with $Q^2\in\{1,2\}$, $P^2>0$ and $Q^2P^2-(Q\cdot P)^2>0$, and for every charge in the $\Gamma_1(2)$ orbit of such a charge.
-\end{mainthm}
-
-The case $Q^2=1$ is Theorem~\ref{thm:Q1} and the case $Q^2=2$ is Theorem~\ref{thm:Q2}. In both cases the proof has the shape of \cite{BM13}. A product formula identity puts the Fourier--Jacobi coefficient $\varphi_m$ of $1/\Phit_6$ into closed form; a theorem of Dabholkar, Murthy and Zagier, or for $m=1$ its special case due to Bringmann and Murthy, separates the polar part and expresses the mock part of the finite part through Hurwitz class numbers; and an analysis of the theta components of the remaining holomorphic Jacobi form gives the sign of every coefficient. The new ingredient at $Q^2=2$ is a factorisation (Proposition~\ref{prop:J2theta}) of that holomorphic part as
-\[
-J_2=\frac{16\,\theta_4(\sigma,v)^2}{\theta_4(\sigma)^6}\Big[\theta_2(\sigma)^2\big(\theta_3(\sigma)^4+3\theta_2(\sigma)^4\big)\theta_2(\sigma,v)^2-\theta_3(\sigma)^2\big(3\theta_3(\sigma)^4+\theta_2(\sigma)^4\big)\theta_3(\sigma,v)^2\Big],
-\]
-from which the signs of its theta components are manifest (Lemma~\ref{lem:Gcomp}).
-
-The index does not decide its own sign by a general principle; what makes the two rows tractable is that the weak Jacobi forms of index one and two are few, so the finite part is a short combination of explicit functions. The third row $Q^2=3$ has the same structure, and we describe at the end what is known there (Remark~\ref{rem:Q3}). The full conjecture for the $\ZZ_2$ CHL model, for all $Q^2$, and the conjecture for the models of order $3,5,7$ remain open.
-
-Section~\ref{sec:setup} recalls the partition function, the decomposition of Bhand, Sen and Singh and the auxiliary functions. Section~\ref{sec:Q1} treats $Q^2=1$ and Section~\ref{sec:Q2} treats $Q^2=2$. Section~\ref{sec:values} compares the first values with the product formula and with Sen's table.
+\input{parts/intro}
 
 \section{The partition function and the single-centred index}\label{sec:setup}
 
@@ -478,6 +442,14 @@ If $\ell\equiv2\pmod4$, then $D\equiv0\pmod4$, every term is $\le0$ by Lemma~\re
 If $\ell\equiv0\pmod4$, write $D=4u$ with $u\ge1$. Then $-c^F_2$ is the coefficient of $x^{u+1}$ in $f\prod_r(1-x^r)^{-e_r}$, with $f=\sum_{t\ge0}\big(-N_0(4t)\big)x^t$. By Lemma~\ref{lem:Q2signs}(iv), $f/16=-1+\sum_{t\ge1}a_tx^t$ with $a_t\ge68>16$, and Lemma~\ref{lem:product} with $K=16$ gives $-c^F_2>0$, so $d^*>0$. The orbits follow from the $\Gamma_1(2)$ invariance of $d^*$.
 \end{proof}
 
+\input{parts/reduction}
+\input{parts/walls}
+\input{parts/hypothesis}
+\input{parts/model}
+\input{parts/bessel}
+\input{parts/errors}
+\input{parts/proofall}
+
 \section{Values and comparison with the product formula}\label{sec:values}
 
 The first single-centred indices given by \eqref{eq:Q1coeff} and \eqref{eq:Q2coeff} are listed in Table~\ref{tab:values}. We expanded the product \eqref{eq:product} in exact rational arithmetic and compared it with \eqref{eq:Q1closed} and \eqref{eq:Q2closed} on every coefficient $x^ey^\ell$ with $e\le 49$ and $|\ell|\le18$; the two sides agree. Every entry of Table~\ref{tab:values} that lies in Sen's Table~2 \cite{Sen11} coincides with it: at $Q^2=1$ the entries $360$, $2164$, $4352$, $18944$, $36024$, $125860$ and the value $2164$ at $(P^2,Q\cdot P)=(6,2)$, and at $Q^2=2$ the entries $198144$, $67008$, $6912$ of the row $P^2=4$ and $1580672$, $671744$, $101376$, $4352$ of the row $P^2=6$.\footnote{In these entries the charge lies in the cone (3.9) of \cite{Sen11}, and the index of the full partition function equals the single-centred index. The entries of Sen's table with $D\le0$, such as $-2$ at $(Q^2,P^2,Q\cdot P)=(1,2,2)$ or $-16$ at $(2,6,4)$, are outside the scope of the theorem, as they should be.} Figure~\ref{fig:indices} shows $\log_{10}d^*$ on the two rows.
@@ -510,35 +482,25 @@ $D$ & $d^*$ & $D$ & $d^*$\ ($\ell$ odd) & $D$ & $d^*$\ ($\ell\equiv0$) & $D$ & $
 \caption{$\log_{10}d^*(Q,P)$ for $Q^2=1$ (left) and $Q^2=2$ (right), $2\le P^2\le30$ and $0\le Q\cdot P\le\min(6,P^2)$ with $Q^2P^2>(Q\cdot P)^2$. Every bar is positive, as Theorems~\ref{thm:Q1} and~\ref{thm:Q2} assert.}\label{fig:indices}
 \end{figure}
 
-\begin{remark}\label{rem:Q3}
-At $Q^2=3$, where $\hat f(3)=1122$, the coefficients of the product formula that we computed (all $x^ey^\ell$ with $e<60$) are matched by $g(\frac\sigma2)\varphi_3=1122\,\varphi^{\rm opt}_{2,3}+J_3=1122\,\mathcal A_{2,3}-1122\,\cH|V_3+J_3$, with $\varphi^{\rm opt}_{2,3}$ the form of \cite[(9.12)--(9.13)]{DMZ12} and $J_3$ a unique holomorphic Jacobi form of weight two and index three built from $A$, $B$ and Eisenstein series at $\sigma$ and $\sigma/2$. We have neither proved this identity, which needs the analogue of Proposition~\ref{prop:P3} at index four, nor determined the signs of the theta components of $J_3$; positivity at $Q^2=3$ therefore remains open, as does the conjecture for all larger $Q^2$. In every case the mock part of $g(\frac\sigma2)\varphi^F_m$ is fixed by the shadow \cite{BSS25,DMZ12}, and what is needed is the sign pattern of the holomorphic remainder $J_m$.
-\end{remark}
+\input{parts/closing}
 
-\section*{Declarations}
+\input{parts/declarations}
 
-\subsection*{Data availability}
-The programs that expand the product formula \eqref{eq:product} and check the identities of Propositions~\ref{prop:Q1closed}, \ref{prop:P3} and \ref{prop:Q2closed}, the identities \eqref{eq:Eis} and the values of Table~\ref{tab:values} in exact arithmetic are available from the author on request.
+\input{parts/appendix}
 
-\subsection*{Funding}
-No funding was received for conducting this study.
-
-\subsection*{Conflict of interest}
-The author has no conflicts of interest to declare that are relevant to the content of this article.
-
-\subsection*{Ethics statement}
-This study involves no human participants, animals or personal data; no ethical approval was required.
-
-\subsection*{Use of AI tools}
-Claude Code (Opus~5.5 and Fable~5.1, Anthropic), GPT-6.1 Sol and GPT-6 Astra (OpenAI) were used to write and run the programs behind the computations and to help prepare the manuscript. The author checked every statement and proof and is responsible for the content.
-
-\begingroup\raggedright
 \begin{thebibliography}{99}
 
-\bibitem{BN26} D.~Bhattacharjee, P.~Nandi, \emph{Enriques and Kummer surfaces arising from K3 involutions}, Preprints (2026). doi:10.20944/preprints202602.0098.v1
+\bibitem{BEW98} B.~C.~Berndt, R.~J.~Evans, K.~S.~Williams, \emph{Gauss and Jacobi Sums}, Canadian Mathematical Society Series of Monographs and Advanced Texts, Wiley, New York, 1998.
 
 \bibitem{Bha22} D.~Bhattacharjee, \emph{Generalization of quartic and quintic Calabi--Yau manifolds fibered by polarized K3 surfaces}, Research Square (2022). doi:10.21203/rs.3.rs-1965255/v1
 
+\bibitem{Bha26c} D.~Bhattacharjee, \emph{Code and data for: Positivity of single-centred black hole indices in the $\mathbb Z_2$ CHL model}, Zenodo (2026). doi:\zenodoDOI
+
 \bibitem{BM13} K.~Bringmann, S.~Murthy, \emph{On the positivity of black hole degeneracies in string theory}, Commun. Number Theory Phys. \textbf{7} (2013), 15--56. doi:10.4310/CNTP.2013.v7.n1.a2
+
+\bibitem{BMa13} K.~Bringmann, J.~Manschot, \emph{From sheaves on $\mathbb P^2$ to a generalization of the Rademacher expansion}, Amer. J. Math. \textbf{135} (2013), 1039--1065. doi:10.1353/ajm.2013.0031
+
+\bibitem{BN26} D.~Bhattacharjee, P.~Nandi, \emph{Enriques and Kummer surfaces arising from K3 involutions}, Preprints (2026). doi:10.20944/preprints202602.0098.v1
 
 \bibitem{BSS25} A.~Bhand, A.~Sen, R.~K.~Singh, \emph{Mock modularity in CHL models}, Res. Math. Sci. \textbf{12} (2025), 8. doi:10.1007/s40687-024-00489-0
 
@@ -546,35 +508,62 @@ Claude Code (Opus~5.5 and Fable~5.1, Anthropic), GPT-6.1 Sol and GPT-6 Astra (Op
 
 \bibitem{CNR21} G.~L.~Cardoso, S.~Nampuri, M.~Rossell\'o, \emph{Arithmetic of decay walls through continued fractions: a new exact dyon counting solution in $\mathcal N=4$ CHL models}, J. High Energy Phys. \textbf{2021}, no.~3 (2021), 154. doi:10.1007/JHEP03(2021)154
 
+\bibitem{Coc67} J.~A.~Cochran, \emph{The monotonicity of modified Bessel functions with respect to their order}, J. Math. and Phys. \textbf{46} (1967), 220--222.
+
+\bibitem{CV08} M.~C.~N.~Cheng, E.~P.~Verlinde, \emph{Wall crossing, discrete attractor flow and Borcherds algebra}, SIGMA \textbf{4} (2008), 068. doi:10.3842/SIGMA.2008.068
+
 \bibitem{DJS06} J.~R.~David, D.~P.~Jatkar, A.~Sen, \emph{Product representation of dyon partition function in CHL models}, J. High Energy Phys. \textbf{2006}, no.~6 (2006), 064. doi:10.1088/1126-6708/2006/06/064
 
 \bibitem{DMZ12} A.~Dabholkar, S.~Murthy, D.~Zagier, \emph{Quantum black holes, wall crossing and mock modular forms}, arXiv:1208.4074 (2012).
 
 \bibitem{DN07} A.~Dabholkar, S.~Nampuri, \emph{Spectrum of dyons and black holes in CHL orbifolds using Borcherds lift}, J. High Energy Phys. \textbf{2007}, no.~11 (2007), 077. doi:10.1088/1126-6708/2007/11/077
 
+\bibitem{DS06} J.~R.~David, A.~Sen, \emph{CHL dyons and statistical entropy function from D1-D5 system}, J. High Energy Phys. \textbf{2006}, no.~11 (2006), 072. doi:10.1088/1126-6708/2006/11/072
+
 \bibitem{DVV97} R.~Dijkgraaf, E.~Verlinde, H.~Verlinde, \emph{Counting dyons in $N=4$ string theory}, Nucl. Phys. B \textbf{484} (1997), 543--561. doi:10.1016/S0550-3213(96)00640-2
 
 \bibitem{EZ85} M.~Eichler, D.~Zagier, \emph{The Theory of Jacobi Forms}, Progress in Mathematics \textbf{55}, Birkh\"auser, Boston, 1985. doi:10.1007/978-1-4684-9162-3
 
+\bibitem{FR17} G.~Ferrari, V.~Reys, \emph{Mixed Rademacher and BPS black holes}, J. High Energy Phys. \textbf{2017}, no.~7 (2017), 094. doi:10.1007/JHEP07(2017)094
+
+\bibitem{GN97} V.~A.~Gritsenko, V.~V.~Nikulin, \emph{Siegel automorphic form corrections of some Lorentzian Kac--Moody Lie algebras}, Amer. J. Math. \textbf{119} (1997), 181--224. arXiv:alg-geom/9504006
+
+\bibitem{Har10} W.~B.~Hart, \emph{Fast Library for Number Theory: an introduction}, in: Mathematical Software -- ICMS 2010, Lecture Notes in Comput. Sci. \textbf{6327}, Springer, Berlin, 2010, 88--91. doi:10.1007/978-3-642-15582-6\_18
+
+\bibitem{Joh17} F.~Johansson, \emph{Arb: efficient arbitrary-precision midpoint-radius interval arithmetic}, IEEE Trans. Comput. \textbf{66} (2017), 1281--1292. doi:10.1109/TC.2017.2690633
+
 \bibitem{JS06} D.~P.~Jatkar, A.~Sen, \emph{Dyon spectrum in CHL models}, J. High Energy Phys. \textbf{2006}, no.~4 (2006), 018. doi:10.1088/1126-6708/2006/04/018
 
+\bibitem{PV15} D.~Persson, R.~Volpato, \emph{Fricke S-duality in CHL models}, J. High Energy Phys. \textbf{2015}, no.~12 (2015), 156. doi:10.1007/JHEP12(2015)156
+
 \bibitem{Ros24} M.~Rossell\'o, \emph{The immortal dyon index is positive}, arXiv:2403.19630 (2024).
+
+\bibitem{RZ38} H.~Rademacher, H.~S.~Zuckerman, \emph{On the Fourier coefficients of certain modular forms of positive dimension}, Ann. of Math. \textbf{39} (1938), 433--462. doi:10.2307/1968796
 
 \bibitem{SBBT26} R.~Sadhu, D.~Bhattacharjee, S.~Bhattacharya, S.~N.~Thakur, \emph{$E_8\times E_8$ heterotic gravity and M-theory}, SSRN (2026). doi:10.2139/ssrn.6326718
 
 \bibitem{Sen07} A.~Sen, \emph{Walls of marginal stability and dyon spectrum in $\mathcal N=4$ supersymmetric string theories}, J. High Energy Phys. \textbf{2007}, no.~5 (2007), 039. doi:10.1088/1126-6708/2007/05/039
 
+\bibitem{Sen08} A.~Sen, \emph{Black hole entropy function, attractors and precision counting of microstates}, Gen. Relativ. Gravit. \textbf{40} (2008), 2249--2431. doi:10.1007/s10714-008-0626-4
+
 \bibitem{Sen11} A.~Sen, \emph{How do black holes predict the sign of the Fourier coefficients of Siegel modular forms?}, Gen. Relativ. Gravit. \textbf{43} (2011), 2171--2183. doi:10.1007/s10714-011-1175-9
 
 \bibitem{Sin26} R.~K.~Singh, \emph{Generating function of single-centered black hole index in CHL models}, arXiv:2606.19479 (2026).
 
+\bibitem{SSY06} D.~Shih, A.~Strominger, X.~Yin, \emph{Recounting dyons in $\mathcal N=4$ string theory}, J. High Energy Phys. \textbf{2006}, no.~10 (2006), 087. doi:10.1088/1126-6708/2006/10/087
+
 \bibitem{Stu87} J.~Sturm, \emph{On the congruence of modular forms}, in: Number Theory (New York, 1984--85), Lecture Notes in Math. \textbf{1240}, Springer, Berlin, 1987, 275--280. doi:10.1007/BFb0072985
+
+\bibitem{Wat44} G.~N.~Watson, \emph{A Treatise on the Theory of Bessel Functions}, 2nd ed., Cambridge University Press, Cambridge, 1944.
 
 \bibitem{WW21} E.~T.~Whittaker, G.~N.~Watson, \emph{A Course of Modern Analysis}, 5th ed., Cambridge University Press, Cambridge, 2021. doi:10.1017/9781009004091
 
 \bibitem{Zag08} D.~Zagier, \emph{Elliptic modular forms and their applications}, in: The 1-2-3 of Modular Forms, Universitext, Springer, Berlin, 2008, 1--103. doi:10.1007/978-3-540-74119-0\_1
 
+\bibitem{Zuc39} H.~S.~Zuckerman, \emph{On the coefficients of certain modular forms belonging to subgroups of the modular group}, Trans. Amer. Math. Soc. \textbf{45} (1939), 298--321. doi:10.1090/S0002-9947-1939-1501993-X
+
+\bibitem{Zwe02} S.~Zwegers, \emph{Mock Theta Functions}, PhD thesis, Universiteit Utrecht, 2002. arXiv:0807.4834
+
 \end{thebibliography}
-\endgroup
 
 \end{document}

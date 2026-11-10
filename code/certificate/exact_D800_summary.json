@@ -1,0 +1,36 @@
+[
+ {
+  "N": 2,
+  "Delta_max": 1600,
+  "orbits": 22972,
+  "box": [
+   28,
+   400
+  ],
+  "exponents_checked_symmetric": 1643151,
+  "least_charges_in_A_checked": 24329,
+  "second_representatives_agreeing": 9624,
+  "first_values_m1": [
+   360,
+   2164,
+   4352,
+   18944,
+   36024,
+   125860,
+   233080,
+   705536
+  ],
+  "least": {
+   "Delta": 2,
+   "charge_m_n_l": [
+    1,
+    1,
+    1
+   ],
+   "dstar": 360
+  },
+  "all_positive": true,
+  "sha256_of_values": "63862a9093e47aaccc33837b1595becd00df1acc1778dac29fa30e36fb750a59",
+  "seconds": 2079.7
+ }
+]

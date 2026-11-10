@@ -1,0 +1,94 @@
+\section{The level-two Rademacher expansion}\label{sec:hypothesis}
+
+This section states the one input of Theorem~\ref{thm:all} that is not proved here, explains where it comes from, and records the evidence for it.
+
+\subsection{Frames and Weil sums}
+Let $\Gamma^0(2)$ be the group of matrices of $SL_2(\ZZ)$ with even upper right entry. It has index three, and
+\[
+R_I=\begin{pmatrix}1&0\\0&1\end{pmatrix},\qquad R_T=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad R_S=\begin{pmatrix}0&-1\\1&0\end{pmatrix}
+\]
+represent its right cosets. For $M\in SL_2(\ZZ)$ the \emph{frame} of $M$ is the $F\in\{I,T,S\}$ with $MR_F^{-1}\in\Gamma^0(2)$. The three frames correspond to the expansions of a form for $\Gamma^0(2)$ at the cusp $\infty$ (frames $I$ and $T$, which differ by a half period) and at the cusp $0$ (frame $S$).\footnote{The duality group $\Gamma_1(2)$ acts on the charges; the finite part $\varphi^F_m(\sigma,v)$ is a function of $\sigma$ on which the relevant group, after the substitution $x=\e(\sigma/2)$, is $\Gamma^0(2)$. The cusp $\infty$ has width two, which is why it carries two frames.}
+
+For $\gamma\ge1$ let $\mathcal C_\gamma$ be the set of pairs $(\gamma,\delta)$ with $-\delta\in\{0,1,\dots,2\gamma-1\}$ and $\gcd(\gamma,\delta)=1$. For each such pair let $\alpha\in\{0,\dots,\gamma-1\}$ be the inverse of $\delta$ modulo $\gamma$ (with $\alpha=0$ if $\gamma=1$), let $\beta=(\alpha\delta-1)/\gamma$, and let $F(\gamma,\delta)$ be the frame of $\begin{psmallmatrix}\delta&-\beta\\-\gamma&\alpha\end{psmallmatrix}$. For $\tilde\ell,\ell\in\ZZ$ put
+\begin{equation}\label{eq:weil}
+W_{\gamma,\delta}(\tilde\ell,\ell)=\frac1{\sqrt{2m\gamma i}}\sum_{T=0}^{\gamma-1}\e\Big(\frac{\alpha x^2-2\ell x+\delta\ell^2}{4m\gamma}\Big),\qquad x=\tilde\ell-2mT,
+\end{equation}
+with the principal square root. This is the matrix coefficient of the Weil representation attached to the lattice $\sqrt{2m}\,\ZZ$, evaluated on the inverse of $\begin{psmallmatrix}\alpha&\beta\\\gamma&\delta\end{psmallmatrix}$ \cite[(2.41)]{CNR21}; it depends on $\tilde\ell$ only modulo $2m$.
+
+\begin{lemma}\label{lem:weilbound}
+$|W_{1,\delta}|=(2m)^{-1/2}$, and $|W_{\gamma,\delta}(\tilde\ell,\ell)|\le\sqrt{\gcd(m,\gamma)/m}$ for every $\gamma\ge1$.
+\end{lemma}
+
+\begin{proof}
+For $\gamma=1$ the sum has one term. In general, $\alpha x^2/(4m\gamma)=\alpha\tilde\ell^2/(4m\gamma)-\alpha\tilde\ell T/\gamma+\alpha mT^2/\gamma$, so up to a factor of modulus one the sum is $\sum_{T\bmod\gamma}\e\big((\alpha mT^2+bT)/\gamma\big)$ for an integer $b$. A quadratic Gauss sum modulo $\gamma$ with leading coefficient $\alpha m$, $\gcd(\alpha,\gamma)=1$, has modulus at most $\sqrt{2\gcd(m,\gamma)\gamma}$ \cite[Chapter~1]{BEW98}. Dividing by $\sqrt{2m\gamma}$ gives the claim.
+\end{proof}
+
+\subsection{Polar data and shadows}
+For $m\ge1$ the polar terms in each frame are the pairs $(\tilde\nu,\tilde\ell)$ with $0\le\tilde\ell<2m$ and $\tilde D=4m\tilde\nu-\tilde\ell^2<0$, where $\tilde\nu\in\ZZ$ in frame $S$ and $\tilde\nu\in\frac12\ZZ$ in frames $I$ and $T$. Their coefficients are the wall sums of Section~\ref{sec:walls}:
+\begin{equation}\label{eq:polardata}
+a_S(\tilde\nu,\tilde\ell)\ \text{from \eqref{eq:P0}},\qquad a_I(\tilde\nu,\tilde\ell)\ \text{from \eqref{eq:Pinf}},\qquad a_T(\tilde\nu,\tilde\ell)=(-1)^{2\tilde\nu}a_I(\tilde\nu,\tilde\ell).
+\end{equation}
+By Lemma~\ref{lem:walls}(iv) a wall with $m_G,n_G\ge-1$ has $t\le t_0=m^2+4m$, so only finitely many polar terms have a nonzero coefficient.
+
+The shadow of the finite part is governed by the coefficient $\hat f(m)=d_1(m)$ of the polar part \eqref{eq:polar}. In the three frames it enters with the constants and the orders
+\begin{equation}\label{eq:mockdata}
+(c_S,\mu_S)=\big(\tfrac{1}{16}\hat f(m),\,1\big),\qquad (c_I,\mu_I)=\big(\hat f(m),\,\tfrac12\big),\qquad (c_T,\mu_T)=\big(-\hat f(m),\,\tfrac12\big).
+\end{equation}
+The number $\mu_F$ is the order of the pole of $1/g(\sigma/2)$ in the local parameter of the frame: $1/g$ has the term $x^{-1}=\e(-\sigma/2)$ at $\infty$, and its transform under $\sigma\mapsto-1/\sigma$ starts with $\e(-\sigma)/16$, by $\eta(-1/\tau)=\sqrt{-i\tau}\,\eta(\tau)$.\footnote{With $\tau=\sigma/2$, the substitution $\sigma\mapsto-1/\sigma$ is $\tau\mapsto-1/4\tau$, and $g(-1/4\tau)=\eta(-1/4\tau)^8\eta(-1/2\tau)^8=2^{12}\tau^8\eta(\sigma)^8\eta(2\sigma)^8$, whose expansion starts with $\e(\sigma)$.} For $\gamma\ge1$, $(\gamma,\delta)\in\mathcal C_\gamma$ and $g\in\ZZ$ put
+\[
+f_{\gamma,g}(u)=\begin{cases}\dfrac{\pi^2}{\sinh^2\!\big(\frac{\pi u}{\gamma}-\frac{i\pi g}{2m\gamma}\big)},& 2m\gamma\nmid g,\\[2.2ex]
+\dfrac{\pi^2}{\sinh^2(\pi u/\gamma)}-\dfrac{\gamma^2}{u^2},& 2m\gamma\mid g.\end{cases}
+\]
+
+\subsection{The hypothesis}
+For a charge $(m,n,\ell)$ with $m\ge1$, $0\le\ell\le m$ and $D=2mn-\ell^2>0$ define
+\begin{align}
+\mathcal M(m,n,\ell)&=\sum_{\gamma\ge1}\sum_{(\gamma,\delta)\in\mathcal C_\gamma}\ \sum_{(\tilde\nu,\tilde\ell)}a_{F}(\tilde\nu,\tilde\ell)\,\e\Big(\frac{\alpha\tilde D+\delta D}{4m\gamma}\Big)W_{\gamma,\delta}(\tilde\ell,\ell)\,\frac{2\pi}\gamma\Big(\frac{|\tilde D|}{D}\Big)^{\frac{15}4}I_{\frac{15}2}\Big(\frac{\pi\sqrt{|\tilde D|D}}{m\gamma}\Big),\label{eq:radmain}\\
+\mathcal K_2(m,n,\ell)&=-\sqrt{2m}\sum_{\gamma\ge1}\gamma^{-\frac12}\!\!\sum_{(\gamma,\delta)\in\mathcal C_\gamma}\!\! c_F\,\e\Big(\frac{-4m\mu_F\alpha+\delta D}{4m\gamma}\Big)W_{\gamma,\delta}(0,\ell)\Big(\frac{4m\mu_F}{D}\Big)^4I_8\Big(\frac{2\pi}\gamma\sqrt{\frac{\mu_FD}m}\Big),\label{eq:radK2}\\
+\mathcal K_3(m,n,\ell)&=\frac1{2\pi}\sum_{\gamma\ge1}\gamma^{-2}\!\!\sum_{(\gamma,\delta)\in\mathcal C_\gamma}\ \sum_{g=-m\gamma}^{m\gamma-1}c_F\,\e\Big(\frac{-\alpha(4m\mu_F+g^2)+\delta D}{4m\gamma}\Big)W_{\gamma,\delta}(g,\ell)\Big(\frac{4m\mu_F}{D}\Big)^{\frac{17}4}\label{eq:radK3}\\
+&\qquad\times\int_{-\sqrt{\mu_F/m}}^{\sqrt{\mu_F/m}}f_{\gamma,g}(u)\Big(1-\frac{mu^2}{\mu_F}\Big)^{\frac{17}4}I_{\frac{17}2}\Big(\frac{2\pi}\gamma\sqrt{\frac{(\mu_F-mu^2)D}m}\Big)\,du,\notag
+\end{align}
+where in each line $F=F(\gamma,\delta)$ and $\alpha,\beta$ are attached to $(\gamma,\delta)$ as above.
+
+\begin{hypothesis}\label{hyp:R}
+For every charge $(m,n,\ell)$ with $m\ge1$, $0\le\ell\le m$ and $D=2mn-\ell^2>0$,
+\begin{equation}\label{eq:hypR}
+(-1)^{\ell+1}c^F_m(n,\ell)=\tfrac12(-1)^\ell\sqrt i\,\big(\mathcal M+\mathcal K_2+\mathcal K_3\big)(m,n,\ell).
+\end{equation}
+\end{hypothesis}
+
+\begin{lemma}\label{lem:radconv}
+The three series \eqref{eq:radmain}--\eqref{eq:radK3} converge absolutely.
+\end{lemma}
+
+\begin{proof}
+There are at most $2\gamma$ pairs in $\mathcal C_\gamma$, the polar terms are finitely many, and $|W|\le1$ by Lemma~\ref{lem:weilbound}. Since $I_\nu(z)/z^\nu$ is increasing, $I_\nu(z/\gamma)\le\gamma^{-\nu}I_\nu(z)$ for $\gamma\ge1$. So the $\gamma$-th term of \eqref{eq:radmain} is $O(\gamma\cdot\gamma^{-1}\cdot\gamma^{-15/2})$, that of \eqref{eq:radK2} is $O(\gamma^{1-1/2-8})$. In \eqref{eq:radK3}, for $2m\gamma\nmid g$ one has $|\sinh(a-ib)|^2=\sinh^2a+\sin^2b\ge\sin^2b$, so $|f_{\gamma,g}|\le\pi^2\csc^2(\pi g/2m\gamma)$, and for $g=0$ the function $\pi^2/\sinh^2y-\pi^2/y^2$ takes values in $[-\pi^2/3,0)$. With the identity $\sum_{g=1}^{N-1}\csc^2(\pi g/N)=(N^2-1)/3$ for $N=2m\gamma$,
+\begin{equation}\label{eq:fsum}
+\sum_{g=-m\gamma}^{m\gamma-1}\sup_u|f_{\gamma,g}(u)|\le\frac{\pi^2(4m^2\gamma^2-1)}3+\frac{\pi^2}3=\frac{4\pi^2m^2\gamma^2}3,
+\end{equation}
+so the $\gamma$-th term of \eqref{eq:radK3} is $O(\gamma\cdot\gamma^{-2}\cdot\gamma^2\cdot\gamma^{-17/2})$. Only absolute bounds are used below, except for the terms with $\gamma=1$ in frame $S$, which are computed explicitly in Section~\ref{sec:model}.
+\end{proof}
+
+\begin{remark}\label{rem:hypsource}
+Hypothesis~\ref{hyp:R} has three ingredients.
+\begin{enumerate}
+\item[(H)] The shape of the expansion: a mixed mock Jacobi form of weight $-6$ and index $m$ for $\Gamma^0(2)$, whose shadow is a multiple of the vector of unary theta functions of index $m$ with coefficient $1/g$, has Fourier coefficients given by the vector-valued Rademacher series over the three frames, with the main Bessel terms $I_{15/2}$ from the principal parts and the correction terms $I_8$ and $I_{17/2}$ from the shadow. For a weakly holomorphic Jacobi form at level $N$ this is the classical circle method of Rademacher and Zuckerman \cite{RZ38,Zuc39}, written for Jacobi forms by its theta decomposition. For mixed mock Jacobi forms on $SL_2(\ZZ)$, which is the case of $1/\Phi_{10}$, the expansion was proved by Bringmann and Manschot \cite{BMa13} and used by Ferrari and Reys \cite{FR17}; the correction terms come from the non-holomorphic completion of Zwegers \cite{Zwe02}. At level two it is stated in \cite[\S4]{CNR21}, where it is assumed in the derivation of the immortal index, and we do not know a proof.
+\item[(P0)] The principal part at the cusp $0$ is given by the wall sum \eqref{eq:P0}: the continued-fraction formula of \cite[(2.43)]{CNR21} with $d_1$ in place of the coefficients of $1/\eta^{24}$.
+\item[(P$\infty$)] The principal part at the cusp $\infty$ is given by the parity-restricted wall sum \eqref{eq:Pinf}.
+\end{enumerate}
+The constants \eqref{eq:mockdata} are part of (H): they are the shadow coefficients of $\varphi^F_m$ in the three frames, read off from the polar part \eqref{eq:polar}, whose shadow is the image of $\hat f(m)\mathcal A_{2,m}/g$ under the completion of the Appell--Lerch sum \cite{Zwe02,DMZ12}.
+\end{remark}
+
+\subsection{Evidence}\label{ssec:evidence}
+We have tested the three ingredients separately and together.
+\begin{enumerate}
+\item[(a)] For $m=1,2$ the coefficients $c^F_m(n,\ell)$ are known in closed form (Propositions~\ref{prop:Q1closed} and~\ref{prop:Q2closed}). The right side of \eqref{eq:hypR}, truncated at $\gamma\le8$ in $\mathcal M$ and at $\gamma\le4$ in $\mathcal K_2$ and $\mathcal K_3$, agrees with them to relative precision $10^{-21}$ for every $n\le42$.
+\item[(b)] For $m=3$ ($n=8,12$) and $m=4$ ($n=10,12$), with the same truncation ($\gamma\le8$ in $\mathcal M$, $\gamma\le4$ in $\mathcal K_2,\mathcal K_3$) and with $c^F_m(n,\ell)$ computed exactly from the product formula, the relative difference is below $10^{-13}$ for every $0\le\ell\le m$. The size of the omitted terms, estimated by Lemma~\ref{lem:radconv}, is of the same order, so the agreement is as good as the truncation allows.
+\item[(c)] The polar coefficients at the cusp $\infty$ are Fourier coefficients of $\varphi^F_m$ itself, computable from the product formula. On all $373$ polar terms with $m\le14$ they agree with \eqref{eq:Pinf}.
+\item[(d)] The polar coefficients at the cusp $0$ can be computed by expanding $\varphi_m$ at that cusp, where the twisted genera \eqref{eq:genera} are permuted by $\sigma\mapsto-1/\sigma$, and subtracting the transform of the polar part. On all $168$ polar terms with $m\le10$ they agree with \eqref{eq:P0}.
+\end{enumerate}
+All of these are exact or high-precision computations; the programs are in the archive \cite{Bha26c}.
+
+\begin{remark}
+Without (P0) and (P$\infty$), (H) alone would still give an expansion whose principal parts are \emph{some} finite sets of numbers. What the proof of Theorem~\ref{thm:all} uses from (P0) is exactly the structure of Lemma~\ref{lem:walls}: the leading family of walls and the bound (vi) for the others. From (P$\infty$) it uses only that every wall in it has $r$ or $s$ even, hence $rs\ge2$, so that Lemma~\ref{lem:walls}(vi) applies.
+\end{remark}
