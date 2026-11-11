@@ -1,0 +1,195 @@
+\section{The polar coefficients at the cusp \texorpdfstring{$0$}{0}}\label{sec:polar0}
+
+This section proves (P0) of Section~\ref{sec:rademacher}. For a function $f$ on $\mathbb H\times\CC$ and integers $k$, $m$ put
+\[
+(f|_{k,m}S)(\sigma,v)=\sigma^{-k}\,\e\Big(-\frac{mv^2}{\sigma}\Big)f\Big(-\frac1\sigma,\frac v\sigma\Big),
+\]
+the action of $R_S$ in weight $k$ and index $m$. The polar part \eqref{eq:polar} satisfies $\varphi^P_m|_{-6,m}S=\frac{d_1(m)}{16}\,g(\sigma)^{-1}\,\mathcal A_{2,m}|_{2,m}S$, because $g(-1/2\sigma)=16\,\sigma^8g(\sigma)$ (from $\eta(-1/\tau)=\sqrt{-i\tau}\,\eta(\tau)$). Accordingly we define the \emph{finite part in the frame $S$} by
+\begin{equation}\label{eq:psiS}
+\begin{aligned}
+\psi^S_m&=\varphi_m|_{-6,m}S-\frac{d_1(m)}{16}\,\frac{\mathcal A_{2,m}(\sigma,v)}{g(\sigma)}
+=\varphi^F_m|_{-6,m}S+\frac{d_1(m)}{16}\,\frac{h_m(\sigma,v)}{g(\sigma)},\\
+h_m&=\mathcal A_{2,m}|_{2,m}S-\mathcal A_{2,m}.
+\end{aligned}
+\end{equation}
+It is the subtraction recorded by the constants $(c_S,\mu_S)=(d_1(m)/16,1)$ of \eqref{eq:mockdata}.
+
+\begin{theorem}\label{thm:P0}
+Let $m\ge1$.
+\begin{enumerate}
+\item[(i)] $\psi^S_m$ is holomorphic on $\mathbb H\times\CC$, of period one in $\sigma$, and has an expansion $\psi^S_m=\sum_{\nu\ge-1}\sum_{\ell}c^S_m(\nu,\ell)\,p^\nu y^\ell$ with $16\,c^S_m(\nu,\ell)\in\ZZ$.
+\item[(ii)] For every $\nu\in\ZZ$ and $0\le\tilde\ell<2m$ with $4m\nu-\tilde\ell^2<0$,
+\[
+c^S_m(\nu,\tilde\ell)=a_S(\nu,\tilde\ell),
+\]
+the wall sum \eqref{eq:P0}. The opposite endpoint convention $q/s<\omega_0\le p/r$ in $\mathcal W(m,\nu,\tilde\ell)$ gives the same value.
+\item[(iii)] $h_m$ is holomorphic on $\mathbb H\times\CC$, even in $v$, with the elliptic property of index $m$.
+\end{enumerate}
+Consequently (P0) holds: the principal part of the finite part at the cusp $0$, in the frame $S$ with the subtraction \eqref{eq:mockdata}, is given by \eqref{eq:P0}.
+\end{theorem}
+
+The term $h_m/g$ in \eqref{eq:psiS} is the transformation defect of the Appell--Lerch sum; it carries no polar terms, see Remark~\ref{rem:appell}. The proof runs parallel to Section~\ref{sec:polarinf}, for a second product $\Phi^S_6$ whose Fourier--Jacobi coefficients are the functions $16\,\varphi_m|_{-6,m}S$: we prove this from the transformation of the twisted genera (Lemmas~\ref{lem:generaS} to~\ref{lem:LlS}). For $1/\Phi^S_6$ every Farey edge is a wall, the chambers are the Farey triangles, and the group of symmetries is all of $SL_2(\ZZ)$. With the factor $\frac1{16}$ from \eqref{eq:psiS}, the path argument of Section~\ref{sec:polarinf} then gives \eqref{eq:P0}.
+
+\subsection{The genera under \texorpdfstring{$SL_2(\ZZ)$}{SL2(Z)}}
+Let $SL_2(\ZZ)$ act on weak Jacobi forms of weight $0$ and index one by $(F|\gamma)(\tau,z)=\e(-cz^2/(c\tau+d))F(\gamma\tau,z/(c\tau+d))$, and on $(\ZZ/2)^2$ from the right by $(r,s)\gamma=(r,s)\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}\bmod2$.
+
+\begin{lemma}\label{lem:generaS}
+$F^{(r,s)}|\gamma=F^{(r,s)\gamma}$ for all $\gamma\in SL_2(\ZZ)$ and $(r,s)\in(\ZZ/2)^2$.
+\end{lemma}
+
+\begin{proof}
+Both sides define right actions, so it suffices to take $\gamma=T=\begin{psmallmatrix}1&1\\0&1\end{psmallmatrix}$, for which $(r,s)T=(r,r+s)$, and $\gamma=S$, for which $(r,s)S=(s,r)$. The forms $\pB$ and $\pA$ are invariant under $SL_2(\ZZ)$ in weights $0$ and $-2$ \cite[\S9]{EZ85}. For $T$ the claim is clear from \eqref{eq:genera}, since $\fE$ has period one. For $S$ we use the transformation $E(-1/\tau)=\tau^2E(\tau)+6\tau/(\pi i)$ of the quasimodular $E$. Applied at $\tau$ and at $\tau/2$ it gives
+\[
+\tau^{-2}\fE(-1/\tau)=-\tfrac12\fE(\tau/2),\qquad\text{and, replacing $\tau$ by $2\tau$,}\qquad \tau^{-2}\fE\big(-1/(2\tau)\big)=-2\fE(\tau),
+\]
+so $\fE$ and $\fE(\tau/2)$ are exchanged by $\tau\mapsto-1/\tau$ in weight two, up to the factors $-\frac12$ and $-2$.
+From $\sigma_1(2n)=3\sigma_1(n)-2\sigma_1(n/2)$ one gets $\fE(\tau/2)+\fE((\tau+1)/2)=2\fE(\tau)$, so $\fE((\tau+1)/2)=2\fE(\tau)-\fE(\tau/2)$ is invariant under $\tau\mapsto-1/\tau$ in weight two. Hence $F^{(0,1)}|S=\frac13\pB+\frac23\pA\cdot(-\frac12)\fE(\tau/2)=F^{(1,0)}$, $F^{(1,0)}|S=\frac13\pB-\frac13\pA\cdot(-2)\fE=F^{(0,1)}$ and $F^{(1,1)}|S=F^{(1,1)}$; $F^{(0,0)}=\pB$ is invariant.
+\end{proof}
+
+For an integer matrix $M=\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}$ with $\det M=l>0$ and a function $F$ of index one put
+\[
+(F|[M])(\tau,z)=\e\Big(-\frac{lcz^2}{c\tau+d}\Big)F\Big(M\tau,\frac{lz}{c\tau+d}\Big),
+\]
+so that $F|[M]=F((t\tau+u)/d,tz)$ for $M=\begin{psmallmatrix}t&u\\0&d\end{psmallmatrix}$. By Lemma~\ref{tr:lem:slash}(i) of Section~\ref{tr:sec}, a statement of pure matrix algebra, $F|[\gamma M]=(F|\gamma)|[M]$ for $\gamma\in SL_2(\ZZ)$, and $F|[MS]=(F|[M])|_{0,l}S$; these are the terms of the operator $V_l$ of \cite[\S4]{EZ85} written without the normalising powers of $l$.
+
+\begin{lemma}\label{lem:LlS}
+For $l\ge1$ let
+\[
+L'_l=\sum_{td=l}\frac1{2dt}\sum_{r,s\in\{0,1\}}(-1)^{rt}\sum_{u=0}^{2d-1}F^{(r,s)}\Big(\frac{t\sigma+u}d,\,tv\Big).
+\]
+Then $L_l|_{0,l}S=L'_l$, and
+\[
+L'_l=\sum_{t\mid l}\frac1t\sum_{k\ge0}\sum_{j\in\ZZ}\big[C_0+(-1)^tC_1\big]\big(4\tfrac ltk-j^2\big)\,p^{tk}y^{tj},
+\]
+where $C_0(N)$ and $C_1(N)$ are the coefficients of $q^n\zeta^j$, $4n-j^2=N$, $n\in\ZZ$, in $F^{(0,0)}+F^{(0,1)}=\frac43\pB+\frac23\pA\fE$ and in the integral-power part of $F^{(1,0)}+F^{(1,1)}$, which is $\frac23\pB-\frac23\pA\fE$. In particular $C_0(N)=C_1(N)=0$ for $N<-1$, $C_0(-1)=2$, $C_1(-1)=0$, $C_0(0)=12$, $C_1(0)=8$, and
+\[
+C_0(N)=c^{(0,0)}_b(N)+c^{(0,1)}_b(N),\qquad C_1(N)=c^{(1,0)}_b(N)+c^{(1,1)}_b(N),\qquad b\equiv N\pmod 2,
+\]
+in the notation of \eqref{eq:product}.
+\end{lemma}
+
+\begin{proof}
+Let $\mathcal M_l$ be the set of integer matrices of determinant $l$, and let $SL_2(\ZZ)$ act on $\mathcal M_l\times(\ZZ/2)^2$ by $\gamma\cdot(M,w)=(\gamma M,w\gamma^{-1})$. With $w=(r,s)$ and $M=\begin{psmallmatrix}t&u\\0&d\end{psmallmatrix}$ the sign in \eqref{eq:Ll} is $(-1)^{sd+ru}=(-1)^{(wM)_2}$, the second entry of the row vector $wM$. The term $(-1)^{(wM)_2}F^w|[M]$ depends only on the orbit of $(M,w)$, by Lemma~\ref{lem:generaS} and $F|[\gamma M]=(F|\gamma)|[M]$. The stabiliser of $M$ in $SL_2(\ZZ)$ is trivial, and every orbit contains exactly one $(M,w)$ with $M$ upper triangular, $t,d>0$, $0\le u<d$ (Hermite normal form). In \eqref{eq:Ll}, $u$ runs modulo $2d$, and $(TM,w)$ lies in the orbit of $(M,wT)$; so each orbit occurs twice, and
+\[
+L_l=\frac1l\sum_{(M,w)\in SL_2(\ZZ)\backslash(\mathcal M_l\times(\ZZ/2)^2)}(-1)^{(wM)_2}F^w|[M].
+\]
+Applying $|_{0,l}S$ and $F|[MS]=(F|[M])|_{0,l}S$, and substituting $M'=MS$, which permutes the orbits, with $(wM)_2=(wM'S^{-1})_2=(wM')_1$, gives the same sum with the sign $(-1)^{(wM')_1}$. For upper triangular $M'$ that sign is $(-1)^{rt}$, and returning to $u$ modulo $2d$ gives $L'_l$.
+
+For the expansion, $F^{(r,s)}=\sum c(n,j)q^n\zeta^j$ with $n\in\frac12\ZZ$, and $\sum_{u=0}^{2d-1}\e(nu/d)=2d$ if $n\in d\ZZ$ and $0$ otherwise. So the term $(t,d)$ is $\frac1t\sum_{k,j}c(dk,j)p^{tk}y^{tj}$, and only integral powers $n=dk$ of $q$ survive. Since $c(n,j)$ depends only on $4n-j^2$ and $j\bmod2$, and for integral $n$ the parity of $j$ is that of $N=4n-j^2$, the formula follows. The genera have no negative powers of $q$, which gives $C_0=C_1=0$ for $N<-1$. The values at $N=-1,0$ are read off from $\pB=\zeta+10+\zeta^{-1}+O(q)$, $\pA=\zeta-2+\zeta^{-1}+O(q)$ and $\fE=1+O(q)$. For the integral-power part of $F^{(1,0)}+F^{(1,1)}$ note that the integral-power parts of $\fE(\tau/2)$ and $\fE((\tau+1)/2)$ are both $\frac12(\fE(\tau/2)+\fE((\tau+1)/2))=\fE(\tau)$.
+\end{proof}
+
+\subsection{The product at the cusp \texorpdfstring{$0$}{0}}
+Let $\mathcal I^S=\{(B,k,j)\in\ZZ^3:\ B,k\ge0,\ j<0\text{ if }B=k=0\}$, and for $g=(B,k,j)$ put $N(g)=4Bk-j^2$ and $\e(\langle g,\Omega\rangle)=\e(B\rho+k\sigma+j v)$. Define
+\begin{equation}\label{eq:PhiS}
+\Phi^S_6(\Omega)=\e(\rho+\sigma+v)\prod_{g\in\mathcal I^S}\big(1-\e(\langle g,\Omega\rangle)\big)^{C_0(N(g))}\big(1+\e(\langle g,\Omega\rangle)\big)^{C_1(N(g))}.
+\end{equation}
+Charges are now triples $T=(m,\nu,\ell)\in\ZZ^3$, and all the notation of Section~\ref{sec:polarinf} ($Y$, $\tau_Y$, \eqref{eq:pairing}, \eqref{eq:tauaction}, \eqref{eq:chargeaction}, $\mathcal D$, the tube $\mathcal T$) is used unchanged.
+
+\begin{proposition}\label{prop:PhiS}
+\begin{enumerate}
+\item[(i)] The product \eqref{eq:PhiS} converges absolutely and locally uniformly on $\mathcal T$. Its zeros there are the double zeros of the factors $(1-\e(\langle g,\Omega\rangle))^2$ with $N(g)=-1$, at the points where $\langle g,\Omega\rangle\in\ZZ$. The walls of $1/\Phi^S_6$ are the cones over all Farey edges: $g\mapsto$\eqref{eq:geodesic} is a bijection from $\{g\in\mathcal I^S:\,N(g)=-1\}$ onto the set of Farey edges, each with exponent $C_0(-1)=2$.
+\item[(ii)] For $(\sigma,v)$ in the strip $\mathcal S=\{0<-\operatorname{Im}v<\operatorname{Im}\sigma\}$ and $\operatorname{Im}\rho$ large, $\tau_Y$ lies in the Farey triangle $\Delta(0)$ with vertices $0,1,\infty$, and
+\[
+\frac1{\Phi^S_6}=\sum_{m\ge-1}\varphi'_m(\sigma,v)\,\e(m\rho),\qquad \varphi'_m=\frac{P_m(L'_1,\dots,L'_{m+1})}{g(\sigma)\,A},
+\]
+with $P_m$ as in the proof of Proposition~\ref{prop:identification}.
+\item[(iii)] $\varphi'_m=16\,\varphi_m|_{-6,m}S$ as meromorphic functions on $\mathbb H\times\CC$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) By Lemma~\ref{lem:LlS} the exponents are sums of coefficients of the genera, so they satisfy the bound of Lemma~\ref{lem:growth}, and they vanish for $N<-1$. For $N(g)\ge0$ the matrix $S_g$ is positive semidefinite and nonzero, and $|{\e(\langle g,\Omega\rangle)}|<1$ on $\mathcal T$, so neither $1-\e$ nor $1+\e$ vanishes. The proof of Proposition~\ref{prop:convergence} then applies verbatim. A charge with $N(g)=-1$ has exponents $(2,0)$; by the first part of the proof of Lemma~\ref{lem:wallsfarey}, without the parity condition, these charges correspond bijectively to the Farey edges, with $g=(cd,ab,ad+bc)$ for the edge joining $a/c$ and $b/d$, $c,d\ge1$, and $g=(0,n,1)$, $(0,-n,-1)$ for the vertical edges.
+
+(ii) For such $\Omega$, $\operatorname{Re}\tau_Y=-M_3/M_2\in(0,1)$ and $\operatorname{Im}\tau_Y\to\infty$ as $M_1\to\infty$, so $\tau_Y\in\Delta(0)$. The factors with $B=0$ are $(1-p^k)^{12}(1+p^k)^8=(1-p^k)^4(1-p^{2k})^8$ for $k\ge1$ and $(1-p^ky)^2$, $(1-p^{k}y^{-1})^2$ for $k\ge1$, together with $(1-y^{-1})^2$; by the triple product for $\theta_1$ and $g(\sigma)=p\prod(1-p^n)^8(1-p^{2n})^8$, together with the prefactor they give $\e(\rho)\,g(\sigma)\,A$. They have $\langle g,Y\rangle>0$ on $\mathcal S$. For $B\ge1$ take logarithms, $\log(1-X)^{C_0}(1+X)^{C_1}=-\sum_{t\ge1}\frac1t\big(C_0+(-1)^tC_1\big)X^t$; collecting the powers of $\e(\rho)$, the exponent of $\e(l\rho)$ is $L'_l$ by Lemma~\ref{lem:LlS}. This is a rearrangement of an absolutely convergent series, as in Proposition~\ref{prop:identification}(b).
+
+(iii) By Lemma~\ref{lem:LlS}, $L'_l=L_l|_{0,l}S$. The function $L_l$ is even in $v$ (Lemma~\ref{lem:modular}), so $L_l|_{0,l}S^2=L_l$, and $P_m(L')=P_m(L)|_{0,m+1}S$ because the slash is multiplicative in weight and index (Lemma~\ref{tr:lem:slash}(ii)). Moreover $\pA|_{-2,1}S=\pA$, and $g(-1/2\sigma)=16\sigma^8g(\sigma)$ gives $g(\sigma/2)^{-1}|_{-8,0}S=\frac1{16}g(\sigma)^{-1}$. With \eqref{eq:phim1} and $\varphi_m=\varphi_{-1}P_m(L)$, $\varphi_m|_{-6,m}S=\big(\varphi_{-1}|_{-6,-1}S\big)\big(P_m(L)|_{0,m+1}S\big)=\frac1{16\,g(\sigma)A}\,P_m(L')$.
+
+\end{proof}
+
+
+\subsection{Chambers, symmetries and the jump}
+Since every Farey edge is a wall, the chambers of $1/\Phi^S_6$ (the components of the complement of the walls in $\mathbb H$) are the open Farey triangles $\Delta(e)$, $\Delta(n)$ of Section~\ref{sec:polarinf}, by Lemma~\ref{lem:tess}(i). Lemma~\ref{lem:chamberexp} holds for $1/\Phi^S_6$ with the same proof, the factor $(1+\e(\langle g,\Omega\rangle))^{-C_1}$ occurring only for $N(g)\ge0$; we write $d^S(T;C)$ for the coefficient of $\e(\langle T,\Omega\rangle)$, $T\in\ZZ^3$, in the chamber $C$, so that
+\[
+d^S(T;C)=\int_0^1\!\!\int_0^1\!\!\int_0^1\frac{\e(-\langle T,X+iY\rangle)}{\Phi^S_6(X+iY)}\,dX_v\,dX_\sigma\,dX_\rho\qquad(Y\in\tilde C).
+\]
+All wall charges are positive on $\tilde\Delta(0)$: by (F3) no Farey edge with $c,d\ge1$ contains $0$ or $1$ strictly inside its interval, so its half-disc lies in $\{\mathsf x\le0\}$, in $\{\mathsf x\ge1\}$ or is that of $(0,1)$; and the vertical walls are positive there by Lemma~\ref{lem:wallsfarey}. Hence the expansion in $\Delta(0)$ is the expansion of the product \eqref{eq:PhiS} itself.
+
+\begin{lemma}\label{lem:symS}
+$\Phi^S_6(A\Omega A^T)=\Phi^S_6(\Omega)$ for every $A\in SL_2(\ZZ)$ (on $\mathcal T$), and $d^S(T;M_A(C))=d^S(A^\ast T;C)$ for every chamber $C$. The group $SL_2(\ZZ)$ acts transitively on the Farey triangles, so every chamber is $M_A(\Delta(0))$ for some $A\in SL_2(\ZZ)$.
+\end{lemma}
+
+\begin{proof}
+For $E=\begin{psmallmatrix}1&1\\0&1\end{psmallmatrix}$ the proof of Lemma~\ref{lem:symmetries}(i) applies: $E^\ast(B,k,j)=(B,k+B+j,j+2B)$ preserves $N$, on which alone the exponents depend, and with $\varrho^S=(1,1,1)$ one has $E^\ast\varrho^S=\varrho^S+(0,2,2)$, compensated by the two exceptional factors as before. Next, \eqref{eq:PhiS} is symmetric under $(\rho,\sigma,v)\mapsto(\sigma,\rho,v)$, since $(B,k,j)\mapsto(k,B,j)$ preserves $\mathcal I^S$ and $N$; and it is even in $v$ by the argument of Lemma~\ref{lem:symmetries}(ii). Together, $\Phi^S_6$ is invariant under $\Omega\mapsto J\Omega J^T$ with $J=\begin{psmallmatrix}0&-1\\1&0\end{psmallmatrix}$, and $E$, $J$ generate $SL_2(\ZZ)$. The statement on coefficients is proved as in Lemma~\ref{lem:symmetries}(iv). Finally $SL_2(\ZZ)$ maps Farey edges to Farey edges and triangles to triangles, and it is transitive on triangles: the matrix $\begin{psmallmatrix}b&a\\d&c\end{psmallmatrix}$ maps $0,\infty$ to $a/c,b/d$ when $bc-ad=1$, hence maps $\Delta(0)$ or $\Delta(-1)$ to a triangle with side $(a/c,b/d)$, and $\Delta(-1)=T^{-1}\Delta(0)$.
+\end{proof}
+
+\begin{lemma}[Jump lemma at the cusp $0$]\label{lem:jumpS}
+For every $T=(m,\nu,\ell)\in\ZZ^3$, $d^S(T;\Delta(0))-d^S(T;\Delta(-1))=-\ell\,d_1(m)\,d_1(\nu)$.
+\end{lemma}
+
+\begin{proof}
+The proof of Lemma~\ref{lem:jump} applies with $g_0=(0,0,-1)$ and $1/\Phi^S_6=-H^S/(4\sin^2\pi v)$, $H^S$ even and holomorphic near $M_3=0$; it remains to compute $H^S(\rho,\sigma,0)$. At $v=0$ the factors with given $(B,k)\ne(0,0)$ combine to $(1-X)^{\sum_jC_0}(1+X)^{\sum_jC_1}$ with $X=\e(B\rho+k\sigma)$, and $\sum_jC_0(4Bk-j^2)$, $\sum_jC_1(4Bk-j^2)$ are the coefficients of $q^{Bk}$ in $(F^{(0,0)}+F^{(0,1)})(\tau,0)=16$ and in the integral part of $(F^{(1,0)}+F^{(1,1)})(\tau,0)=8$. So only $Bk=0$ contributes, and
+\begin{align*}
+H^S(\rho,\sigma,0)&=\frac{\e(-\rho-\sigma)}{\prod_{k\ge1}(1-p^k)^{16}(1+p^k)^8\prod_{B\ge1}(1-\e(B\rho))^{16}(1+\e(B\rho))^8}\\
+&=\frac1{g(\rho)\,g(\sigma)}=\sum_{k,k'\ge-1}d_1(k)d_1(k')\,\e(k\rho)\,p^{k'}.
+\end{align*}
+The coefficient of $\e(m\rho)p^\nu$ is $d_1(m)d_1(\nu)$.
+\end{proof}
+
+For a Farey edge that is not vertical let $G=\begin{psmallmatrix}p&q\\r&s\end{psmallmatrix}\in SL_2(\ZZ)$, $r,s\ge1$, be the matrix with $G(\infty)=p/r$, $G(0)=q/s$, and define $m_G,n_G,\ell_G$ by \eqref{eq:mGnG}.
+
+\begin{corollary}[Transport at the cusp $0$]\label{cor:transportS}
+Let $C_{\rm out}$, $C_{\rm in}$ be the Farey triangles adjacent to the edge of $G$, outside and inside its half-disc. Then $d^S(T;C_{\rm out})-d^S(T;C_{\rm in})=\ell_G\,d_1(m_G)\,d_1(n_G)$.
+\end{corollary}
+
+\begin{proof}
+$G$ maps the edge $(0,\infty)$ onto the edge of $G$, and $\Delta(0)$ onto the triangle with third vertex $G(1)=(p+q)/(r+s)$, which is inside; so $C_{\rm in}=G(\Delta(0))$ and $C_{\rm out}=G(\Delta(-1))$. With $A=\begin{psmallmatrix}p&-q\\-r&s\end{psmallmatrix}$ one has $M_A=G$ and $A^\ast T=(m_G,n_G,\ell_G)$ by \eqref{eq:chargeaction}, and Lemmas~\ref{lem:symS} and~\ref{lem:jumpS} give the claim. No parity condition on $r,s$ occurs.
+\end{proof}
+
+\begin{lemma}\label{lem:vanishS}
+\begin{enumerate}
+\item[(i)] $d^S((m,\nu,\ell);\Delta(0))=0$ for $m\le-2$.
+\item[(ii)] Let $\kappa=a'/c'$ in lowest terms with $c'\ge2$, and let $C$ be the Farey triangle containing $\kappa+i\mathsf y$ for all small $\mathsf y>0$ on the line $\operatorname{Re}\tau=\kappa$. Then $d^S((m,\nu,\ell);C)=d^S(T';\Delta(0))$ for a charge $T'$ whose first entry is $V(\kappa)=\nu c'^2-\ell a'c'+ma'^2$; hence it vanishes if $V(\kappa)\le-2$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) is proved as Lemma~\ref{lem:vanish}(i). (ii) With $M=\begin{psmallmatrix}a'&b'\\c'&d'\end{psmallmatrix}\in SL_2(\ZZ)$, $M^{-1}(\kappa+i\mathsf y)=-d'/c'+i/(c'^2\mathsf y)$ has non-integral real part and, for $\mathsf y<2/c'^2$, imaginary part above $\frac12$, the largest radius of a non-vertical Farey edge; so it lies in $\Delta(n)$, $n=\lfloor-d'/c'\rfloor$, and $C=M_n(\Delta(0))$ with $M_n=MT^n$, whose first column is $(a',c')^T$. Conclude as in Lemma~\ref{lem:vanish}(ii) with Lemma~\ref{lem:symS}.
+\end{proof}
+
+\subsection{Identification and the proof of the theorem}
+
+\begin{proposition}\label{prop:identS}
+Theorem~\ref{thm:P0}(i) and (iii) hold, and $16\,c^S_m(\nu,\ell)=d^S((m,\nu,\ell);\Delta(0))$ for $m\ge1$, $\nu\in\ZZ$, $0\le\ell\le2m$.
+\end{proposition}
+
+\begin{proof}
+By Proposition~\ref{prop:PhiS}(iii), $16\,\psi^S_m=\varphi'_m-d_1(m)\,\mathcal A_{2,m}/g(\sigma)$. Each $L'_l$ is holomorphic on $\mathbb H\times\CC$, even in $v$, with the elliptic property of index $l$, by the argument of Lemma~\ref{lem:modular} applied to the terms of Lemma~\ref{lem:LlS}; so $\varphi'_m$ is meromorphic, even, of index $m$, with at most double poles along $v\in\ZZ\sigma+\ZZ$, the zeros of $A$. At $v=0$, Lemma~\ref{lem:LlS} and $\sum_jC_i(4n-j^2)=0$ for $n\ge1$ give $L'_l(\sigma,0)=\sum_{t\mid l}\frac1t\big(16+8(-1)^t\big)$, so
+\begin{align*}
+\sum_{k\ge0}P_{k-1}(L'(\sigma,0))X^k&=\prod_{d\ge1}(1-X^d)^{-16}(1+X^d)^{-8}\\
+&=\prod_{d\ge1}(1-X^d)^{-8}(1-X^{2d})^{-8}=\sum_{k\ge-1}d_1(k)X^{k+1},
+\end{align*}
+and $P_m(L'(\sigma,0))=d_1(m)$. Hence $\varphi'_m=-d_1(m)/(4\pi^2g(\sigma)v^2)+O(1)$, which is also the principal part of $d_1(m)\mathcal A_{2,m}/g(\sigma)$ (Proposition~\ref{prop:identification}(e)). Both are even and of index $m$, so $\psi^S_m$ is holomorphic on $\mathbb H\times\CC$. Both terms are series in $p$ and $y$ with $p$-exponents at least $-1$ (the factor $1/g(\sigma)$) and coefficients in $\ZZ$, which gives (i). By Proposition~\ref{prop:PhiS}(ii) and Lemma~\ref{lem:chamberexp}, $\varphi'_m=\sum_{\nu,\ell}d^S((m,\nu,\ell);\Delta(0))p^\nu y^\ell$ on $\mathcal S$, and on $\mathcal S$ the expansion of $\mathcal A_{2,m}$ has no $y^\ell$ with $0\le\ell\le2m$ (Proposition~\ref{prop:identification}(f)). Computing the coefficients of the holomorphic function $16\psi^S_m$ on a horizontal torus in $\mathcal S$ gives $16c^S_m(\nu,\ell)=d^S((m,\nu,\ell);\Delta(0))$.
+
+For (iii): $\mathcal A_{2,m}$ is even, has the elliptic property of index $m$ and the principal part $-1/(4\pi^2v^2)$ at $v=0$ (Proposition~\ref{prop:identification}(e)). The slash $|_{2,m}S$ preserves evenness and the elliptic property of index $m$ (Lemma~\ref{tr:lem:slash}(iii)), and maps the principal part at $v=0$ to $\sigma^{-2}\cdot(-\sigma^2/(4\pi^2v^2))$, the same. So $h_m$ is holomorphic near $v=0$ and, by the elliptic property, on $\mathbb H\times\CC$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:P0}(ii)]
+Fix a polar term $T=(m,\nu,\tilde\ell)$, $\nu\in\ZZ$, $0\le\tilde\ell<2m$, and let $\omega_0$, $t$, $\delta$, $\delta'=\delta/2$, $J$ be as in Section~\ref{sec:polarinf}. Call a non-vertical Farey edge \emph{relevant} if $m_G,n_G\ge-1$; by Corollary~\ref{cor:transportS} only relevant edges have a nonzero jump, and Lemma~\ref{lem:finite} applies to them unchanged (its proof uses only Lemma~\ref{lem:walls}(ii), valid for every $G$). Choose $\kappa^*=(2j+1)/2^k\in(\omega_0,\beta)$ as in the proof of Theorem~\ref{thm:Pinf}, with $V(\kappa^*)\le-2$, and follow $\gamma(\mathsf y)=\kappa^*+i\mathsf y$ from $\mathsf y>\frac12$, where $\gamma$ lies in $\Delta(0)$, down to $0$. It crosses each Farey edge whose interval contains $\kappa^*$ strictly exactly once, from outside to inside; there are finitely many, by (F3), and no vertical one. Below the last one it lies in the triangle $C$ of Lemma~\ref{lem:vanishS}(ii), where $d^S(T;C)=0$. Summing Corollary~\ref{cor:transportS},
+\[
+d^S(T;\Delta(0))=\sum_{G:\ q/s<\kappa^*<p/r}\ell_G\,d_1(m_G)\,d_1(n_G),
+\]
+and the argument at the end of the proof of Theorem~\ref{thm:Pinf} shows that the relevant edges in this sum are exactly the relevant $G\in\mathcal W(m,\nu,\tilde\ell)$. Hence $d^S(T;\Delta(0))=16\,a_S(\nu,\tilde\ell)$ by \eqref{eq:P0}, and $c^S_m(\nu,\tilde\ell)=a_S(\nu,\tilde\ell)$ by Proposition~\ref{prop:identS}. The opposite endpoint convention is Remark~\ref{rem:convention} verbatim: for $\omega_0=0$ the path starts in $\Delta(-1)$, and $d^S(T;\Delta(-1))=d^S(T;\Delta(0))$ by Lemma~\ref{lem:jumpS} with $\ell=\tilde\ell=0$.
+\end{proof}
+
+\begin{remark}\label{rem:appell}
+By Theorem~\ref{thm:P0}(iii), $h_m=\sum_{\ell\bmod2m}h_{m,\ell}(\sigma)\vartheta_{m,\ell}(\sigma,v)$ with $\vartheta_{m,\ell}=\sum_{r\equiv\ell\,(2m)}p^{r^2/4m}y^r$ and $h_{m,\ell}$ holomorphic on $\mathbb H$, so that
+\[
+\varphi^F_m|_{-6,m}S=\psi^S_m-\frac{d_1(m)}{16\,g(\sigma)}\sum_{\ell\bmod 2m}h_{m,\ell}(\sigma)\,\vartheta_{m,\ell}(\sigma,v).
+\]
+The functions $h_{m,\ell}$ are period integrals: $h_m$ is the function $\mathcal D=\mathcal A|_{2,m}S-\mathcal A$ of the proof of Proposition~\ref{tr:prop:Ahat}, where it is proved that
+\[
+h_{m,\ell}(\sigma)=\frac{\sqrt{2m}}{4\pi}\int_0^\infty\vartheta_{m,\ell}(it,0)\,(t-i\sigma)^{-3/2}\,dt
+\]
+(this is $c_\ell=\frac{\sqrt{2m}}{4\pi}e^{\pi i/4}\tilde P_\ell$ there, with $u=it$ in $\tilde P_\ell$ and $(i(t-i\sigma))^{-3/2}=e^{-3\pi i/4}(t-i\sigma)^{-3/2}$). They are not Fourier series in $\sigma$. The circle method of Section~\ref{circ:sec} uses at the frame $S$ the theta coefficients $h_{S,\ell}$ of $\psi^S_m=\psi_S-G_S\mathcal A$ (Lemma~\ref{tr:lem:thetadec}, with $G_S=d_1(m)/(16g(\sigma))$, Proposition~\ref{tr:prop:jacobi}(iii)), not those of $\varphi^F_m|_{-6,m}S$; the transformation of $\mathcal A$ under $S$, including the period integrals $h_{m,\ell}$, is accounted for by the completion $\widehat{\mathcal A}$ of Proposition~\ref{tr:prop:Ahat} in the transformation law \textup{(T2b)}, Theorem~\ref{tr:thm:T2}. So the polar data at the frame $S$ are the coefficients $c^S_m$ of Theorem~\ref{thm:P0}(ii), with no correction from the Appell--Lerch sum.
+\end{remark}
+

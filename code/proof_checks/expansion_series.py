@@ -1,8 +1,9 @@
-# Full (non-mock) vector-valued Rademacher sum for Z2 CHL psi^F_m, frames I,T,S of Gamma^0(2)
-import sys, pickle, mpmath as mp
+# The principal-part series M of the Rademacher expansion (eq:radmain) for the Z2 CHL finite part phi^F_m,
+# summed over the frames I, T, S of Gamma^0(2); imported by expansion_check.py.
+import sys, os, mpmath as mp
 from math import gcd
 from fractions import Fraction as Fr
-sys.path.insert(0,'/home/user/Paper_5/code'); sys.path.insert(0,'../full')
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
 import chl_coefficients as C
 mp.mp.dps=30
 m=int(sys.argv[1]); GMAX=int(sys.argv[2])

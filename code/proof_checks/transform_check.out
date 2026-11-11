@@ -1,0 +1,30 @@
+(a) theta transformation, m<=3, gamma<=4, all delta, l: max rel. error 4.65e-49
+(b) Fourier expansion of A_{2,m} in the strip, m<=3: max rel. error 6.4e-51
+(c) Ahat|S, m<=3: max rel. error 8.51e-51
+(c) Ahat|T, m<=3: max rel. error 6.23e-51
+(c) period identity, m<=3: max rel. error 1.01e-27
+(c) E closed form, m<=3: max rel. error 8.45e-28
+(d) psi_m|_{-6,m}S = phi_m'/16 (series of L'_l), m<=3: rel. error 1.35e-50
+(e) m=1 gamma=1 delta=0 frame S, Im tau=0.995, Im N tau=0.995: (T2a) 1.5e-50, (T2b) max over l 1.9e-50
+(e) m=1 gamma=1 delta=-1 frame T, Im tau=0.995, Im N tau=0.995: (T2a) 3.91e-51, (T2b) max over l 3.77e-49
+(e) m=1 gamma=2 delta=-1 frame T, Im tau=0.497, Im N tau=0.497: (T2a) 5.78e-51, (T2b) max over l 2.51e-48
+(e) m=1 gamma=2 delta=-3 frame I, Im tau=0.497, Im N tau=0.497: (T2a) 9.52e-51, (T2b) max over l 2.75e-48
+(e) m=1 gamma=3 delta=-1 frame T, Im tau=0.332, Im N tau=0.332: (T2a) 3.51e-50, (T2b) max over l 1.39e-41
+(e) m=1 gamma=3 delta=-2 frame S, Im tau=0.332, Im N tau=0.332: (T2a) 6.52e-51, (T2b) max over l 9.2e-40
+(e) m=1 gamma=3 delta=-4 frame S, Im tau=0.332, Im N tau=0.332: (T2a) 1.31e-50, (T2b) max over l 8.37e-40
+(e) m=2 gamma=1 delta=0 frame S, Im tau=0.995, Im N tau=0.995: (T2a) 1.6e-50, (T2b) max over l 3.12e-50
+(e) m=2 gamma=1 delta=-1 frame T, Im tau=0.995, Im N tau=0.995: (T2a) 3.18e-51, (T2b) max over l 5.75e-49
+(e) m=2 gamma=2 delta=-1 frame T, Im tau=0.497, Im N tau=0.497: (T2a) 2.82e-51, (T2b) max over l 3.16e-47
+(e) m=2 gamma=2 delta=-3 frame I, Im tau=0.497, Im N tau=0.497: (T2a) 1.05e-50, (T2b) max over l 1.93e-47
+(e) m=2 gamma=3 delta=-1 frame T, Im tau=0.332, Im N tau=0.332: (T2a) 3.71e-50, (T2b) max over l 2.55e-36
+(e) m=2 gamma=3 delta=-2 frame S, Im tau=0.332, Im N tau=0.332: (T2a) 6.75e-51, (T2b) max over l 8.87e-34
+(e) m=2 gamma=3 delta=-4 frame S, Im tau=0.332, Im N tau=0.332: (T2a) 1.16e-50, (T2b) max over l 7.74e-34
+(e) m=3 gamma=1 delta=0 frame S, Im tau=0.995, Im N tau=0.995: (T2a) 1.46e-50, (T2b) max over l 2.74e-50
+(e) m=3 gamma=1 delta=-1 frame T, Im tau=0.995, Im N tau=0.995: (T2a) 3.28e-51, (T2b) max over l 1.47e-48
+(e) m=3 gamma=2 delta=-1 frame T, Im tau=0.497, Im N tau=0.497: (T2a) 3.28e-51, (T2b) max over l 1.55e-46
+(e) m=3 gamma=2 delta=-3 frame I, Im tau=0.497, Im N tau=0.497: (T2a) 1.05e-50, (T2b) max over l 1.99e-46
+(e) m=3 gamma=3 delta=-1 frame T, Im tau=0.332, Im N tau=0.332: (T2a) 3.68e-50, (T2b) max over l 4.99e-31
+(e) m=3 gamma=3 delta=-2 frame S, Im tau=0.332, Im N tau=0.332: (T2a) 7.35e-51, (T2b) max over l 3.11e-28
+(e) m=3 gamma=3 delta=-4 frame S, Im tau=0.332, Im N tau=0.332: (T2a) 1.52e-50, (T2b) max over l 2.6e-28
+control: (T2b) without the completion terms, m=2, gamma=1: rel. error 0.602 (must be large)
+SUMMARY (a) theta lemma 4.65e-49; (b) A strip 6.4e-51; (c) Ahat|S 8.51e-51; (c) Ahat|T 6.23e-51; (c) period identity 1.01e-27; (c) E closed form 8.45e-28; (d) psi_I|S = psi_S 1.35e-50; (e) T2a 3.71e-50; (e) T2b 3.11e-28

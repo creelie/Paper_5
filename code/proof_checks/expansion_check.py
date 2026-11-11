@@ -1,5 +1,9 @@
-import sys
-exec(open('radfull.py').read().split("for n in (4,8,16,30):")[0].replace("m=int(sys.argv[1]); GMAX=int(sys.argv[2])","m=int(sys.argv[1]); GMAX=int(sys.argv[2]); PW=float(sys.argv[3]) if len(sys.argv)>3 else 0"))
+# Usage: python3 expansion_check.py m GMAX PW GM2 SW IW
+# Compares the truncated right side M + K2 + K3 of the Rademacher expansion (Theorem thm:rad) with the exact
+# coefficients c^F_m(n,l) from the product formula.  GMAX, GM2: truncation in gamma for M and for K2, K3;
+# PW = 0, SW = IW = 1 give the expansion as stated (they only exist to switch pieces off).
+import sys, os
+exec(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'expansion_series.py')).read().split("for n in (4,8,16,30):")[0].replace("m=int(sys.argv[1]); GMAX=int(sys.argv[2])","m=int(sys.argv[1]); GMAX=int(sys.argv[2]); PW=float(sys.argv[3]) if len(sys.argv)>3 else 0"))
 def fhat(m): return D1(m)
 def kl(D,mu_t,ga,lt,l,frames):
     # sum over -delta in [0,2ga), frame of Gamma^{-1} in frames; returns dict frame->sum
@@ -16,11 +20,17 @@ def kl(D,mu_t,ga,lt,l,frames):
         out[fr]=out.get(fr,0)+c*ph*weil(al,ga,de,lt,l)
     return out
 def f_(ga,g,x):
-    if g%(2*m*ga)==0: return mp.pi**2/mp.sinh(mp.pi*x/ga)**2 - mp.mpf(ga)**2/x**2
+    if g%(2*m*ga)==0:
+        y=mp.pi*x/ga
+        if abs(y)<mp.mpf('1e-4'):
+            # pi^2/sinh^2(y) - pi^2/y^2 = pi^2(-1/3 + y^2/15 - 2y^4/189)
+            return mp.pi**2*(-mp.mpf(1)/3 + y**2/15 - 2*y**4/189 + y**6/675)
+        with mp.workdps(mp.mp.dps+20):
+            return mp.pi**2/mp.sinh(y)**2 - mp.mpf(ga)**2/x**2
     return mp.pi**2/mp.sinh(mp.pi*x/ga - 1j*mp.pi*g/(2*m*ga))**2
 def mock(n,l,GM):
     D=mp.mpf(2*m*n-l*l); fm=fhat(m)
-    frames={'S':(mp.mpf(-1),mp.mpf(fm)/16),'I':(mp.mpf(-1)/2,mp.mpf(fm)),'T':(mp.mpf(-1)/2,-mp.mpf(fm))}
+    frames={'S':(mp.mpf(-1),mp.mpf(fm)/16*SW),'I':(mp.mpf(-1)/2,mp.mpf(fm)*IW),'T':(mp.mpf(-1)/2,-mp.mpf(fm)*IW)}
     tot=0
     for ga in range(1,GM+1):
         # line 2
@@ -43,7 +53,7 @@ def mock(n,l,GM):
                 integ=mp.quad(lambda x: f_(ga,g,x)*(1-m*x*x/mu)**(mp.mpf(17)/4)*mp.besseli(mp.mpf(17)/2,4*mp.pi*mp.sqrt((mu-m*x*x)*D/(4*m))/ga),[-X,0,X])
                 tot+= 1/(2*mp.pi)*v/ga**2*(4*m*mu/D)**(mp.mpf(17)/4)*integ*mu**PW
     return tot/2*(-1)**l*mp.sqrt(1j)
-GM2=int(sys.argv[4]) if len(sys.argv)>4 else 2
+GM2=int(sys.argv[4]); SW=float(sys.argv[5]); IW=float(sys.argv[6])
 for n in (4,8,16,30):
     for l in range(0,m+1):
         d=(-1)**(l+1)*coef(m,n,l)

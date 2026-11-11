@@ -1,0 +1,353 @@
+\section{The circle method for the level-two expansion}\label{circ:sec}
+
+This section proves Theorem~\ref{thm:rad} by the circle method on Farey arcs, in the form used by Rademacher and Zuckerman \cite{RZ38,Zuc39} and, for mixed mock modular forms, by Bringmann and Manschot \cite{BMa13}. Because the weight $-\frac{13}{2}$ is very negative, every error term is estimated absolutely; no cancellation in Kloosterman-type sums is used. The conventions are those of Section~\ref{circ:conv}.
+
+\subsection{The three properties}\label{circ:input}
+The coefficients $c^F_m(n,\ell)$ are those of the finite part $\varphi^F_m(\sigma,v)=\sum c^F_m(n,\ell)\,x^ny^\ell$, $x=\e(\sigma/2)$, $y=\e(v)$, and we write $\tau$ for $\sigma$. The circle method uses only the following three properties of $\varphi^F_m$; Proposition~\ref{circ:prop:input} below records where each is proved.
+
+\medskip\noindent\textbf{(T1) Theta decomposition.} For each $\ell\in\{0,\dots,2m-1\}$ the series $h_{I,\ell}$ of \eqref{circ:T1} has only finitely many nonzero terms with $2mn-\ell^2<0$ and converges absolutely and locally uniformly on $\HH$, and $\varphi^F_m(\tau,v)=\sum_{\ell=0}^{2m-1}h_{I,\ell}(\tau)\,\vartheta_{m,\ell}(\tau,v)$.
+
+\medskip\noindent\textbf{(T2) Completion and modularity.} There are holomorphic functions $h_{F,\ell}$ on $\HH$ ($F\in\{I,T,S\}$, $0\le\ell<2m$; for $F=I$ they are \eqref{circ:T1}) and holomorphic functions $G_I,G_T,G_S$ on $\HH$, none identically zero, with the following properties. Let $\hh_{F,\ell}=h_{F,\ell}+\kappa_mG_FE_\ell$ be as in \eqref{circ:T2b}, with $\kappa_m$ and $E_\ell$ as in \eqref{circ:kappa}. Then for every $\gamma\ge1$ and $(\gamma,\delta)\in\mathcal C_\gamma$, with $N=N_{\gamma,\delta}$, $F=F(\gamma,\delta)$ and $j=j_{\gamma,\delta}$:
+\begin{enumerate}
+\item[(T2a)] $G_I(N\tau)=\lambda_{\gamma,\delta}\,j(\tau)^{-8}\,G_F(\tau)$ for a constant $\lambda_{\gamma,\delta}\ne0$;
+\item[(T2b)] for $0\le\ell<2m$ and $\tau\in\HH$,
+\begin{equation}\label{circ:T2}
+\hh_{I,\ell}(N\tau)=j(\tau)^{-13/2}\sum_{\ell'=0}^{2m-1}W_{\gamma,\delta}(\ell',\ell)\,\hh_{F,\ell'}(\tau).
+\end{equation}
+\end{enumerate}
+
+\medskip\noindent\textbf{(T3) Expansions in the frames.} For each $F$ there are a finite set $P_F$ of pairs $(\tilde\nu,\tilde\ell)$ with $0\le\tilde\ell<2m$ and $\tilde D:=4m\tilde\nu-\tilde\ell^2<0$, numbers $a_F(\tilde\nu,\tilde\ell)$, numbers $\mu_F>0$ and $c_F\in\CC$, such that for $0\le\ell'<2m$
+\begin{align}
+h_{F,\ell'}(\tau)&=\sum_{\tilde\nu:\ (\tilde\nu,\ell')\in P_F}a_F(\tilde\nu,\ell')\,\e\Big(\frac{\tilde D\tau}{4m}\Big)+\sum_{\lambda\in\Lambda_{F,\ell'}}b_{F,\ell'}(\lambda)\,\e(\lambda\tau),\label{circ:T3h}\\
+G_F(\tau)&=c_F\,\e(-\mu_F\tau)+\sum_{\lambda\in\Lambda^G_F}g_F(\lambda)\,\e(\lambda\tau),\label{circ:T3G}
+\end{align}
+where $\Lambda_{F,\ell'},\Lambda_F^G$ are countable subsets of $[0,\infty)$ and the two series over $\lambda$ converge absolutely on $\HH$.
+
+\medskip
+We use the abbreviations
+\begin{equation}\label{circ:consts}
+\begin{gathered}
+C_h=\max_{F,\ell'}\sum_{\lambda\in\Lambda_{F,\ell'}}|b_{F,\ell'}(\lambda)|e^{-\pi\lambda},\qquad C_G=\max_F\sum_{\lambda\in\Lambda^G_F}|g_F(\lambda)|e^{-\pi\lambda},\\
+a_*=\max_F\sum_{(\tilde\nu,\tilde\ell)\in P_F}|a_F(\tilde\nu,\tilde\ell)|,\qquad A_*=\max_F\max_{P_F}\frac{|\tilde D|}{4m},\\
+c_*=\max_F|c_F|,\qquad\mu_*=\max_F\mu_F,
+\end{gathered}
+\end{equation}
+($A_*=0$ if every $P_F$ is empty). $C_h$ and $C_G$ are finite by the absolute convergence in (T3) at $\operatorname{Im}\tau=\frac12$, and by (T3), for $\operatorname{Im}\tau\ge\frac12$,
+\begin{equation}\label{circ:rembound}
+\Big|h_{F,\ell'}(\tau)-\sum_{(\tilde\nu,\ell')\in P_F}a_F\,\e\Big(\frac{\tilde D\tau}{4m}\Big)\Big|\le C_h,\qquad |G_F(\tau)-c_F\e(-\mu_F\tau)|\le C_G .
+\end{equation}
+
+\begin{proposition}\label{circ:prop:input}
+The finite part $\varphi^F_m$ has the properties \textup{(T1)--(T3)}, with $\lambda_{\gamma,\delta}=1$, with $P_F$ and $a_F$ the polar data \eqref{eq:polardata}, with the constants $c_F,\mu_F$ of \eqref{eq:mockdata}, and with $\Lambda_{F,\ell'}\subset\frac1{4m}\ZZ_{\ge0}$, $\Lambda^G_I=\Lambda^G_T=\frac12\ZZ_{\ge0}$, $\Lambda^G_S=\ZZ_{\ge0}$.
+\end{proposition}
+
+\begin{proof}
+(T1) is Lemma~\ref{tr:lem:thetadec} together with Theorem~\ref{tr:thm:polar}. In (T2) the functions are the $h_{F,\ell}$ of Lemma~\ref{tr:lem:thetadec} and $G_I=\hat f(m)/g(\tau/2)$, $G_T(\tau)=G_I(\tau+1)$, $G_S(\tau)=\tau^8G_I(-1/\tau)=\hat f(m)/(16\,g(\tau))$ of Proposition~\ref{tr:prop:jacobi}(iii); (T2a) with $\lambda_{\gamma,\delta}=1$ is Proposition~\ref{tr:prop:jacobi}(iv), and (T2b) is Theorem~\ref{tr:thm:T2}. In (T3) the finiteness of the polar parts and the absolute convergence are Theorem~\ref{tr:thm:polar}, and the expansions of $G_F$, with the leading terms \eqref{eq:mockdata}, are Remark~\ref{tr:rem:G}. The polar coefficients are $a_I$ and $a_T=(-1)^{2\tilde\nu}a_I$ in the frames $I$ and $T$ by Theorem~\ref{thm:Pinf}, and $a_S$ in the frame $S$ by Theorem~\ref{thm:P0}(ii); the latter applies because the $h_{S,\ell}$ are the theta coefficients of $\psi_S-G_S\mathcal A=\psi^S_m$ (Proposition~\ref{tr:prop:jacobi}(iii) and \eqref{eq:psiS}; see Remark~\ref{rem:appell}). Terms with exponent exactly $0$ belong to the remainders.
+\end{proof}
+
+\subsection{The statement}
+For $D>0$ and $(\gamma,\delta)\in\mathcal C_\gamma$, with $F=F(\gamma,\delta)$, $\alpha$ attached to $(\gamma,\delta)$, $\tilde D=4m\tilde\nu-\tilde\ell^2$ and $u_F=\sqrt{\mu_F/m}$, put
+\begin{align}
+\mathcal M_{\gamma,\delta}&=\sum_{(\tilde\nu,\tilde\ell)\in P_F}a_F(\tilde\nu,\tilde\ell)\,\e\Big(\frac{\alpha\tilde D+\delta D}{4m\gamma}\Big)W_{\gamma,\delta}(\tilde\ell,\ell)\,\frac{2\pi}\gamma\Big(\frac{|\tilde D|}{D}\Big)^{\frac{15}4}I_{\frac{15}2}\Big(\frac{\pi\sqrt{|\tilde D|D}}{m\gamma}\Big),\label{circ:Mterm}\\
+\mathcal K_{2;\gamma,\delta}&=-\sqrt{2m}\,\gamma^{-\frac12}c_F\,\e\Big(\frac{-4m\mu_F\alpha+\delta D}{4m\gamma}\Big)W_{\gamma,\delta}(0,\ell)\Big(\frac{4m\mu_F}{D}\Big)^4I_8\Big(\frac{2\pi}\gamma\sqrt{\frac{\mu_FD}m}\Big),\label{circ:K2term}\\
+\mathcal K_{3;\gamma,\delta}&=\frac{\gamma^{-2}}{2\pi}\sum_{g=-m\gamma}^{m\gamma-1}c_F\,\e\Big(\frac{-\alpha(4m\mu_F+g^2)+\delta D}{4m\gamma}\Big)W_{\gamma,\delta}(g,\ell)\Big(\frac{4m\mu_F}{D}\Big)^{\frac{17}4}\label{circ:K3term}\\
+&\qquad\times\int_{-u_F}^{u_F}f_{\gamma,g}(u)\Big(1-\frac{mu^2}{\mu_F}\Big)^{\frac{17}4}I_{\frac{17}2}\Big(\frac{2\pi}\gamma\sqrt{\frac{(\mu_F-mu^2)D}m}\Big)\,du,\notag
+\end{align}
+and $\mathcal M=\sum_{\gamma\ge1}\sum_{\mathcal C_\gamma}\mathcal M_{\gamma,\delta}$, $\mathcal K_2$, $\mathcal K_3$ likewise; by Proposition~\ref{circ:prop:input} these are the series \eqref{eq:radmain}--\eqref{eq:radK3}. Let $\mathcal M^{(N)},\mathcal K_2^{(N)},\mathcal K_3^{(N)}$ be the partial sums over $\gamma\le N$.
+
+\begin{theorem}\label{circ:thm}
+Let $0\le\ell<2m$, $n\in\ZZ$ and $D=2mn-\ell^2>0$, and put $B=D/4m$. Then the series $\mathcal M$, $\mathcal K_2$, $\mathcal K_3$ converge absolutely, and
+\begin{equation}\label{circ:main}
+c^F_m(n,\ell)=\tfrac12\,e^{-3\pi i/4}\big(\mathcal M+\mathcal K_2+\mathcal K_3\big),
+\end{equation}
+equivalently $(-1)^{\ell+1}c^F_m(n,\ell)=\tfrac12(-1)^\ell\sqrt i\,(\mathcal M+\mathcal K_2+\mathcal K_3)$.
+More precisely, for every integer $N\ge1$,
+\begin{equation}\label{circ:errN}
+\Big|c^F_m(n,\ell)-\tfrac12\,e^{-3\pi i/4}\big(\mathcal M^{(N)}+\mathcal K_2^{(N)}+\mathcal K_3^{(N)}\big)\Big|\le C_*\,N^{-6},
+\end{equation}
+where, with the constants \eqref{circ:consts},
+\[
+\begin{aligned}
+C_*={}&\frac{2^{17/2}a_*}{\sqrt{2m}}e^{8\pi(A_*+B)}+2^{13/4}\sqrt{2m}\,C_he^{2\pi B}+\frac{2^{5/2}}\pi C_Ge^{2\pi B}\\
+&+2^{1/4}\pi^2m\,(C_G+c_*)e^{2\pi B}+\frac{2^8}\pi c_*e^{8\pi(\mu_*+B)}+2^7\pi^2m\sqrt{\mu_*}\,c_*e^{8\pi(\mu_*+B)} .
+\end{aligned}
+\]
+\end{theorem}
+
+The two forms of \eqref{circ:main} agree because $-e^{-3\pi i/4}=e^{\pi i/4}=\sqrt i$, and for $0\le\ell\le m$ the second form is \eqref{eq:hypR}. So Theorem~\ref{circ:thm} contains Theorem~\ref{thm:rad}. The constant $\frac12$ is the reciprocal of the width $2$ of the cusp $\infty$, and $e^{-3\pi i/4}$ is the value of $j_{\gamma,\delta}^{-13/2}/z^{13/2}$ on every arc (see \eqref{circ:jz}); for $\gamma=1$, $\delta=0$ it combines with $(2mi)^{-1/2}$ in $W_{1,0}$ to the real negative number $-(2m)^{-1/2}$, the factor $i^{-6}=-1$ familiar from weight $-6$.
+
+\subsection{Auxiliary results}
+
+\begin{lemma}\label{circ:lem:weil}
+$W_{\gamma,\delta}(\tilde\ell+2m,\ell)=W_{\gamma,\delta}(\tilde\ell,\ell)$, and $|W_{\gamma,\delta}(\tilde\ell,\ell)|\le\sqrt{\gamma/2m}$.
+\end{lemma}
+
+\begin{proof}
+Replacing $\tilde\ell$ by $\tilde\ell+2m$ replaces $T$ by $T-1$ in $x$. The summand is periodic in $T$ with period $\gamma$: replacing $x$ by $x-2m\gamma$ changes the argument of $\e$ by $-\alpha x+\alpha m\gamma+\ell\in\ZZ$. So the sum over $T$ is unchanged. The bound is the triangle inequality: $\gamma$ terms of modulus one, divided by $\sqrt{2m\gamma}$.
+\end{proof}
+
+(The sharper bound of Lemma~\ref{lem:weilbound} is not needed here.)
+
+\begin{lemma}\label{circ:lem:bessel}
+Let $c>0$, $\nu>0$ and $x>0$. Then
+\begin{equation}\label{circ:hankel}
+\frac1{2\pi i}\int_{c-i\infty}^{c+i\infty}t^{-\nu-1}\exp\Big(t+\frac{x^2}{4t}\Big)\,dt=\Big(\frac x2\Big)^{-\nu}I_\nu(x),
+\end{equation}
+the integral converging absolutely. Consequently, for $A,B,k>0$, $r>0$ and $c>0$,
+\begin{equation}\label{circ:hankel2}
+\frac1{2\pi i}\int_{c-i\infty}^{c+i\infty}t^{-r-2}\exp\Big(\frac{2\pi}k\Big(At+\frac Bt\Big)\Big)\,dt=\Big(\frac AB\Big)^{\frac{r+1}2}I_{r+1}\Big(\frac{4\pi\sqrt{AB}}k\Big).
+\end{equation}
+Moreover $I_\nu(x)/x^\nu$ is increasing on $(0,\infty)$, so $I_\nu(x/\gamma)\le\gamma^{-\nu}I_\nu(x)$ for $\gamma\ge1$.
+\end{lemma}
+
+\begin{proof}
+First, for $\operatorname{Re}s>1$,
+\begin{equation}\label{circ:gammainv}
+\frac1{\Gamma(s)}=\frac1{2\pi i}\int_{c-i\infty}^{c+i\infty}e^tt^{-s}\,dt .
+\end{equation}
+Indeed, let $\phi(x)=x^{s-1}e^{-cx}$ for $x>0$ and $\phi(x)=0$ for $x\le0$. Its Fourier transform is $\hat\phi(y)=\int_0^\infty x^{s-1}e^{-(c+iy)x}dx=\Gamma(s)(c+iy)^{-s}$ (principal branch; both sides are holomorphic in $c+iy$ on the right half-plane and agree for $y=0$), which is integrable since $\operatorname{Re}s>1$. By Fourier inversion, $\phi(1)=\frac1{2\pi}\int_\RR\hat\phi(y)e^{iy}dy$, the equality holding at $x=1$ because $\phi$ is continuous on $(0,\infty)$ and the inverse transform is continuous. With $t=c+iy$ this is \eqref{circ:gammainv}. (It is Hankel's formula \cite[\S12.22]{WW21} with the loop opened to a line.)
+
+On the line $\operatorname{Re}t=c$ one has $|t|\ge c$, $|e^t|=e^c$ and $|e^{x^2/4t}|\le e^{x^2/4c}$, and $|t^{-\nu-1}|=|t|^{-\nu-1}$ is integrable since $\nu>0$; so \eqref{circ:hankel} converges absolutely. Expanding $e^{x^2/4t}=\sum_{p\ge0}(x^2/4)^pt^{-p}/p!$, the series of absolute values is dominated by $e^{c}e^{x^2/4c}|t|^{-\nu-1}$, so we may integrate termwise and use \eqref{circ:gammainv} with $s=\nu+1+p>1$:
+\[
+\frac1{2\pi i}\int_{c-i\infty}^{c+i\infty}t^{-\nu-1}e^{t+x^2/4t}dt=\sum_{p\ge0}\frac{(x^2/4)^p}{p!\,\Gamma(\nu+p+1)}=\Big(\frac x2\Big)^{-\nu}I_\nu(x).
+\]
+For \eqref{circ:hankel2} substitute $t=\frac k{2\pi A}s$; the line $\operatorname{Re}t=c$ goes to the line $\operatorname{Re}s=2\pi Ac/k>0$, $t^{-r-2}=(\frac{2\pi A}k)^{r+2}s^{-r-2}$ (a positive real factor), and $\frac{2\pi B}{kt}=\frac{x^2}{4s}$ with $x=4\pi\sqrt{AB}/k$. So the left side of \eqref{circ:hankel2} is $(\frac{2\pi A}k)^{r+1}(\frac x2)^{-r-1}I_{r+1}(x)=(\frac AB)^{(r+1)/2}I_{r+1}(x)$. Finally $I_\nu(x)/x^\nu=\sum_p 2^{-\nu-2p}x^{2p}/(p!\Gamma(\nu+p+1))$ has positive coefficients.
+\end{proof}
+
+\begin{lemma}[Farey arcs]\label{circ:lem:farey}
+Let $N\ge1$. To each $(\gamma,\delta)\in\mathcal C_\gamma$ with $\gamma\le N$ attach the fraction $-\delta/\gamma\in[0,2)$, and let $\gamma_1,\gamma_2$ be the denominators of its left and right neighbours in the sequence of reduced fractions in $[0,2]$ with denominator at most $N$, where the left neighbour of $0/1$ is taken to be $-1/N$. Put $\omega'_{\gamma,\delta}=1/(\gamma(\gamma+\gamma_1))$, $\omega''_{\gamma,\delta}=1/(\gamma(\gamma+\gamma_2))$ and $J_{\gamma,\delta}=[-\delta/\gamma-\omega'_{\gamma,\delta},\,-\delta/\gamma+\omega''_{\gamma,\delta}]$. Then the intervals $J_{\gamma,\delta}$ have disjoint interiors, their union is $[-\frac1{N+1},2-\frac1{N+1}]$, and
+\[
+\frac1{2\gamma N}\le\omega'_{\gamma,\delta},\ \omega''_{\gamma,\delta}<\frac1{\gamma N}.
+\]
+\end{lemma}
+
+\begin{proof}
+The fractions in $[0,1]$ form the Farey sequence $\mathfrak F_N$, those in $[1,2]$ form $1+\mathfrak F_N$, and the extension by $-1/N$ is the translate by $-1$ of the last step $(N-1)/N<1/1$ of $\mathfrak F_N$. For consecutive fractions $h_1/k_1<h_2/k_2$ in $\mathfrak F_N$ one has $h_2k_1-h_1k_2=1$ and $k_1+k_2>N$ \cite[Chapter~III]{HW08}; translation by an integer preserves both properties. Hence the mediant $\frac{h_1+h_2}{k_1+k_2}$ satisfies $\frac{h_1+h_2}{k_1+k_2}-\frac{h_1}{k_1}=\frac1{k_1(k_1+k_2)}$ and $\frac{h_2}{k_2}-\frac{h_1+h_2}{k_1+k_2}=\frac1{k_2(k_1+k_2)}$, so $J_{\gamma,\delta}$ runs from the mediant with the left neighbour to the mediant with the right neighbour. Consecutive intervals therefore share an endpoint, the first starts at $\frac{0-1}{1+N}$ and the last, belonging to $\frac{2N-1}N$ with right neighbour $\frac21$, ends at $\frac{2N-1+2}{N+1}=2-\frac1{N+1}$. The bounds follow from $N+1\le\gamma+\gamma_j\le2N$.
+\end{proof}
+
+For $(\gamma,\delta)\in\mathcal C_\gamma$ and $\varphi\in\RR$ put
+\begin{equation}\label{circ:z}
+z=\gamma\Big(\frac1{N^2}-i\varphi\Big),\qquad\tau=\frac{-\delta+iz}\gamma=-\frac\delta\gamma+\varphi+\frac i{N^2},\qquad \tau'=M_{\gamma,\delta}\tau=\frac\alpha\gamma+\frac i{\gamma z}.
+\end{equation}
+The last equality holds because $\gamma\tau+\delta=iz$ and $\alpha\tau+\beta=(-1+i\alpha z)/\gamma$. Then $\tau=N_{\gamma,\delta}\tau'$, and $j_{\gamma,\delta}(\tau')=-\gamma\tau'+\alpha=-i/z$. Since $\operatorname{Re}z>0$, $\Arg(-i/z)=-\frac\pi2-\Arg z\in(-\pi,0)$, so $\Log j_{\gamma,\delta}(\tau')=-\Log z-\frac{\pi i}2$ and
+\begin{equation}\label{circ:jz}
+j_{\gamma,\delta}(\tau')^{-13/2}=e^{13\pi i/4}z^{13/2}=e^{-3\pi i/4}z^{13/2}.
+\end{equation}
+
+\begin{lemma}\label{circ:lem:zbounds}
+Let $1\le\gamma\le N$ and $|\varphi|\le\frac1{\gamma N}$. Then $\operatorname{Re}z=\gamma/N^2$, $|z|\le\sqrt2/N$, $\gamma|z|\le\sqrt2$ and $\operatorname{Im}\tau'=\operatorname{Re}\frac1{\gamma z}\ge\frac12$. If moreover $|\varphi|\ge\frac1{2\gamma N}$, then $\operatorname{Re}\frac1{\gamma z}\le4$.
+\end{lemma}
+
+\begin{proof}
+$|z|^2=\gamma^2(N^{-4}+\varphi^2)\le\gamma^2N^{-4}+N^{-2}\le2N^{-2}$, using $\gamma\le N$. Next $\operatorname{Re}\frac1{\gamma z}=\frac{N^{-2}}{\gamma^2(N^{-4}+\varphi^2)}$, which is at least $\frac{N^{-2}}{\gamma^2N^{-4}+N^{-2}}=\frac1{1+\gamma^2N^{-2}}\ge\frac12$, and, if $\varphi^2\ge\frac1{4\gamma^2N^2}$, at most $N^{-2}\cdot4N^2=4$.
+\end{proof}
+
+\begin{lemma}[The arc integral]\label{circ:lem:arc}
+Let $1\le\gamma\le N$, $(\gamma,\delta)\in\mathcal C_\gamma$, $r\ge1$, $A>0$, $B>0$, and $z$ as in \eqref{circ:z}. Then
+\[
+\int_{-\omega'_{\gamma,\delta}}^{\omega''_{\gamma,\delta}}z^r\exp\Big(\frac{2\pi}\gamma\Big(\frac Az+Bz\Big)\Big)d\varphi=\frac{2\pi}\gamma\Big(\frac AB\Big)^{\frac{r+1}2}I_{r+1}\Big(\frac{4\pi\sqrt{AB}}\gamma\Big)+\varepsilon,
+\]
+where $|\varepsilon|\le2^{r+2}e^{8\pi(A+B)}\gamma^{-1}N^{-r-1}$.
+\end{lemma}
+
+\begin{proof}
+Write $\Psi(z)=z^re^{\frac{2\pi}\gamma(A/z+Bz)}$ and split the interval as $[-\frac1{\gamma N},\frac1{\gamma N}]$ minus $[-\frac1{\gamma N},-\omega')$ and $(\omega'',\frac1{\gamma N}]$ (both nonempty or empty half-open intervals, by Lemma~\ref{circ:lem:farey}). On the two removed pieces $\frac1{2\gamma N}\le|\varphi|\le\frac1{\gamma N}$, so by Lemma~\ref{circ:lem:zbounds} $|\Psi(z)|\le(\sqrt2/N)^re^{8\pi A}e^{2\pi B/N^2}$; each piece has length at most $\frac1{2\gamma N}$, so together they contribute at most $2^{r/2}e^{8\pi A+2\pi B}/(\gamma N^{r+1})$.
+
+On the symmetric interval, $d\varphi=\frac i\gamma dz$ and $z$ runs down the segment from $z_1=\frac\gamma{N^2}+\frac iN$ to $z_2=\bar z_1$. Put $t=1/z$; then $z^r=t^{-r}$ (as $\Arg t=-\Arg z$), $dz=-dt/t^2$, and $t$ runs from $t_1=1/z_1=c-iT$ to $t_2=c+iT$ along the arc of the circle $|t-\frac{N^2}{2\gamma}|=\frac{N^2}{2\gamma}$ (the image of the line $\operatorname{Re}z=\gamma/N^2$) through $t=N^2/\gamma$, where
+\[
+c=\frac{\gamma N^2}{\gamma^2+N^2},\qquad T=\frac{N^3}{\gamma^2+N^2}\ge\frac N2 .
+\]
+This arc is the part of the circle in $\{\operatorname{Re}t\ge c\}$, and $t^{-r-2}e^{\frac{2\pi}\gamma(At+B/t)}$ is holomorphic on $\operatorname{Re}t>0$; by Cauchy's theorem the arc may be replaced by the segment $[t_1,t_2]$. Hence
+\[
+\begin{aligned}
+\int_{-1/\gamma N}^{1/\gamma N}\Psi\,d\varphi&=-\frac i\gamma\int_{c-iT}^{c+iT}t^{-r-2}e^{\frac{2\pi}\gamma(At+B/t)}dt\\
+&=\frac{2\pi}\gamma\cdot\frac1{2\pi i}\Big(\int_{c-i\infty}^{c+i\infty}-\int_{|\operatorname{Im}t|>T}\Big)t^{-r-2}e^{\frac{2\pi}\gamma(At+B/t)}dt .
+\end{aligned}
+\]
+The full line gives the main term by \eqref{circ:hankel2}. On $t=c+is$, $|s|>T$: $\frac{2\pi}\gamma Ac=\frac{2\pi AN^2}{\gamma^2+N^2}\le2\pi A$ and $\frac{2\pi B}\gamma\operatorname{Re}\frac1t=\frac{2\pi Bc}{\gamma(c^2+s^2)}\le\frac{2\pi B}{T^2}\le8\pi B$; so the tail is at most $\frac1\gamma\cdot2e^{2\pi A+8\pi B}\int_T^\infty s^{-r-2}ds\le\frac{2^{r+2}}{(r+1)}\frac{e^{2\pi A+8\pi B}}{\gamma N^{r+1}}$. Adding the two errors and using $2^{r/2}+2^{r+2}/(r+1)\le2^{r+2}$ for $r\ge1$ gives the bound.
+\end{proof}
+
+\begin{lemma}\label{circ:lem:fbound}
+For $\gamma\ge1$, $\displaystyle\sum_{g=-m\gamma}^{m\gamma-1}\sup_{u\in\RR}|f_{\gamma,g}(u)|\le\frac{\pi^4m^2\gamma^2}2$.
+\end{lemma}
+
+\begin{proof}
+For $g=0$, $f_{\gamma,0}(u)=\pi^2(\sinh^{-2}y-y^{-2})$ with $y=\pi u/\gamma$, and $\sinh^{-2}y-y^{-2}\in[-\frac13,0)$, so $|f_{\gamma,0}|\le\pi^2/3$. For $0<|g|\le m\gamma$, $|\sinh(a-ib)|^2=\sinh^2a+\sin^2b\ge\sin^2b$ with $b=\pi g/2m\gamma$, $|b|\le\frac\pi2$, and $|\sin b|\ge\frac2\pi|b|=|g|/m\gamma$; so $|f_{\gamma,g}|\le\pi^2m^2\gamma^2/g^2$. Summing, $\frac{\pi^2}3+2\pi^2m^2\gamma^2\zeta(2)\le\frac{\pi^4m^2\gamma^2}2$.
+\end{proof}
+
+The next lemma extracts from (T2) the transformation of the shadow. With $\lambda_{\gamma,\delta}=1$ it is the classical transformation law of the vector $(\vartheta_\ell)$, proved directly in Lemma~\ref{tr:lem:theta}; the argument below shows that it is forced by (T2).
+
+\begin{lemma}\label{circ:lem:theta}
+For $(\gamma,\delta)\in\mathcal C_\gamma$, $0\le\ell<2m$ and $u\in\HH$,
+\[
+\vartheta_\ell(N^*_{\gamma,\delta}u)=\lambda_{\gamma,\delta}^{-1}(\gamma u+\alpha)^{1/2}\sum_{\ell'=0}^{2m-1}W_{\gamma,\delta}(\ell',\ell)\,\vartheta_{\ell'}(u).
+\]
+\end{lemma}
+
+\begin{proof}
+Write $N,j,\lambda,W$ without indices. The function $(\tau,s)\mapsto\int_s^{i\infty}\vartheta_\ell(w)(w+\tau)^{-3/2}dw$ is holomorphic on $\HH\times\HH$ (the integrand is holomorphic in $(w,\tau)$, as $w+\tau\in\HH$, and decays like $(\operatorname{Im}w)^{-3/2}$ uniformly on compacta), and $E_\ell(\tau)$ is its value at $s=-\bar\tau$. Hence, by \eqref{circ:thetaconj},
+\[
+\partial_{\bar\tau}E_\ell(\tau)=\vartheta_\ell(-\bar\tau)(\tau-\bar\tau)^{-3/2}=\overline{\vartheta_\ell(\tau)}\,(2i\tau_2)^{-3/2}\qquad(\tau_2=\operatorname{Im}\tau),
+\]
+and $\partial_{\bar\tau}\hh_{F,\ell}=\kappa_mG_F(\tau)\overline{\vartheta_\ell(\tau)}(2i\tau_2)^{-3/2}$. Apply $\partial_{\bar\tau}$ to \eqref{circ:T2}. On the left, by the chain rule and $\frac{d}{d\tau}N\tau=j(\tau)^{-2}$, we get $(\partial_{\bar w}\hh_{I,\ell})(N\tau)\,\overline{j(\tau)}^{-2}$, and $\operatorname{Im}N\tau=\tau_2/|j|^2$, so $(2i\operatorname{Im}N\tau)^{-3/2}=|j|^3(2i\tau_2)^{-3/2}$. Cancelling $\kappa_m(2i\tau_2)^{-3/2}\ne0$ and using (T2a),
+\[
+G_F(\tau)\Big[\lambda\,j^{-8}|j|^3\bar j^{-2}\,\overline{\vartheta_\ell(N\tau)}-j^{-13/2}\sum_{\ell'}W(\ell',\ell)\overline{\vartheta_{\ell'}(\tau)}\Big]=0 .
+\]
+The zeros of $G_F\not\equiv0$ are isolated and the bracket is continuous, so the bracket vanishes on $\HH$. Since $j(\tau)$ lies in the lower half-plane, $\Arg\bar j=-\Arg j$ and $|j|^3=j^{3/2}\bar j^{3/2}$; thus $j^{-8}|j|^3\bar j^{-2}=j^{-13/2}\bar j^{-1/2}$ and $\overline{\vartheta_\ell(N\tau)}=\lambda^{-1}\bar j^{1/2}\sum_{\ell'}W(\ell',\ell)\overline{\vartheta_{\ell'}(\tau)}$. Take $\tau=-\bar u$. By \eqref{circ:Nstar} and \eqref{circ:thetaconj}, $\overline{\vartheta_\ell(N(-\bar u))}=\overline{\vartheta_\ell(-\overline{N^*u})}=\vartheta_\ell(N^*u)$, $\overline{\vartheta_{\ell'}(-\bar u)}=\vartheta_{\ell'}(u)$, and $\overline{j(-\bar u)}=\gamma u+\alpha$.
+\end{proof}
+
+\begin{proposition}[The transformation on an arc]\label{circ:prop:arc}
+Let $(\gamma,\delta)\in\mathcal C_\gamma$, $F=F(\gamma,\delta)$, $\operatorname{Re}z>0$, and let $\tau,\tau'$ be as in \eqref{circ:z}. Then for $0\le\ell<2m$
+\begin{equation}\label{circ:arcformula}
+\begin{aligned}
+h_{I,\ell}(\tau)={}&e^{-3\pi i/4}z^{13/2}\sum_{\ell'=0}^{2m-1}W_{\gamma,\delta}(\ell',\ell)\,h_{F,\ell'}(\tau')\\
+&-\frac{\sqrt m}{2\sqrt2\,\pi}e^{-3\pi i/4}z^{13/2}G_F(\tau')\sum_{g=-m\gamma}^{m\gamma-1}W_{\gamma,\delta}(g,\ell)\,\e\Big(-\frac{\alpha g^2}{4m\gamma}\Big)\\
+&\qquad\times\Big[2\cdot\mathbf 1_{g=0}(\gamma z)^{1/2}-\frac z{\sqrt{2m}\,\pi\gamma}\int_\RR e^{-\frac{2\pi mu^2}{\gamma z}}f_{\gamma,g}(u)\,du\Big].
+\end{aligned}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Write $N,N^*,j,\lambda,W$ without indices, and
+\[
+\Phi_\ell(\tau')=h_{I,\ell}(N\tau')-j(\tau')^{-13/2}\sum_{\ell'}W(\ell',\ell)h_{F,\ell'}(\tau').
+\]
+By \eqref{circ:T2} and \eqref{circ:T2b},
+\[
+\Phi_\ell(\tau')=\kappa_m\Big[j(\tau')^{-13/2}G_F(\tau')\sum_{\ell'}W(\ell',\ell)E_{\ell'}(\tau')-G_I(N\tau')E_\ell(N\tau')\Big].
+\]
+\emph{Path independence.} For $a\in\HH$ and $\tau\in\HH$ the integral of $\vartheta_\ell(w)(w+\tau)^{-3/2}$ from $a$ to $i\infty$ is the same along every piecewise smooth path in $\HH$ that is vertical from some point on: for $\operatorname{Im}w\ge1$ one has $|\vartheta_\ell(w)|\le\sum_r e^{-\pi r^2/2m}$ and $|(w+\tau)^{-3/2}|\le(\operatorname{Im}w)^{-3/2}$, so horizontal connecting segments of bounded length at height $Y$ contribute $O(Y^{-3/2})$, and Cauchy's theorem applies. Also $|\vartheta_\ell(x+it)|\le2+(2mt)^{-1/2}$ for $t>0$ (compare the sum over the progression $r\equiv\ell\pmod{2m}$ with an integral).
+
+\emph{Change of variables.} Put $\tau=N\tau'$; by \eqref{circ:Nstar}, $-\bar\tau=N^*(-\bar\tau')$. Write $E_\ell(\tau)$ as the integral along the segment from $-\bar\tau$ to $w_1=\frac\delta\gamma+i(\operatorname{Im}\tau+1)$ followed by the vertical ray from $w_1$ upwards. Substitute $w=N^*u$: the segment becomes a path $\Sigma$ in $\HH$ from $-\bar\tau'$ to $u_1=(N^*)^{-1}w_1$, and, since $N^*(-\frac\alpha\gamma+it)=\frac\delta\gamma+\frac i{\gamma^2t}$, the ray becomes the vertical segment from $u_1$ down to $-\alpha/\gamma$, which we call $\Sigma'$. By Lemma~\ref{circ:lem:theta}, \eqref{circ:Nstar} and $dw=(\gamma u+\alpha)^{-2}du$,
+\[
+E_\ell(\tau)=\lambda^{-1}\sum_{\ell'}W(\ell',\ell)\int_{\Sigma\cup\Sigma'}\vartheta_{\ell'}(u)\,(\gamma u+\alpha)^{1/2}\Big(\frac{u+\tau'}{(\gamma u+\alpha)j(\tau')}\Big)^{-3/2}(\gamma u+\alpha)^{-2}du .
+\]
+For $u,\tau'\in\HH$ the four numbers $u+\tau'$, $\gamma u+\alpha$, $\overline{j(\tau')}$ and $w+\tau=\frac{u+\tau'}{(\gamma u+\alpha)j(\tau')}$ lie in $\HH$, so $\Arg(u+\tau')-\Arg(\gamma u+\alpha)-\Arg j(\tau')-\Arg(w+\tau)\in2\pi\ZZ$ is a continuous function on the connected set $\HH\times\HH$, hence constant; at $u=\tau'=it$ it is $\frac\pi2-\vartheta_0+\vartheta_0-\frac\pi2=0$ with $\vartheta_0=\Arg(\alpha+i\gamma t)$. Therefore $(w+\tau)^{-3/2}=(u+\tau')^{-3/2}(\gamma u+\alpha)^{3/2}j(\tau')^{3/2}$, the powers of $\gamma u+\alpha$ cancel, and
+\[
+E_\ell(N\tau')=\lambda^{-1}j(\tau')^{3/2}\sum_{\ell'}W(\ell',\ell)\int_{\Sigma\cup\Sigma'}\vartheta_{\ell'}(u)(u+\tau')^{-3/2}du .
+\]
+With (T2a), $G_I(N\tau')E_\ell(N\tau')=j(\tau')^{-13/2}G_F(\tau')\sum_{\ell'}W(\ell',\ell)\int_{\Sigma\cup\Sigma'}$. On the other hand $E_{\ell'}(\tau')$ is, by path independence, the integral along $\Sigma$ followed by the vertical ray from $u_1$ upwards. Subtracting,
+\begin{equation}\label{circ:period}
+\Phi_\ell(\tau')=\kappa_m\,j(\tau')^{-13/2}G_F(\tau')\sum_{\ell'}W(\ell',\ell)\int_{-\alpha/\gamma}^{i\infty}\vartheta_{\ell'}(u)\,(u+\tau')^{-3/2}\,du,
+\end{equation}
+the integral along the vertical line $\operatorname{Re}u=-\alpha/\gamma$; it converges absolutely by the bound for $|\vartheta_{\ell'}(x+it)|$.
+
+\emph{Evaluation.} Let $u=-\frac\alpha\gamma+it$ and $X=\frac1{\gamma z}$, so $\operatorname{Re}X>0$ and $u+\tau'=i(t+X)$ by \eqref{circ:z}. As $\Arg i+\Arg(t+X)\in(0,\pi)$, $(u+\tau')^{-3/2}=i^{-3/2}(t+X)^{-3/2}$, and $du=i\,dt$. Splitting $r=g+2m\gamma p$ with $g\in[-m\gamma,m\gamma)$ and using $\e(-\alpha r^2/4m\gamma)=\e(-\alpha g^2/4m\gamma)$,
+\[
+\vartheta_{\ell'}\Big(-\frac\alpha\gamma+it\Big)=\sum_{\substack{-m\gamma\le g<m\gamma\\ g\equiv\ell'\,(2m)}}\e\Big(-\frac{\alpha g^2}{4m\gamma}\Big)\theta_{\gamma,g}(t).
+\]
+By Lemma~\ref{circ:lem:weil}, $\sum_{\ell'}W(\ell',\ell)\sum_{g\equiv\ell'}=\sum_{g=-m\gamma}^{m\gamma-1}W(g,\ell)$. Lemma~\ref{circ:lem:mordell} with $X^{-1/2}=(\gamma z)^{1/2}$, $X^{-1}=\gamma z$, together with $\kappa_m i^{-1/2}=-\frac{\sqrt m}{2\sqrt2\pi}$ and \eqref{circ:jz}, turns \eqref{circ:period} into the second line of \eqref{circ:arcformula}; the first line is $j(\tau')^{-13/2}\sum W h_{F,\ell'}(\tau')$ by \eqref{circ:jz}.
+\end{proof}
+
+\subsection{Proof of Theorem~\ref{circ:thm}}\label{circ:proof}
+Fix $\ell$, $n$ with $D=2mn-\ell^2>0$, $B=D/4m$, and an integer $N\ge1$. Write $W=W_{\gamma,\delta}$ when $(\gamma,\delta)$ is clear.
+
+\emph{Step 1: the coefficient as an integral.} By (T1) and Proposition~\ref{circ:prop:input}, $h_{I,\ell}(\tau)\e(-D\tau/4m)=\sum_{n'}c^F_m(n',\ell)\e((n'-n)\tau/2)$, an absolutely and uniformly convergent series on the line $\operatorname{Im}\tau=N^{-2}$ (a Laurent series in $\e(\tau/2)$ with finitely many negative powers). Integrating termwise over a period of length $2$,
+\begin{equation}\label{circ:cauchy}
+c^F_m(n,\ell)=\frac12\int_{-1/(N+1)}^{2-1/(N+1)}h_{I,\ell}\Big(x+\frac i{N^2}\Big)\,\e\Big(-\frac D{4m}\Big(x+\frac i{N^2}\Big)\Big)dx .
+\end{equation}
+By Lemma~\ref{circ:lem:farey} the interval is the union of the arcs $J_{\gamma,\delta}$, $\gamma\le N$. On $J_{\gamma,\delta}$ write $x=-\delta/\gamma+\varphi$, $\varphi\in[-\omega',\omega'']$, so that $x+i/N^2=\tau$ with $z,\tau,\tau'$ as in \eqref{circ:z}, and
+\begin{equation}\label{circ:phaseD}
+\e\Big(-\frac{D\tau}{4m}\Big)=\e\Big(\frac{\delta D}{4m\gamma}\Big)\exp\Big(\frac{2\pi}\gamma Bz\Big),\qquad\Big|\exp\Big(\frac{2\pi}\gamma Bz\Big)\Big|=e^{2\pi B/N^2}\le e^{2\pi B}.
+\end{equation}
+By Lemma~\ref{circ:lem:zbounds}, $\operatorname{Im}\tau'\ge\frac12$ on every arc, so \eqref{circ:rembound} applies at $\tau'$.
+
+\emph{Step 2: decomposition of the integrand.} Insert \eqref{circ:arcformula}, and in it the expansions (T3) at $\tau'$. Since $\e(\tilde D\tau'/4m)=\e(\alpha\tilde D/4m\gamma)\exp(\frac{2\pi}\gamma\frac{|\tilde D|}{4mz})$ and $\e(-\mu_F\tau')=\e(-\alpha\mu_F/\gamma)\exp(\frac{2\pi}\gamma\frac{\mu_F}z)$, the integrand of \eqref{circ:cauchy} on $J_{\gamma,\delta}$ equals $\e(\delta D/4m\gamma)$ times the sum of the following terms, with $F=F(\gamma,\delta)$ and $\kappa'=\sqrt m/(2\sqrt2\pi)$:
+\begin{align*}
+\Pi_1&=e^{-3\pi i/4}\sum_{(\tilde\nu,\tilde\ell)\in P_F}a_F(\tilde\nu,\tilde\ell)\,\e\Big(\frac{\alpha\tilde D}{4m\gamma}\Big)W(\tilde\ell,\ell)\,z^{13/2}e^{\frac{2\pi}\gamma(\frac{|\tilde D|}{4mz}+Bz)},\\
+\Pi_2&=-e^{-3\pi i/4}\kappa'\cdot2\gamma^{1/2}c_F\,\e\Big(-\frac{\alpha\mu_F}\gamma\Big)W(0,\ell)\,z^{7}e^{\frac{2\pi}\gamma(\frac{\mu_F}z+Bz)},\\
+\Pi_3&=e^{-3\pi i/4}\frac{\kappa'}{\sqrt{2m}\,\pi\gamma}c_F\,\e\Big(-\frac{\alpha\mu_F}\gamma\Big)\sum_gW(g,\ell)\e\Big(-\frac{\alpha g^2}{4m\gamma}\Big)\\
+&\qquad\times\int_{|u|<u_F}f_{\gamma,g}(u)\,z^{15/2}e^{\frac{2\pi}\gamma(\frac{\mu_F-mu^2}z+Bz)}du,
+\end{align*}
+and the error terms
+\begin{align*}
+\Xi_1&=e^{-3\pi i/4}z^{13/2}\sum_{\ell'}W(\ell',\ell)\Big(h_{F,\ell'}(\tau')-\sum_{P_F}a_F\e\Big(\frac{\tilde D\tau'}{4m}\Big)\Big)e^{\frac{2\pi}\gamma Bz},\\
+\Xi_2&=-e^{-3\pi i/4}\kappa'\,z^{13/2}\big(G_F(\tau')-c_F\e(-\mu_F\tau')\big)W(0,\ell)\cdot2(\gamma z)^{1/2}e^{\frac{2\pi}\gamma Bz},\\
+\Xi_3&=e^{-3\pi i/4}\frac{\kappa'z^{15/2}}{\sqrt{2m}\,\pi\gamma}\sum_gW(g,\ell)\e\Big(-\frac{\alpha g^2}{4m\gamma}\Big)\Big[\big(G_F(\tau')-c_F\e(-\mu_F\tau')\big)\int_\RR e^{-\frac{2\pi mu^2}{\gamma z}}f_{\gamma,g}\,du\\
+&\hspace{14em}+c_F\e(-\mu_F\tau')\int_{|u|\ge u_F}e^{-\frac{2\pi mu^2}{\gamma z}}f_{\gamma,g}\,du\Big]e^{\frac{2\pi}\gamma Bz}.
+\end{align*}
+Here $\sum_g$ runs over $-m\gamma\le g<m\gamma$, and we used $z^{13/2}(\gamma z)^{1/2}=\gamma^{1/2}z^7$ and $z^{13/2}z=z^{15/2}$ (principal powers of $z$, $\operatorname{Re}z>0$), and exchanged the order of $\sum_g$ and $\int du$ (finite sum). Note $\kappa'/(\sqrt{2m}\pi)=1/(4\pi^2)$ and $4\pi\kappa'=\sqrt{2m}$.
+
+\emph{Step 3: the error terms.} We use Lemma~\ref{circ:lem:weil} ($|W|\le\sqrt{\gamma/2m}\le\sqrt{N/2m}$), Lemma~\ref{circ:lem:zbounds}, \eqref{circ:rembound}, \eqref{circ:phaseD}, and the fact that the arcs have total length $2$; the factor $\frac12$ of \eqref{circ:cauchy} then cancels the length.
+\begin{itemize}
+\item $|\Xi_1|\le(\sqrt2/N)^{13/2}\cdot2m\sqrt{N/2m}\cdot C_he^{2\pi B}=2^{13/4}\sqrt{2m}\,C_he^{2\pi B}N^{-6}$.
+\item $|\Xi_2|\le\kappa'(\sqrt2/N)^{13/2}C_G\sqrt{N/2m}\cdot2\cdot2^{1/4}e^{2\pi B}=\frac{2^{5/2}}\pi C_Ge^{2\pi B}N^{-6}$, using $\gamma|z|\le\sqrt2$.
+\item In $\Xi_3$, $|e^{-2\pi mu^2/\gamma z}|=e^{-2\pi mu^2\operatorname{Re}(1/\gamma z)}\le e^{-\pi mu^2}$, and for $|u|\ge u_F$,
+\[
+|\e(-\mu_F\tau')e^{-2\pi mu^2/\gamma z}|=e^{-2\pi(mu^2-\mu_F)\operatorname{Re}(1/\gamma z)}\le e^{-\pi m(u^2-u_F^2)}\le e^{-\pi m(|u|-u_F)^2}.
+\] Both Gaussian integrals are at most $m^{-1/2}$. With Lemma~\ref{circ:lem:fbound},
+\[
+|\Xi_3|\le\frac{(\sqrt2/N)^{15/2}}{4\pi^2\gamma}\sqrt{\frac\gamma{2m}}\,\frac{C_G+c_*}{\sqrt m}\,\frac{\pi^4m^2\gamma^2}2e^{2\pi B}\le2^{1/4}\pi^2m\,(C_G+c_*)e^{2\pi B}N^{-6},
+\]
+using $\gamma^{3/2}\le N^{3/2}$.
+\end{itemize}
+So the error terms contribute at most $\big(2^{13/4}\sqrt{2m}C_h+\frac{2^{5/2}}\pi C_G+2^{1/4}\pi^2m(C_G+c_*)\big)e^{2\pi B}N^{-6}$ to \eqref{circ:cauchy}.
+
+\emph{Step 4: the principal terms.} Apply Lemma~\ref{circ:lem:arc} on $J_{\gamma,\delta}$: to $\Pi_1$ termwise with $r=\frac{13}2$, $A=|\tilde D|/4m\le A_*$; to $\Pi_2$ with $r=7$, $A=\mu_F$; and to $\Pi_3$, after exchanging $\int d\varphi$ and $\int du$ (continuous integrand on a compact set), for each $u$ with $|u|<u_F$, with $r=\frac{15}2$ and $A=\mu_F-mu^2\in(0,\mu_*]$. Since
+\[
+\frac{4\pi}\gamma\sqrt{\frac{|\tilde D|}{4m}\cdot\frac D{4m}}=\frac{\pi\sqrt{|\tilde D|D}}{m\gamma},\qquad\frac{4\pi}\gamma\sqrt{\frac{\mu_F D}{4m}}=\frac{2\pi}\gamma\sqrt{\frac{\mu_FD}m},
+\]
+\[
+\Big(\frac{4m(\mu_F-mu^2)}D\Big)^{\frac{17}4}=\Big(\frac{4m\mu_F}D\Big)^{\frac{17}4}\Big(1-\frac{mu^2}{\mu_F}\Big)^{\frac{17}4},
+\]
+and $2\pi\cdot2\kappa'=\sqrt{2m}$, $\frac{\kappa'}{\sqrt{2m}\pi}\cdot2\pi=\frac1{2\pi}$, the main terms of Lemma~\ref{circ:lem:arc} give exactly
+\[
+\begin{aligned}
+\frac12\,\e\Big(\frac{\delta D}{4m\gamma}\Big)\int_{J_{\gamma,\delta}}(\Pi_1+\Pi_2+\Pi_3)\,d\varphi={}&\frac12e^{-3\pi i/4}\big(\mathcal M_{\gamma,\delta}+\mathcal K_{2;\gamma,\delta}+\mathcal K_{3;\gamma,\delta}\big)\\
+&+\frac12\,\e\Big(\frac{\delta D}{4m\gamma}\Big)(\varepsilon_1+\varepsilon_2+\varepsilon_3),
+\end{aligned}
+\]
+where, by the error bound of Lemma~\ref{circ:lem:arc}, Lemma~\ref{circ:lem:weil} and Lemma~\ref{circ:lem:fbound},
+\[
+|\varepsilon_1|\le a_*\sqrt{\frac\gamma{2m}}\frac{2^{17/2}e^{8\pi(A_*+B)}}{\gamma N^{15/2}},
+\]
+\[
+|\varepsilon_2|\le2\kappa'\gamma^{1/2}c_*\sqrt{\frac\gamma{2m}}\frac{2^9e^{8\pi(\mu_*+B)}}{\gamma N^8},
+\]
+\[
+|\varepsilon_3|\le\frac{c_*}{4\pi^2\gamma}\sqrt{\frac\gamma{2m}}\,2u_*\frac{\pi^4m^2\gamma^2}2\,\frac{2^{19/2}e^{8\pi(\mu_*+B)}}{\gamma N^{17/2}},
+\]
+with $u_*=\sqrt{\mu_*/m}$. There are at most $2\gamma$ pairs in $\mathcal C_\gamma$. Summing $\frac12(|\varepsilon_1|+|\varepsilon_2|+|\varepsilon_3|)$ over them and over $\gamma\le N$, with $\sum_{\gamma\le N}\gamma^{1/2}\le N^{3/2}$, $\sum_{\gamma\le N}\gamma\le N^2$, $\sum_{\gamma\le N}\gamma^{3/2}\le N^{5/2}$ and $2\kappa'(2m)^{-1/2}=\frac1{2\pi}$, gives at most
+\[
+\frac{2^{17/2}a_*}{\sqrt{2m}}e^{8\pi(A_*+B)}N^{-6}+\frac{2^8}\pi c_*e^{8\pi(\mu_*+B)}N^{-6}+2^7\pi^2m\sqrt{\mu_*}\,c_*e^{8\pi(\mu_*+B)}N^{-6}.
+\]
+
+\emph{Step 5: conclusion.} Steps 1--4 give \eqref{circ:errN}. The absolute convergence and the limit $N\to\infty$ follow from the next lemma, which shows that $\mathcal M^{(N)}+\mathcal K_2^{(N)}+\mathcal K_3^{(N)}\to\mathcal M+\mathcal K_2+\mathcal K_3$; letting $N\to\infty$ in \eqref{circ:errN} gives \eqref{circ:main}. \qed
+
+\begin{lemma}\label{circ:lem:conv}
+There is a constant $C$, depending on $m,D$ and the data of \textup{(T3)}, such that $|\mathcal M_{\gamma,\delta}|+|\mathcal K_{2;\gamma,\delta}|+|\mathcal K_{3;\gamma,\delta}|\le C\gamma^{-8}$ for all $(\gamma,\delta)\in\mathcal C_\gamma$. In particular the three series converge absolutely, and their tails over $\gamma>N$ are at most $2C\sum_{\gamma>N}\gamma^{-7}\le\frac C3N^{-6}$.
+\end{lemma}
+
+\begin{proof}
+Use $|W|\le\sqrt{\gamma/2m}$ and $I_\nu(x/\gamma)\le\gamma^{-\nu}I_\nu(x)$ for $\gamma\ge1$ (Lemma~\ref{circ:lem:bessel}). In $\mathcal M_{\gamma,\delta}$ the factor
+\[
+(|\tilde D|/D)^{15/4}I_{15/2}\big(\pi\sqrt{|\tilde D|D}/m\gamma\big)
+\]
+is increasing in $|\tilde D|\le4mA_*$, so
+\[
+|\mathcal M_{\gamma,\delta}|\le a_*\sqrt{\gamma/2m}\,\frac{2\pi}\gamma\,\gamma^{-15/2}(A_*/B)^{15/4}I_{15/2}(4\pi\sqrt{A_*B}).
+\]
+Similarly
+\[
+|\mathcal K_{2;\gamma,\delta}|\le\sqrt{2m}\gamma^{-1/2}c_*\sqrt{\gamma/2m}\,\gamma^{-8}(\mu_*/B)^4I_8(4\pi\sqrt{\mu_*B}).
+\]
+In $\mathcal K_3$, $(1-mu^2/\mu_F)^{17/4}\le1$ and $I_{17/2}(\frac{2\pi}\gamma\sqrt{(\mu_F-mu^2)D/m})\le\gamma^{-17/2}I_{17/2}(4\pi\sqrt{\mu_*B})$, so by Lemma~\ref{circ:lem:fbound}
+\[
+|\mathcal K_{3;\gamma,\delta}|\le\frac{\gamma^{-2}}{2\pi}c_*\sqrt{\gamma/2m}\,(\mu_*/B)^{17/4}\,2u_*\frac{\pi^4m^2\gamma^2}2\gamma^{-17/2}I_{17/2}(4\pi\sqrt{\mu_*B}).
+\]
+Each bound is $O(\gamma^{-8})$, and $|\mathcal C_\gamma|\le2\gamma$.
+\end{proof}
+
+\subsection{Remarks}\label{circ:remarks}
+
+\begin{remark}[Signs and normalisations]
+The derivation fixes every constant of \eqref{eq:radmain}--\eqref{eq:radK3}: the factor $\frac12$ (width of $\infty$), the phase $e^{-3\pi i/4}=j^{-13/2}z^{-13/2}$ of \eqref{circ:jz}, the factor $2\pi/\gamma$ and the Bessel orders $r+1=\frac{15}2,8,\frac{17}2$ of Lemma~\ref{circ:lem:arc} for $r=\frac{13}2,7,\frac{15}2$, the coefficient $-\sqrt{2m}\gamma^{-1/2}$ of $\mathcal K_2$ (from the term $2X^{-1/2}$ of Lemma~\ref{circ:lem:mordell}) and $\frac1{2\pi}\gamma^{-2}$ of $\mathcal K_3$, both through $\kappa_m$, i.e.\ through the normalisation of the completion term forced by the invariance of $\widehat{\mathcal A}$ (Proposition~\ref{tr:prop:Ahat}). With $W_{\gamma,\delta}$ as in \eqref{eq:weil} and the frame data \eqref{eq:mockdata}, the result is the right side of \eqref{eq:hypR}. Three features of the formula are forced by the derivation, and each would change under a wrong convention: $W$ enters with the polar index in the first slot and the charge index $\ell$ in the second; the phase of $\mathcal K_3$ carries $-\alpha g^2$ (from $\vartheta_{\ell'}(-\alpha/\gamma+it)$, Lemma~\ref{circ:lem:theta} being an identity for $\vartheta_\ell\circ N^*$, not $\vartheta_\ell\circ N$); and $\mathcal K_2$ and $\mathcal K_3$ have opposite signs relative to the $g=0$ term of $\mathcal K_3$.
+\end{remark}
+
+\begin{remark}[What is not used]
+No Kloosterman cancellation is used: all sums over $\delta$ are estimated by $|\mathcal C_\gamma|\le2\gamma$ and the trivial bound for $W$. The only properties of the remainder series in (T3) that are used are \eqref{circ:rembound}, which follows from absolute convergence at height $\frac12$; terms with exponent $0$ (constant terms) are harmless because the weight is negative. Lemma~\ref{circ:lem:theta} shows that (T2b) forces the shadow to transform by the matrix $W$ under $N^*_{\gamma,\delta}$, in agreement with the classical transformation of Lemma~\ref{tr:lem:theta}.
+\end{remark}
+
+\begin{proof}[Proof of Theorem~\textup{\ref{thm:rad}}]
+By Proposition~\ref{circ:prop:input} the finite part has the properties (T1)--(T3) with the data of Section~\ref{sec:rademacher}, so Theorem~\ref{circ:thm} applies; for $0\le\ell\le m$ its second form is \eqref{eq:hypR}, and the absolute convergence is part of it.
+\end{proof}

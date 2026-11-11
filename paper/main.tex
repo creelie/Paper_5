@@ -14,10 +14,10 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{remark}[theorem]{Remark}
-\newtheorem{hypothesis}{Hypothesis}
-\renewcommand{\thehypothesis}{R}
 
 \newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\HH}{\mathbb{H}}
 \newcommand{\QQ}{\mathbb{Q}}
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\Phit}{\widetilde\Phi}
@@ -28,6 +28,9 @@
 \newcommand{\pA}{\phi_{-2,1}}
 \newcommand{\pB}{\phi_{0,1}}
 \newcommand{\e}{\mathbf e}
+\newcommand{\hh}{\widehat h}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arg}{Arg}
 \newcommand{\Dexact}{800}
 \newcommand{\Norbits}{22972}
 \newcommand{\Qmaxexact}{28}
@@ -141,10 +144,8 @@ Every charge with $Q^2\in\{1,2\}$, $P^2>0$ and $D>0$ lies in $\mathcal A$.
 If $m_1=0$, the condition $m_1\mid s(s+1)$ reads $s(s+1)=0$, and the bracket is $m^2(2s+1)^2=m^2$. If $m_1\ne0$, then $m_1^2\ge4\ge m^2$ and $D\ge1$, so the bracket is at least $m^2$.
 \end{proof}
 
-So for $Q^2\in\{1,2\}$ the theorem is the statement that $(-1)^{\ell+1}c^F_m(n,\ell)>0$ whenever $D>0$.
-
 \subsection{A positivity lemma}
-The last step in both cases divides a series of known sign pattern by $g$.
+The last step of Section~\ref{sec:Q1} divides a series of known sign pattern by $g$.
 
 \begin{lemma}\label{lem:product}
 Let $f=-1+\sum_{n\ge1}a_nx^n$ with $a_n>K$ for every $n$, and let $0<e_r\le K$ for every $r\ge1$. Then $f\prod_{r\ge1}(1-x^r)^{-e_r}$ has positive coefficients at every $x^n$ with $n\ge1$.
@@ -229,222 +230,13 @@ In the $\ZZ_2$ CHL model, $d^*(Q,P)>0$ for every charge with $Q^2=1$, $P^2>0$ an
 By Lemma~\ref{lem:setA}, \eqref{eq:dstar} and Proposition~\ref{prop:Q1closed}, $d^*=(-1)^{\ell+1}\mathcal C(D)$ with $D=2n-\ell^2\equiv\ell\pmod2$. If $D$ is odd, every argument of $\mathcal N$ in \eqref{eq:Q1coeff} is odd, so every term is nonnegative by Lemma~\ref{lem:Q1signs}, and the term $j=0$ is $\mathcal N(D+2)>0$. If $D=2u$ is even, $-\mathcal C(2u)$ is the coefficient of $x^{u+1}$ in $f\prod_r(1-x^r)^{-e_r}$ with $f=\sum_{t\ge0}\big(-\mathcal N(2t)\big)x^t$. By Lemma~\ref{lem:Q1signs}, $f/2=-1+\sum_{t\ge1}a_tx^t$ with $a_t\ge48$, and Lemma~\ref{lem:product} with $K=16$ gives $-\mathcal C(2u)>0$. The orbits follow from the $\Gamma_1(2)$ invariance of $d^*$.
 \end{proof}
 
-\section{The second row: \texorpdfstring{$Q^2=2$}{Q2=2}}\label{sec:Q2}
-
-\subsection{The closed form}
-Let
-\begin{equation}\label{eq:fs}
-f_6=\tfrac5{189}E_6(\tfrac\sigma2)-\tfrac{68}{189}E_6(\sigma),\qquad
-f_4=\tfrac4{45}E_4(\tfrac\sigma2)+\tfrac{26}{45}E_4(\sigma),\qquad
-f_2=-\tfrac13\fE(\tfrac\sigma2),
-\end{equation}
-and $J_2=f_6A^2+f_4AB+f_2B^2$, a weak Jacobi form of weight $2$ and index $2$ for $\Gamma^0(2)$. Let $\cH|V_2$ be the image of $\cH$ under the Hecke-type operator $V_2$ of \cite[(4.37)]{DMZ12},
-\begin{equation}\label{eq:HV2}
-\cH|V_2=\sum_{n\ge0}\sum_{\ell\in\ZZ}C_2(8n-\ell^2)\,p^ny^\ell,\qquad C_2(\Delta)=H(\Delta)+2H(\Delta/4).
-\end{equation}
-
-\begin{proposition}\label{prop:P3}
-\begin{equation}\label{eq:P3}
-L_3+L_1L_2+\tfrac16L_1^3=\tfrac4{27}\big(B^3-3E_4(\sigma)A^2B+2E_6(\sigma)A^3\big)+A\,J_2 .
-\end{equation}
-\end{proposition}
-
-\begin{proof}
-By Lemma~\ref{lem:modular} both sides are Jacobi forms of weight $0$ and index three for $\Gamma(12)$, even and holomorphic in $v$ and weak at every cusp; the functions $E_k(\sigma/2)$ and $\fE(\sigma/2)$ are modular for $\Gamma^0(2)\supset\Gamma(12)$. Let $G$ be the difference and $\chi_\nu$ its Taylor coefficients in $v$, as in the proof of Proposition~\ref{prop:Q1closed}. Now $[PSL_2(\ZZ):\bar\Gamma(12)]=576$ and the width of $\infty$ is $12$, so by Sturm's theorem a modular form of weight $\nu$ for $\Gamma(12)$ vanishes once its coefficients vanish through $x^{8\nu}$. The coefficients of $G$ vanish through $x^{49}$ (we computed them in exact arithmetic for every monomial $x^ey^\ell$ with $e\le49$ and $|\ell|\le18$, which contains every monomial of these orders that a weak form of index three can carry), so $\chi_0=\chi_2=\chi_4=\chi_6=0$. Then $G(\sigma,\cdot)$ vanishes to order at least eight at $v=0$, while a nonzero function with the elliptic property of index three has six zeros in a period parallelogram \cite[Theorem~1.2]{EZ85}. Hence $G=0$.
-\end{proof}
-
-\begin{proposition}\label{prop:Q2closed}
-In the $\ZZ_2$ CHL model
-\begin{equation}\label{eq:Q2closed}
-g(\tfrac\sigma2)\,\varphi_2=256\,\mathcal A_{2,2}+J_2-256\,\cH|V_2 ,
-\end{equation}
-so that $g(\frac\sigma2)\varphi^F_2=J_2-256\,\cH|V_2$.
-\end{proposition}
-
-\begin{proof}
-Dabholkar, Murthy and Zagier \cite[(9.11)]{DMZ12} define
-\[
-\varphi^{\rm opt}_{2,2}=\frac{B^3-3E_4A^2B+2E_6A^3}{1728\,A},
-\]
-a meromorphic Jacobi form of weight $2$ and index $2$, and prove that its finite part $\varphi^{\rm opt}_{2,2}-\mathcal A_{2,2}$ equals $-\cH|V_2$ \cite[(9.13) and Theorem~9.1, proved in \S10]{DMZ12}. Divide \eqref{eq:P3} by $A$ and use \eqref{eq:phi12}: since $\frac4{27}\cdot1728=256$,
-\[
-g(\tfrac\sigma2)\,\varphi_2=256\,\varphi^{\rm opt}_{2,2}+J_2=256\,\mathcal A_{2,2}-256\,\cH|V_2+J_2 .
-\]
-The term $256\mathcal A_{2,2}/g(\sigma/2)$ is the polar part \eqref{eq:polar}, as $\hat f(2)=256$.
-\end{proof}
-
-\begin{remark}
-The index-two weak forms of weight two for $SL_2(\ZZ)$ are spanned by $E_6A^2$ and $E_4AB$, whose coefficients at the discriminants $-4,-1$ are $(1,-4)$ and $(1,8)$; so a weak form of this space with no polar terms vanishes. This is why the optimal choice of \cite{DMZ12} is forced at index two, and why the whole of the level-two dependence of $\varphi_2^F$ sits in the holomorphic form $J_2$.
-\end{remark}
-
-\subsection{The factorisation of \texorpdfstring{$J_2$}{J2}}
-Put $u=\theta_2(\sigma)^4$ and $w=\theta_4(\sigma)^4$, so that $\theta_3(\sigma)^4=u+w$ by Jacobi's identity. The classical identities
-\begin{equation}\label{eq:Eis}
-\begin{gathered}
-E_4(\sigma)=u^2+uw+w^2,\quad E_4(\tfrac\sigma2)=16u^2+16uw+w^2,\quad \fE(\tfrac\sigma2)=2u+w,\\
-E_6(\sigma)=w^3+\tfrac32uw^2-\tfrac32u^2w-u^3,\quad E_6(\tfrac\sigma2)=w^3-30uw^2-96u^2w-64u^3
-\end{gathered}
-\end{equation}
-hold between modular forms for $\Gamma(4)$ of weight at most six; by Sturm's theorem each reduces to the first coefficients, which agree \cite{Zag08}.\footnote{We checked each identity to $x^{100}$ in exact arithmetic, far beyond the Sturm bound $x^{12}$ for weight six on $\Gamma(4)$.} From \eqref{eq:fs},
-\begin{equation}\label{eq:fuw}
-f_2=-\tfrac13(2u+w),\qquad f_4=2u^2+2uw+\tfrac23w^2,\qquad f_6=-\tfrac43u^3-2u^2w-\tfrac43uw^2-\tfrac13w^3 .
-\end{equation}
-
-\begin{lemma}\label{lem:Y}
-For $k=2,3,4$,
-\[
-Y_k:=\frac{\theta_k(\sigma,v)^2}{\theta_k(\sigma)^2}=\frac{B}{12}-e_kA,\qquad e_2=-\frac{u+2w}{12},\quad e_3=\frac{w-u}{12},\quad e_4=\frac{2u+w}{12}.
-\]
-\end{lemma}
-
-\begin{proof}
-The quartic relations of Jacobi \cite[\S21.2]{WW21},
-\[
-\theta_1(\sigma,v)^2\theta_4^2=\theta_3(\sigma,v)^2\theta_2^2-\theta_2(\sigma,v)^2\theta_3^2,\qquad
-\theta_1(\sigma,v)^2\theta_3^2=\theta_4(\sigma,v)^2\theta_2^2-\theta_2(\sigma,v)^2\theta_4^2,
-\]
-with $\theta_k=\theta_k(\sigma)$, and $\eta^3=\frac12\theta_2\theta_3\theta_4$ give $Y_3-Y_2=\theta_1(\sigma,v)^2\theta_4^2/(\theta_2^2\theta_3^2)=-\frac{1}{4}\theta_4^4\,A$ and $Y_4-Y_2=-\frac14\theta_3^4A$, that is, $Y_3-Y_2=(e_2-e_3)A$ and $Y_4-Y_2=(e_2-e_4)A$. Together with $Y_2+Y_3+Y_4=B/4$ and $e_2+e_3+e_4=0$ this gives the lemma.
-\end{proof}
-
-\begin{proposition}\label{prop:J2theta}
-\begin{equation}\label{eq:J2theta}
-J_2=\frac{16\,Y_4}{w}\Big[u(4u+w)\,Y_2-(u+w)(4u+3w)\,Y_3\Big].
-\end{equation}
-Equivalently, with $\theta_k=\theta_k(\sigma)$,
-\[
-J_2=\frac{16\,\theta_4(\sigma,v)^2}{\theta_4^6}\Big[\theta_2^2\big(\theta_3^4+3\theta_2^4\big)\theta_2(\sigma,v)^2-\theta_3^2\big(3\theta_3^4+\theta_2^4\big)\theta_3(\sigma,v)^2\Big].
-\]
-\end{proposition}
-
-\begin{proof}
-By Lemma~\ref{lem:Y}, $B=12(Y_4+e_4A)$. Substituting into $J_2=f_6A^2+f_4AB+f_2B^2$,
-\[
-J_2=\big(f_6+12e_4f_4+144e_4^2f_2\big)A^2+\big(12f_4+288e_4f_2\big)AY_4+144f_2Y_4^2 .
-\]
-By \eqref{eq:fuw} the first bracket vanishes: its coefficients at $u^3,u^2w,uw^2,w^3$ are $-\frac43+4-\frac83$, $-2+6-4$, $-\frac43+\frac{10}3-2$ and $-\frac13+\frac23-\frac13$. The second bracket is $24u^2+24uw+8w^2-8(2u+w)^2=-8u(u+w)$, and $144f_2=-48(2u+w)$. So
-\[
-J_2=-8\,Y_4\big[u(u+w)A+6(2u+w)Y_4\big].
-\]
-By Lemma~\ref{lem:Y}, $A=4(Y_2-Y_3)/w$ and $Y_4=\big((u+w)Y_3-uY_2\big)/w$. Inserting these, the coefficient of $Y_2$ in the bracket is $\big(4u(u+w)-6u(2u+w)\big)/w=-2u(4u+w)/w$ and that of $Y_3$ is $\big(-4u(u+w)+6(2u+w)(u+w)\big)/w=2(u+w)(4u+3w)/w$, which gives \eqref{eq:J2theta}. The second form follows from $\theta_k^2\theta_k(\sigma,v)^2=\theta_k^4Y_k$, $\theta_2^4=u$, $\theta_3^4=u+w$ and $\theta_4^4=w$.
-\end{proof}
-
-\subsection{Theta components}
-A holomorphic Jacobi form $\phi$ of index two is determined by its theta components: $\phi=\sum_{\mu\bmod4}G_\mu(\sigma)\,\vt_{2,\mu}(\sigma,v)$ with $\vt_{2,\mu}(\sigma,v)=\sum_{\ell\equiv\mu\,(4)}p^{\ell^2/8}y^\ell$ \cite[\S5]{EZ85}. Since $J_2$ is even, $G_1=G_3$. Put
-\[
-\begin{gathered}
-a_4=\theta_3(4\sigma)=\sum_nx^{4n^2},\qquad b_4=\theta_2(4\sigma)=\sum_nx^{(2n+1)^2},\\
-a_2=\theta_3(2\sigma),\qquad b_2=\theta_2(2\sigma),\qquad \psi=\sum_{j\in\ZZ}x^{(4j+1)^2/4}.
-\end{gathered}
-\]
-Then $\theta_3(\sigma)=a_4+b_4$, $\theta_4(\sigma)=a_4-b_4$, $a_2^2=a_4^2+b_4^2$, $b_2^2=2a_4b_4$ and $\theta_2(\sigma)^2=2a_2b_2$.
-
-\begin{lemma}\label{lem:Gcomp}
-The theta components of $J_2$ are
-\[
-\begin{aligned}
-G_0&=-\frac{16\,a_4\big(3a_4^6+28a_4^5b_4+3a_4^4b_4^2+112a_4^3b_4^3+25a_4^2b_4^4+84a_4b_4^5+b_4^6\big)}{(a_4-b_4)^4},\\
-G_2&=-\frac{16\,b_4\big(a_4^6+84a_4^5b_4+25a_4^4b_4^2+112a_4^3b_4^3+3a_4^2b_4^4+28a_4b_4^5+3b_4^6\big)}{(a_4-b_4)^4},\\
-G_1&=G_3=\frac{16\,\psi\,\theta_2(\sigma)^2\big(a_4^4+28a_4^3b_4+6a_4^2b_4^2+28a_4b_4^3+b_4^4\big)}{(a_4-b_4)^4}.
-\end{aligned}
-\]
-In particular $-G_0$, $-G_2$ and $G_1$ have nonnegative coefficients as series in $x^{1/4}$.
-\end{lemma}
-
-\begin{proof}
-Expanding the squares, with $\vt_{1,\mu}=\vt_{1,\mu}(\sigma,v)=\sum_{r\equiv\mu\,(2)}p^{r^2/4}y^r$,
-\[
-\theta_3(\sigma,v)^2=a_2\vt_{1,0}+b_2\vt_{1,1},\qquad \theta_4(\sigma,v)^2=a_2\vt_{1,0}-b_2\vt_{1,1},\qquad \theta_2(\sigma,v)^2=b_2\vt_{1,0}+a_2\vt_{1,1}:
-\]
-for the first, write $\frac12(k^2+k'^2)=\frac14(r^2+s^2)$ with $r=k+k'$, $s=k-k'\equiv r\pmod 2$, and sum over $s$; the others are the same computation with the sign $(-1)^{r}$ or with $k,k'\in\ZZ+\frac12$. In the same way
-\[
-\vt_{1,0}^2=a_4\vt_{2,0}+b_4\vt_{2,2},\qquad \vt_{1,1}^2=b_4\vt_{2,0}+a_4\vt_{2,2},\qquad \vt_{1,0}\vt_{1,1}=\psi\,(\vt_{2,1}+\vt_{2,3}).
-\]
-Hence
-\[
-\begin{aligned}
-\theta_4(\sigma,v)^2\theta_2(\sigma,v)^2&=a_2b_2(a_4-b_4)(\vt_{2,0}-\vt_{2,2})+(a_4-b_4)^2\psi\,(\vt_{2,1}+\vt_{2,3}),\\
-\theta_4(\sigma,v)^2\theta_3(\sigma,v)^2&=a_4(a_4-b_4)(a_4+b_4)\,\vt_{2,0}-b_4(a_4-b_4)(a_4+b_4)\,\vt_{2,2}.
-\end{aligned}
-\]
-Insert these in the second form of Proposition~\ref{prop:J2theta}, with $\theta_2(\sigma)^2=2a_2b_2$, $\theta_2^4=8a_4b_4(a_4^2+b_4^2)$, $\theta_3^4=(a_4+b_4)^4$ and $\theta_4^4=(a_4-b_4)^4$. The coefficient of $\vt_{2,1}$ is $16\psi\theta_2(\sigma)^2(\theta_3^4+3\theta_2^4)/\theta_4^4$, which is the stated $G_1$. The coefficients of $\vt_{2,0}$ and $\vt_{2,2}$ are
-\[
-\begin{gathered}
-\frac{16\big[2a_2^2b_2^2(\theta_3^4+3\theta_2^4)-a_4(a_4+b_4)^3(3\theta_3^4+\theta_2^4)\big]}{(a_4-b_4)^5},\\
-\frac{16\big[b_4(a_4+b_4)^3(3\theta_3^4+\theta_2^4)-2a_2^2b_2^2(\theta_3^4+3\theta_2^4)\big]}{(a_4-b_4)^5},
-\end{gathered}
-\]
-and expanding the numerators and cancelling one factor $a_4-b_4$ gives $G_0$ and $G_2$. Finally $a_4,b_4,a_2,b_2,\psi$ have nonnegative coefficients, and
-\[
-\frac1{\theta_4(\sigma)}=\frac1{a_4-b_4}=\prod_{n\ge1}\frac{1+x^n}{1-x^n}
-\]
-has positive coefficients, which gives the sign statement.
-\end{proof}
-
-Write $G_\mu=\sum_Dg_\mu(D)\,x^{D/4}$, so that $J_2=\sum_{e,\ell}g_{\ell\bmod4}(4e-\ell^2)\,x^ey^\ell$. In the same way $\cH|V_2$ has the coefficient $C_2(4e-\ell^2)$ at $x^ey^\ell$ when $e$ is even and $0$ when $e$ is odd. Since $\ell^2\equiv0,4,1\pmod 8$ for $\ell\equiv0,2,\pm1\pmod4$, the parity of $e$ is determined by $D=4e-\ell^2$ and $\mu=\ell\bmod4$. So the numerator $J_2-256\,\cH|V_2$ of $\varphi_2^F$ has the coefficient
-\begin{equation}\label{eq:Nmu}
-N_\mu(D)=g_\mu(D)-256\,\epsilon_\mu(D)\,C_2(D),\qquad \epsilon_\mu(D)=\begin{cases}1,&(D+\mu^2)/4\ \text{even},\\0,&\text{otherwise},\end{cases}
-\end{equation}
-at $x^ey^\ell$, with $D=4e-\ell^2$ and $\mu\equiv\ell\pmod 4$, $N_3=N_1$. By Proposition~\ref{prop:Q2closed} and \eqref{eq:beta},
-\begin{equation}\label{eq:Q2coeff}
-c^F_2(n,\ell)=\sum_{j\ge0}\beta(j)\,N_{\ell\bmod4}(D+4-4j),\qquad D=4n-\ell^2 .
-\end{equation}
-For $Q^2=2$ this $D$ is $Q^2P^2-(Q\cdot P)^2$, in agreement with \eqref{eq:D}.
-
-\begin{lemma}\label{lem:Q2signs}
-\textup{(i)} $N_\mu(D)=0$ for $D<0$.
-
-\textup{(ii)} $N_1(D)>0$ for every $D\equiv3\pmod4$, $D\ge3$.
-
-\textup{(iii)} $N_2(0)=0$ and $N_2(D)<0$ for $D\equiv0\pmod 4$, $D\ge4$.
-
-\textup{(iv)} $N_0(0)=16$ and $-N_0(4t)\ge1088$ for $t\ge1$.
-\end{lemma}
-
-\begin{proof}
-We use $a_4=1+O(x^4)$, $b_4=2x+O(x^9)$, $\psi=x^{1/4}+O(x^{9/4})$, $\theta_2(\sigma)^2=4x^{1/2}+O(x^{5/2})$, all with nonnegative coefficients, and $1/(a_4-b_4)^4\ge1/(1-x)^4$ coefficientwise. Here $F\ge F'$ means that $F-F'$ has nonnegative coefficients.
-
-(i) By Lemma~\ref{lem:Gcomp}, $G_0$, $G_1$, $G_2$ begin with $x^0$, $x^{3/4}$, $x^1$, so $g_\mu(D)=0$ for $D<0$; and $C_2(D)=0$ for $D<0$.
-
-(ii) For $D\equiv3\pmod4$, $D/4$ is not an integer, so $C_2(D)=H(D)$. Keeping the terms $a_4^4$ and $28a_4^3b_4$ of the numerator of $G_1$,
-\[
-G_1\ \ge\ 64\,x^{3/4}\Big(\frac1{(1-x)^4}+\frac{56x}{(1-x)^4}\Big),\qquad g_1(4k+3)\ \ge\ 64\Big[\binom{k+3}3+56\binom{k+2}3\Big].
-\]
-At $D=3$, $(D+1)/4=1$ is odd, so $\epsilon_1(3)=0$ and $N_1(3)=g_1(3)=64$. For $k\ge1$, $g_1(4k+3)\ge3584k$, while $256\,H(4k+3)\le256(4k+3)<3584k$; so $N_1(4k+3)>0$.
-
-(iii) At $D=0$, $g_2(0)=0$ and $\epsilon_2(0)=0$ because $(0+4)/4=1$ is odd. For $D=4t$, $t\ge1$, keeping the term $a_4^6$ of the numerator of $G_2$ gives $-G_2\ge32x/(1-x)^4$, so $-g_2(4t)\ge32\binom{t+2}3>0$, and $-256\,\epsilon_2C_2(4t)\le0$ because $C_2(D)\ge0$ for $D>0$.
-
-(iv) At $D=0$, $g_0(0)=-48$ and $\epsilon_0(0)=1$, $C_2(0)=3H(0)=-\frac14$, so $N_0(0)=-48+64=16$. For $t\ge1$, keeping $3a_4^6$ and $28a_4^5b_4$ in the numerator of $G_0$,
-\[
--G_0\ \ge\ \frac{48+896x}{(1-x)^4},\qquad -g_0(4t)\ \ge\ 48\binom{t+3}3+896\binom{t+2}3\ \ge\ 1088,
-\]
-and $-N_0(4t)=-g_0(4t)+256\,\epsilon_0C_2(4t)\ge-g_0(4t)$.
-\end{proof}
-
-The first values are $N_0(0),N_0(4),N_0(8)=16,-1280,-9536$; $N_2(4),N_2(8)=-160,-5632$; $N_1(3),N_1(7),N_1(11)=64,3840,32960$. Figure~\ref{fig:signs} shows the pattern of Lemma~\ref{lem:Q2signs}.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.78\textwidth]{fig_signs.png}
-\caption{The coefficients $N_\mu(D)$ of the numerator of $\varphi^F_2$ for $0\le D\le60$, plotted as $\operatorname{sgn}N_\mu\cdot\log_{10}(1+|N_\mu|)$ over the plane $N=0$. The component $\mu=0$ is positive only at $D=0$, the component $\mu=2$ is never positive, and the odd components are always positive.}\label{fig:signs}
-\end{figure}
-
-\begin{theorem}\label{thm:Q2}
-In the $\ZZ_2$ CHL model, $d^*(Q,P)>0$ for every charge with $Q^2=2$, $P^2>0$ and $2P^2>(Q\cdot P)^2$, and for every charge in the $\Gamma_1(2)$ orbit of such a charge.
-\end{theorem}
-
-\begin{proof}
-By Lemma~\ref{lem:setA} and \eqref{eq:dstar}, $d^*=(-1)^{\ell+1}c^F_2(n,\ell)$, and $c^F_2$ is given by \eqref{eq:Q2coeff} with $D=4n-\ell^2>0$; every $\beta(j)$ is positive.
-
-If $\ell$ is odd, then $D\equiv3\pmod4$, every argument $D+4-4j$ is $\equiv3\pmod 4$, every term is nonnegative by Lemma~\ref{lem:Q2signs}(i), (ii), and the term $j=0$ is $N_1(D+4)>0$. So $d^*=c^F_2>0$.
-
-If $\ell\equiv2\pmod4$, then $D\equiv0\pmod4$, every term is $\le0$ by Lemma~\ref{lem:Q2signs}(i), (iii), and the term $j=0$ is $N_2(D+4)<0$ since $D+4\ge8$. So $d^*=-c^F_2>0$.
-
-If $\ell\equiv0\pmod4$, write $D=4u$ with $u\ge1$. Then $-c^F_2$ is the coefficient of $x^{u+1}$ in $f\prod_r(1-x^r)^{-e_r}$, with $f=\sum_{t\ge0}\big(-N_0(4t)\big)x^t$. By Lemma~\ref{lem:Q2signs}(iv), $f/16=-1+\sum_{t\ge1}a_tx^t$ with $a_t\ge68>16$, and Lemma~\ref{lem:product} with $K=16$ gives $-c^F_2>0$, so $d^*>0$. The orbits follow from the $\Gamma_1(2)$ invariance of $d^*$.
-\end{proof}
-
 \input{parts/reduction}
 \input{parts/walls}
-\input{parts/hypothesis}
+\input{parts/rademacher}
+\input{parts/polar}
+\input{parts/polar0}
+\input{parts/transform}
+\input{parts/circle}
 \input{parts/model}
 \input{parts/bessel}
 \input{parts/errors}
@@ -452,7 +244,7 @@ If $\ell\equiv0\pmod4$, write $D=4u$ with $u\ge1$. Then $-c^F_2$ is the coeffici
 
 \section{Values and comparison with the product formula}\label{sec:values}
 
-The first single-centred indices given by \eqref{eq:Q1coeff} and \eqref{eq:Q2coeff} are listed in Table~\ref{tab:values}. We expanded the product \eqref{eq:product} in exact rational arithmetic and compared it with \eqref{eq:Q1closed} and \eqref{eq:Q2closed} on every coefficient $x^ey^\ell$ with $e\le 49$ and $|\ell|\le18$; the two sides agree. Every entry of Table~\ref{tab:values} that lies in Sen's Table~2 \cite{Sen11} coincides with it: at $Q^2=1$ the entries $360$, $2164$, $4352$, $18944$, $36024$, $125860$ and the value $2164$ at $(P^2,Q\cdot P)=(6,2)$, and at $Q^2=2$ the entries $198144$, $67008$, $6912$ of the row $P^2=4$ and $1580672$, $671744$, $101376$, $4352$ of the row $P^2=6$.\footnote{In these entries the charge lies in the cone (3.9) of \cite{Sen11}, and the index of the full partition function equals the single-centred index. The entries of Sen's table with $D\le0$, such as $-2$ at $(Q^2,P^2,Q\cdot P)=(1,2,2)$ or $-16$ at $(2,6,4)$, are outside the scope of the theorem, as they should be.} Figure~\ref{fig:indices} shows $\log_{10}d^*$ on the two rows.
+Table~\ref{tab:values} lists the first single-centred indices on the rows $Q^2=1$ and $Q^2=2$, computed exactly from the product \eqref{eq:product} by the program of Appendix~\ref{app:exact}; at $Q^2=1$ they are the values of \eqref{eq:Q1coeff}. We compared the expansion of the product in exact rational arithmetic with \eqref{eq:Q1closed} on every coefficient $x^ey^\ell$ with $e\le 49$ and $|\ell|\le18$; the two sides agree. Every entry of Table~\ref{tab:values} that lies in Sen's Table~2 \cite{Sen11} coincides with it: at $Q^2=1$ the entries $360$, $2164$, $4352$, $18944$, $36024$, $125860$ and the value $2164$ at $(P^2,Q\cdot P)=(6,2)$, and at $Q^2=2$ the entries $198144$, $67008$, $6912$ of the row $P^2=4$ and $1580672$, $671744$, $101376$, $4352$ of the row $P^2=6$.\footnote{In these entries the charge lies in the cone (3.9) of \cite{Sen11}, and the index of the full partition function equals the single-centred index. The entries of Sen's table with $D\le0$, such as $-2$ at $(Q^2,P^2,Q\cdot P)=(1,2,2)$ or $-16$ at $(2,6,4)$, are outside the scope of the theorem, as they should be.} Figure~\ref{fig:indices} shows $\log_{10}d^*$ on the two rows.
 
 \begin{table}[t]
 \centering
@@ -479,7 +271,7 @@ $D$ & $d^*$ & $D$ & $d^*$\ ($\ell$ odd) & $D$ & $d^*$\ ($\ell\equiv0$) & $D$ & $
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{fig_indices.png}
-\caption{$\log_{10}d^*(Q,P)$ for $Q^2=1$ (left) and $Q^2=2$ (right), $2\le P^2\le30$ and $0\le Q\cdot P\le\min(6,P^2)$ with $Q^2P^2>(Q\cdot P)^2$. Every bar is positive, as Theorems~\ref{thm:Q1} and~\ref{thm:Q2} assert.}\label{fig:indices}
+\caption{$\log_{10}d^*(Q,P)$ for $Q^2=1$ (left) and $Q^2=2$ (right), $2\le P^2\le30$ and $0\le Q\cdot P\le\min(6,P^2)$ with $Q^2P^2>(Q\cdot P)^2$. Every bar is positive, as Theorems~\ref{thm:Q1} and~\ref{thm:all} assert.}\label{fig:indices}
 \end{figure}
 
 \input{parts/closing}
@@ -490,11 +282,13 @@ $D$ & $d^*$ & $D$ & $d^*$\ ($\ell$ odd) & $D$ & $d^*$\ ($\ell\equiv0$) & $D$ & $
 
 \begin{thebibliography}{99}
 
+\bibitem{Ahl79} L.~V.~Ahlfors, \emph{Complex Analysis}, 3rd ed., McGraw-Hill, New York, 1979.
+
 \bibitem{BEW98} B.~C.~Berndt, R.~J.~Evans, K.~S.~Williams, \emph{Gauss and Jacobi Sums}, Canadian Mathematical Society Series of Monographs and Advanced Texts, Wiley, New York, 1998.
 
 \bibitem{Bha22} D.~Bhattacharjee, \emph{Generalization of quartic and quintic Calabi--Yau manifolds fibered by polarized K3 surfaces}, Research Square (2022). doi:10.21203/rs.3.rs-1965255/v1
 
-\bibitem{Bha26c} D.~Bhattacharjee, \emph{Code and data for: Positivity of single-centred black hole indices in the $\mathbb Z_2$ CHL model}, version v1.0.0, Zenodo (2026). doi:\zenodoDOI
+\bibitem{Bha26c} D.~Bhattacharjee, \emph{Code and data for: Every single-centred black hole index of the $\mathbb Z_2$ CHL model is positive}, version v2.0.0, Zenodo (2026). doi:\zenodoDOI
 
 \bibitem{BM13} K.~Bringmann, S.~Murthy, \emph{On the positivity of black hole degeneracies in string theory}, Commun. Number Theory Phys. \textbf{7} (2013), 15--56. doi:10.4310/CNTP.2013.v7.n1.a2
 
@@ -514,8 +308,6 @@ $D$ & $d^*$ & $D$ & $d^*$\ ($\ell$ odd) & $D$ & $d^*$\ ($\ell\equiv0$) & $D$ & $
 
 \bibitem{DJS06} J.~R.~David, D.~P.~Jatkar, A.~Sen, \emph{Product representation of dyon partition function in CHL models}, J. High Energy Phys. \textbf{2006}, no.~6 (2006), 064. doi:10.1088/1126-6708/2006/06/064
 
-\bibitem{DMZ12} A.~Dabholkar, S.~Murthy, D.~Zagier, \emph{Quantum black holes, wall crossing and mock modular forms}, arXiv:1208.4074 (2012).
-
 \bibitem{DN07} A.~Dabholkar, S.~Nampuri, \emph{Spectrum of dyons and black holes in CHL orbifolds using Borcherds lift}, J. High Energy Phys. \textbf{2007}, no.~11 (2007), 077. doi:10.1088/1126-6708/2007/11/077
 
 \bibitem{DS06} J.~R.~David, A.~Sen, \emph{CHL dyons and statistical entropy function from D1-D5 system}, J. High Energy Phys. \textbf{2006}, no.~11 (2006), 072. doi:10.1088/1126-6708/2006/11/072
@@ -526,17 +318,17 @@ $D$ & $d^*$ & $D$ & $d^*$\ ($\ell$ odd) & $D$ & $d^*$\ ($\ell\equiv0$) & $D$ & $
 
 \bibitem{FR17} G.~Ferrari, V.~Reys, \emph{Mixed Rademacher and BPS black holes}, J. High Energy Phys. \textbf{2017}, no.~7 (2017), 094. doi:10.1007/JHEP07(2017)094
 
-\bibitem{GN97} V.~A.~Gritsenko, V.~V.~Nikulin, \emph{Siegel automorphic form corrections of some Lorentzian Kac--Moody Lie algebras}, Amer. J. Math. \textbf{119} (1997), 181--224. arXiv:alg-geom/9504006
+\bibitem{GN97} V.~A.~Gritsenko, V.~V.~Nikulin, \emph{Siegel automorphic form corrections of some Lorentzian Kac--Moody Lie algebras}, Amer. J. Math. \textbf{119} (1997), 181--224. doi:10.1353/ajm.1997.0002
 
 \bibitem{Har10} W.~B.~Hart, \emph{Fast Library for Number Theory: an introduction}, in: Mathematical Software -- ICMS 2010, Lecture Notes in Comput. Sci. \textbf{6327}, Springer, Berlin, 2010, 88--91. doi:10.1007/978-3-642-15582-6\_18
+
+\bibitem{HW08} G.~H.~Hardy, E.~M.~Wright, \emph{An Introduction to the Theory of Numbers}, 6th ed., revised by D.~R.~Heath-Brown and J.~H.~Silverman, Oxford University Press, Oxford, 2008.
 
 \bibitem{Joh17} F.~Johansson, \emph{Arb: efficient arbitrary-precision midpoint-radius interval arithmetic}, IEEE Trans. Comput. \textbf{66} (2017), 1281--1292. doi:10.1109/TC.2017.2690633
 
 \bibitem{JS06} D.~P.~Jatkar, A.~Sen, \emph{Dyon spectrum in CHL models}, J. High Energy Phys. \textbf{2006}, no.~4 (2006), 018. doi:10.1088/1126-6708/2006/04/018
 
 \bibitem{PV15} D.~Persson, R.~Volpato, \emph{Fricke S-duality in CHL models}, J. High Energy Phys. \textbf{2015}, no.~12 (2015), 156. doi:10.1007/JHEP12(2015)156
-
-\bibitem{Ros24} M.~Rossell\'o, \emph{The immortal dyon index is positive}, arXiv:2403.19630 (2024).
 
 \bibitem{RZ38} H.~Rademacher, H.~S.~Zuckerman, \emph{On the Fourier coefficients of certain modular forms of positive dimension}, Ann. of Math. \textbf{39} (1938), 433--462. doi:10.2307/1968796
 
@@ -548,8 +340,6 @@ $D$ & $d^*$ & $D$ & $d^*$\ ($\ell$ odd) & $D$ & $d^*$\ ($\ell\equiv0$) & $D$ & $
 
 \bibitem{Sen11} A.~Sen, \emph{How do black holes predict the sign of the Fourier coefficients of Siegel modular forms?}, Gen. Relativ. Gravit. \textbf{43} (2011), 2171--2183. doi:10.1007/s10714-011-1175-9
 
-\bibitem{Sin26} R.~K.~Singh, \emph{Generating function of single-centered black hole index in CHL models}, arXiv:2606.19479 (2026).
-
 \bibitem{SSY06} D.~Shih, A.~Strominger, X.~Yin, \emph{Recounting dyons in $\mathcal N=4$ string theory}, J. High Energy Phys. \textbf{2006}, no.~10 (2006), 087. doi:10.1088/1126-6708/2006/10/087
 
 \bibitem{Stu87} J.~Sturm, \emph{On the congruence of modular forms}, in: Number Theory (New York, 1984--85), Lecture Notes in Math. \textbf{1240}, Springer, Berlin, 1987, 275--280. doi:10.1007/BFb0072985
@@ -557,8 +347,6 @@ $D$ & $d^*$ & $D$ & $d^*$\ ($\ell$ odd) & $D$ & $d^*$\ ($\ell\equiv0$) & $D$ & $
 \bibitem{Wat44} G.~N.~Watson, \emph{A Treatise on the Theory of Bessel Functions}, 2nd ed., Cambridge University Press, Cambridge, 1944.
 
 \bibitem{WW21} E.~T.~Whittaker, G.~N.~Watson, \emph{A Course of Modern Analysis}, 5th ed., Cambridge University Press, Cambridge, 2021. doi:10.1017/9781009004091
-
-\bibitem{Zag08} D.~Zagier, \emph{Elliptic modular forms and their applications}, in: The 1-2-3 of Modular Forms, Universitext, Springer, Berlin, 2008, 1--103. doi:10.1007/978-3-540-74119-0\_1
 
 \bibitem{Zuc39} H.~S.~Zuckerman, \emph{On the coefficients of certain modular forms belonging to subgroups of the modular group}, Trans. Amer. Math. Soc. \textbf{45} (1939), 298--321. doi:10.1090/S0002-9947-1939-1501993-X
 

@@ -1,0 +1,32 @@
+=== (a) walls and chambers ===
+a1: 693 N=-1 factor charges with u,l <= 60: exponent 2 exactly on Farey edges with cd even, 0 on odd-odd edges and for u odd
+a2: K_0 = {all 667 walls of the box positive} = quadrilateral (0,1/2,1,inf): 939 points inside, 3061 outside, all consistent
+a3: 116 chambers (quadrilaterals on odd-odd Farey edges with denominators <= 12 in [-2,2]): all four sides are walls and each is A(K_0) with A in Gamma_0(2)
+a3: 696 sampled points in 116 chambers: constant sign vector on each chamber, distinct across
+a4: the generators of Gamma_0(2) (and inverses) map each of the 667 walls to a wall
+=== (b) Farey wall sum against exact polar coefficients of phi^F_m at infinity ===
+b1: 1498 polar terms (1<=m<=12, 0<=l<2m, -2<=nu, 4m nu<l^2), 228 nonzero; mismatches: 0
+    nonzero polar coefficients per m: {1: 2, 2: 3, 3: 8, 4: 9, 5: 14, 6: 15, 7: 22, 8: 21, 9: 28, 10: 29, 11: 38, 12: 39}
+    the same holds with the convention q/s < w0 <= p/r (both conventions agree)
+b2: truncation r,s < 4m+6 agrees with r,s < 12m+20 on 206 polar terms with m <= 6
+    examples (m, n=2nu, l, coefficient): [(1, -1, 0, 2), (1, -1, 1, 0), (2, -1, 2, 0), (3, -1, 3, 0), (4, 1, 3, 424), (8, 2, 7, 0)]
+=== (c) jump lemma, coefficients computed exactly chamber by chamber ===
+c0: chamberwise exact expansion reproduces chl_coefficients in K_0 on [(1, 0, 0), (1, 1, -1), (1, 1, 1), (2, 0, -2), (0, 2, -1), (1, -1, -2), (-1, -1, -3), (0, 0, -1)]
+c1: basic wall Re tau = 0         713 charges, 680 with nonzero predicted jump, failures 0
+c1: 0/1 -> 1/2 (r even)           414 charges,  61 with nonzero predicted jump, failures 0
+c1: 1/2 -> 1/1 (s even)           483 charges,  46 with nonzero predicted jump, failures 0
+c1: 1/3 -> 1/2 (r even)           408 charges,  23 with nonzero predicted jump, failures 0
+c1: 0/1 -> 1/3 (absent (r,s odd))  329 charges,   0 with nonzero predicted jump, failures 0
+c1: 1/3 -> 2/5 (absent (r,s odd))  376 charges,   0 with nonzero predicted jump, failures 0
+c1: 1/4 -> 1/3 (s even)           340 charges,   9 with nonzero predicted jump, failures 0
+c1: -1/2 -> 0/1 (s even)          414 charges,  61 with nonzero predicted jump, failures 0
+c1: 1/2 -> 2/3 (s even)           440 charges,  13 with nonzero predicted jump, failures 0
+c2: path Re tau = 3/16 for T = (m,n,l) = (3,0,1), w0 = 1/6, V(3/16) = -21; K_0 value 424
+    Farey edges crossed (height, q/s -> p/r): 0.3903 0/1->1/1 (odd), 0.2421 0/1->1/2, 0.1654 0/1->1/3 (odd), 0.1083 0/1->1/4, 0.0484 0/1->1/5 (odd), 0.0161 1/6->1/5, 0.0084 2/11->1/5 (odd)
+    wall 0/1 -> 1/2 (r even) at height 0.2421: d    424 ->      8, jump    416, predicted    416
+    wall 0/1 -> 1/4 (r even) at height 0.1083: d      8 ->      0, jump      8, predicted      8
+    wall 1/6 -> 1/5 (s even) at height 0.0161: d      0 ->      0, jump      0, predicted      0
+    sum of predicted jumps = 424 = K_0 value; Farey sum a_I = 424
+note: the identity Phi~6(rho,sigma,v) = 16 sigma^-6 nabla3^2(rho - v^2/sigma, -1/sigma, v/sigma) is not used by the proof (nor checked here)
+total time 47.5 s
+ALL CHECKS PASSED

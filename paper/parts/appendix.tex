@@ -7,10 +7,10 @@ The program \texttt{chl\_coefficients.py} of the archive \cite{Bha26c} proves Th
 \item[(B1)] \emph{Orbits.} A charge $(m,n,\ell)$ corresponds to the binary quadratic form $f(s,t)=ms^2+2\ell st+2nt^2$ of discriminant $-8D$, and $\Gamma_1(2)$ acts by $f\mapsto f\circ g$. The orbits with given $D$ are enumerated through the Gauss-reduced forms of discriminant $-8D$, each with a class of bottom rows modulo $2$, taken modulo the automorphs of the reduced form.
 \item[(B2)] \emph{A representative in $\mathcal A$.} In every orbit the program finds a charge with $0\le\ell<2m$ satisfying \eqref{eq:setA}, which it tests in the form $2(jm+\ell m_1)^2+m_1^2\cdot2D\ge2m^2$ for $m_1\in2\ZZ\setminus\{0\}$ and odd $j$ with $m_1\mid(j^2-1)/4$, the range of $(m_1,j)$ being finite because the left side grows.
 \item[(B3)] \emph{Coefficients.} The coefficients $c_{\mathcal R}(m,n,\ell)$ are computed from \eqref{eq:product} by the recursion for the exponential of \eqref{eq:Ll}, with polynomial products in FLINT \cite{Har10}. By Lemma~\ref{lem:chamber}(ii) each charge is read in the cheaper of its two orientations.
-\item[(B4)] \emph{Signs.} For every orbit, $d^*=(-1)^{\ell+1}c_{\mathcal R}(m,n,\ell)$ is computed for every representative found in the box, the values are compared, and the sign is checked. At $m=1,2$ the values are compared with Propositions~\ref{prop:Q1closed} and~\ref{prop:Q2closed}.
+\item[(B4)] \emph{Signs.} For every orbit, $d^*=(-1)^{\ell+1}c_{\mathcal R}(m,n,\ell)$ is computed for every representative found in the box, the values are compared, and the sign is checked. At $m=1$ the values are compared with Proposition~\ref{prop:Q1closed}.
 \item[(B5)] \emph{Least representatives.} On the whole range, every charge of least $Q^2$ in its orbit is checked to lie in $\mathcal A$, as Lemma~\ref{lem:leastA} predicts.
 \end{enumerate}
-For $D\le\Dexact$ there are $\Norbits$ orbits, with $Q^2\le\Qmaxexact$ for the least representative; all have $d^*>0$. The smallest value relative to the extreme term occurs at small $D$, where $x$ is close to $1$; this is the region in which the leading-family error of Lemma~\ref{lem:mainerr} is largest and which Theorem~\ref{thm:bounded} covers for $Q^2\le7$.
+For $D\le\Dexact$ there are $\Norbits$ orbits, with $Q^2\le\Qmaxexact$ for the least representative; all have $d^*>0$. The smallest value relative to the extreme term occurs at small $D$, where $x$ is close to $1$; this is the region in which the leading-family error of Lemma~\ref{lem:mainerr} is largest, and Theorem~\ref{thm:bounded} covers it for every $Q^2$.
 
 \section{Interval computations}\label{app:interval}
 
@@ -18,13 +18,14 @@ All the numerical statements used in the proofs are certified in ball arithmetic
 \begin{enumerate}
 \item[(I1)] \texttt{pmin.py}: Proposition~\ref{prop:pmin}. Product truncated at $n=60$ with an explicit tail enclosure, $4001$ points on the half circle, Lipschitz constant $L=2P(r_0)r_0P'(r_0)$.
 \item[(I2)] \texttt{gmono2.py}: Lemma~\ref{lem:gfacts}. Monotonicity of $\phi$ on $[3,60]$ by mean-value enclosures on an adaptive cover; the range $[60,\infty)$ through the closed form \eqref{eq:halfint}.
-\item[(I3)] \texttt{cert.py}: Theorem~\ref{thm:cert}. For each $m$ the program lists the leading family $\mathcal L_m$, the walls with $rs\ge2$ and the parity walls through their parameters $(r,s,a,b)$, encloses $t(r,s,a,b)$, and evaluates the seven bounds of Section~\ref{sec:errors}. In \eqref{eq:XT} it uses $32$ in place of $16$.
+\item[(I3)] \texttt{cert.py}: Theorem~\ref{thm:cert}. For each $m$, $1\le m\le100$, the program lists the leading family $\mathcal L_m$, the walls with $rs\ge2$ and the parity walls through their parameters $(r,s,a,b)$, encloses $t(r,s,a,b)$, and evaluates the seven bounds of Section~\ref{sec:errors}. In \eqref{eq:XT} it uses $32$ in place of $16$.
 \item[(I4)] \texttt{analytic.py}, \texttt{analytic2.py}: Theorem~\ref{thm:analytic}.
-\item[(I5)] \texttt{polar.py}: the wall sums \eqref{eq:P0}, \eqref{eq:Pinf}, used also for the checks (c), (d) of Section~\ref{ssec:evidence}.
+\item[(I5)] \texttt{polar.py}: the wall sums \eqref{eq:P0}, \eqref{eq:Pinf}, which supply the polar data in (I3).
 \end{enumerate}
+The programs in the folder \texttt{proof\_checks} of the archive check the proof of Theorem~\ref{thm:rad} independently, in exact or high-precision arithmetic; none of them is used in the proof. \texttt{polar\_check.py} tests the walls, the chambers and the wall sum \eqref{eq:Pinf} of Section~\ref{sec:polarinf}; \texttt{polar0\_check.py} tests the transformation of the product, the second product and the wall sum \eqref{eq:P0} of Section~\ref{sec:polar0}; \texttt{transform\_check.py}, with \texttt{tc\_series.py}, tests the lemmas and the transformation law of Section~\ref{tr:sec}; \texttt{chk\_theta.py} tests Lemma~\ref{circ:lem:theta}, and \texttt{chk\_mordell.py}, \texttt{chk\_mordell2.py} and \texttt{hp.py} test Lemma~\ref{circ:lem:mordell}; \texttt{expansion\_check.py}, with \texttt{expansion\_series.py}, evaluates the truncated right side of \eqref{eq:hypR} (Remark~\ref{rem:numerics}). Their outputs are stored next to them.
 
 \section{The certified margins}\label{app:margins}
 
-Table~\ref{tab:margins} lists, for $3\le Q^2\le100$, the total bound $\epsilon(m,x_0(m))$ of Theorem~\ref{thm:cert} and the margin $0.53816-\epsilon$.
+Table~\ref{tab:margins} lists, for $3\le Q^2\le100$, the total bound $\epsilon(m,x_0(m))$ of Theorem~\ref{thm:cert} and the margin $0.53816-\epsilon$. At $Q^2=1$ and $Q^2=2$, with $x_0=4$ and $x_0=3$, the bounds are $0.304$ and $0.105$, and the margins $0.234$ and $0.433$.
 
 \input{parts/margins_table}
