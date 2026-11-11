@@ -1,0 +1,51 @@
+=== (i) the transformation S of Phi~6, from the two products ===
+i1: log Phi~6(Omega) - log(16 sigma^-6 Phi6(S Omega)) at 3 points (products truncated at <g,Y> <= 17): max |difference| mod 2 pi i = 1.04e-36
+i2: F^(r,s)|S = F^(s,r), F^(r,s)|T = F^(r,r+s), A|_{-2,1}S = A and (1/g(sigma/2))|_{-8}S = 1/(16 g(sigma)) at 2 points, to 1e-20
+i3: L_l|_{0,l}S = L'_l (Hecke form with sign (-1)^(rt)) = sum_t (1/t) sum (C0 + (-1)^t C1) p^(tk) y^(tj), l = 1..5, 2 points, from theta functions at the transformed points: max rel. error 5.3e-29
+=== (ii) walls and chambers of 1/Phi6 ===
+ii1: C0(-1) = 2, C1(-1) = 0, C0 = C1 = 0 below -1; the 797 factor charges with N = -1, B, k <= 60, are exactly Farey edges, each with exponent 2: every Farey edge is a wall
+ii2: Delta(0) = triangle (0,1,inf) = {all 321 sampled walls positive} (670 of 3000 points inside); 1939 points in SL2(Z)-images of Delta(0): constant sign vector on each image (81 chambers met)
+ii3: chamberwise expansion of 1/Phi6 in Delta(0) reproduces the strip expansion of 16 phi_m|S on [(1, -1, 0), (1, -1, 1), (1, 0, 1), (1, 1, 2), (3, -1, 3), (3, 0, 2), (3, 1, 4)]
+ii4: basic wall Re tau = 0       382 charges, 362 with nonzero predicted jump, failures 0
+ii4: 0/1 -> 1/1 (r, s odd)       336 charges,  61 with nonzero predicted jump, failures 0
+ii4: 0/1 -> 1/2 (r even)         255 charges,  34 with nonzero predicted jump, failures 0
+ii4: 1/2 -> 1/1 (s even)         312 charges,  29 with nonzero predicted jump, failures 0
+ii4: 0/1 -> 1/3 (r, s odd)       212 charges,  25 with nonzero predicted jump, failures 0
+ii4: 1/3 -> 1/2 (r even)         270 charges,  13 with nonzero predicted jump, failures 0
+ii4: 1/3 -> 2/5 (r, s odd)       248 charges,   3 with nonzero predicted jump, failures 0
+ii4: 1/4 -> 1/3 (s even)         229 charges,   6 with nonzero predicted jump, failures 0
+ii4: -1/1 -> 0/1 (r, s odd)      336 charges,  61 with nonzero predicted jump, failures 0
+ii4: 1/2 -> 2/3 (s even)         291 charges,  10 with nonzero predicted jump, failures 0
+ii4: 1/2 -> 3/5 (s even)         282 charges,   4 with nonzero predicted jump, failures 0
+ii4: 2/3 -> 3/4 (r even)         296 charges,   5 with nonzero predicted jump, failures 0
+ii5: path Re tau = 1/8 down to the cusp 1/8 for T = (m,nu,l) = (6,0,1), w0 = 1/12, V(1/8) = -2; Delta(0) value 171448
+     wall 0/1 -> 1/1 at height 0.3307: d  171448 ->   46328, jump  125120 = predicted
+     wall 0/1 -> 1/2 at height 0.2165: d   46328 ->   11512, jump   34816 = predicted
+     wall 0/1 -> 1/3 at height 0.1614: d   11512 ->    2536, jump    8976 = predicted
+     wall 0/1 -> 1/4 at height 0.1250: d    2536 ->     488, jump    2048 = predicted
+     wall 0/1 -> 1/5 at height 0.0968: d     488 ->      72, jump     416 = predicted
+     wall 0/1 -> 1/6 at height 0.0722: d      72 ->       8, jump      64 = predicted
+     wall 0/1 -> 1/7 at height 0.0472: d       8 ->       0, jump       8 = predicted
+     7 walls crossed, 7 with nonzero jump; every jump equals l_G d1(m_G) d1(n_G); value in the last chamber (at the cusp 1/8) 0
+=== (iii) polar coefficients of the frame-S finite part against the wall sum (eq:P0) ===
+iii1: 954 polar terms (1 <= m <= 12, 0 <= l < 2m, nu >= -3, 4 m nu < l^2), 356 nonzero; mismatches between 16 x (coefficient of psi^S_m) and the wall sum of (eq:P0): 0 (both endpoint conventions)
+      nonzero per m (0 <= l < 2m): {1: 3, 2: 7, 3: 11, 4: 15, 5: 20, 6: 26, 7: 30, 8: 36, 9: 41, 10: 49, 11: 55, 12: 63}
+      nonzero per m (0 <= l <= m): {1: 3, 2: 5, 3: 7, 4: 9, 5: 12, 6: 15, 7: 17, 8: 20, 9: 23, 10: 27, 11: 30, 12: 34} ; total for m <= 10: 238 (0<=l<2m), 138 (0<=l<=m)
+iii2: the truncation r, s < 2m+6 of the wall sum agrees with r, s < 8m+20 on 159 polar terms, m <= 6
+iii3: the archive's polarS (code/certificate/polar.py, the wall sum of (eq:P0) for 0 <= l <= m, nu >= -1) agrees with the exact frame-S coefficients on its 202 nonzero entries, m <= 12, and lists every nonzero exact polar coefficient with 0 <= l <= m
+      nonzero polar terms per m in that convention: [3, 5, 7, 9, 12, 15, 17, 20, 23, 27, 30, 34] ; cumulative: [3, 8, 15, 24, 36, 51, 68, 88, 111, 138, 168, 202]
+      examples (m, nu, l, 16 psi^S coefficient): [(1, -1, 0, 16), (1, -1, 1, 3), (1, 0, 1, 72), (2, -1, 2, 4), (2, 0, 1, 488), (3, 0, 2, 848), (8, 1, 7, 66560)]
+total time so far 42.9 s
+=== (iv) the frame-S finite part from a direct numerical S-transformation of phi_m ===
+iv:  m = 1: 16 x (FFT coefficients of psi^S_m) against the exact frame-S coefficients, -1 <= nu <= 2, 0 <= l <= 2m (12 coefficients, 5 polar): max relative difference 1.7e-10; theta symmetry l -> -l and (nu, l) -> (nu + l + m, l + 2m) on 8 coefficients: max relative difference 2.7e-11
+iv:  m = 2: 16 x (FFT coefficients of psi^S_m) against the exact frame-S coefficients, -1 <= nu <= 2, 0 <= l <= 2m (20 coefficients, 11 polar): max relative difference 1.1e-10; theta symmetry l -> -l and (nu, l) -> (nu + l + m, l + 2m) on 9 coefficients: max relative difference 4.2e-10
+iv:  m = 3: 16 x (FFT coefficients of psi^S_m) against the exact frame-S coefficients, -1 <= nu <= 2, 0 <= l <= 2m (28 coefficients, 18 polar): max relative difference 5.4e-10; theta symmetry l -> -l and (nu, l) -> (nu + l + m, l + 2m) on 9 coefficients: max relative difference 3.0e-07
+     e.g. m = 1: 16 psi^S coefficients at (nu,l) = (-1,0), (-1,1), (0,1), (0,0), (1,1): [np.float64(16.0), np.float64(3.0), np.float64(72.0), np.float64(216.0), np.float64(505.0)]
+total time so far 46.1 s
+=== (v) the Appell-Lerch sum: A_{2,m}|S - A_{2,m} is a period integral ===
+v:   m = 1: h_l(tau) = kappa_m I_l(tau) for 0 <= l < 2m at 2 points, kappa_m = -i sqrt(m)/(2 pi sqrt 2) = (0.0 - 0.11253953952j): max |h_l/I_l - kappa_m| 4.0e-16; h_l = h_{-l} = h_{l+2m} to 2.4e-17
+v:   m = 2: h_l(tau) = kappa_m I_l(tau) for 0 <= l < 2m at 2 points, kappa_m = -i sqrt(m)/(2 pi sqrt 2) = (0.0 - 0.159154943092j): max |h_l/I_l - kappa_m| 5.6e-16; h_l = h_{-l} = h_{l+2m} to 2.3e-11
+     hence phi^F_m|S = psi^S_m - (d1(m)/16) kappa_m g(sigma)^-1 sum_l I_l(sigma) theta_{m,l}(sigma, v): the difference is a period integral (no Fourier expansion in sigma), so the polar coefficients at the cusp 0 are those of psi^S_m, with no further correction
+total time 66.7 s
+ALL CHECKS PASSED
+EXIT 0

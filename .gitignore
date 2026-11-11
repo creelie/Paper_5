@@ -7,3 +7,4 @@ __pycache__/
 *.toc
 main.pdf
 !code/certificate/*.out
+!code/proof_checks/*.out

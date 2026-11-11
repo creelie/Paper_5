@@ -1,0 +1,363 @@
+\section{The transformation law of the finite parts}\label{tr:sec}
+
+This section proves the theta decomposition of the finite parts in the three frames, the completion of the Appell--Lerch sum and the transformation law of the completed theta coefficients, together with the finiteness of the polar parts in every frame. These are the properties (T1)--(T3) on which the circle method of Section~\ref{circ:sec} runs; the values of the polar coefficients are those of Theorems~\ref{thm:Pinf} and~\ref{thm:P0}. The modularity of $\varphi_m$ in all three frames is derived from the explicit formula of Proposition~\ref{prop:identification}(b) and from Proposition~\ref{prop:PhiS}(iii), without any statement about Siegel modular forms, and the completion is proved directly, by an explicit Mordell integral.
+
+\subsection{Conventions and sources}\label{tr:conv}
+Powers are principal, as in Section~\ref{circ:conv}. In the Jacobi variables $\tau=\sigma$, $z=v$ we write $q=\e(\tau)$, $y=\e(z)$, $x=\e(\tau/2)$. For an integer matrix $M=\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}$ with $\det M=l\ge1$, integers $k,m$ (or $k=2$ for non-holomorphic $\varphi$) and a function $\varphi$ on $\HH\times\CC$ put
+\[
+(\varphi\|_{k,m}M)(\tau,z)=(c\tau+d)^{-k}\,\e\Big(-\frac{mlcz^2}{c\tau+d}\Big)\,\varphi\Big(M\tau,\frac{lz}{c\tau+d}\Big),
+\]
+and write $\varphi|_{k,m}\gamma=\varphi\|_{k,m}\gamma$ for $\gamma\in SL_2(\ZZ)$; for $f$ a function of $\tau$ alone, $f|_k\gamma=f|_{k,0}\gamma$. For $M=M_{t,u,d}=\begin{psmallmatrix}t&u\\0&d\end{psmallmatrix}$, $(\varphi\|_{k,m}M)(\tau,z)=d^{-k}\varphi((t\tau+u)/d,tz)$. The \emph{elliptic law of index $m$} is $\varphi(\tau,z+\lambda\tau+\mu)=\e(-m(\lambda^2\tau+2\lambda z))\varphi(\tau,z)$ for $\lambda,\mu\in\ZZ$. Let $\Gamma^0(2)$, $R_I,R_T,R_S$ and the frames be as in Section~\ref{circ:conv}; $R_T=T=\begin{psmallmatrix}1&1\\0&1\end{psmallmatrix}$, $R_S=S=\begin{psmallmatrix}0&-1\\1&0\end{psmallmatrix}$.
+
+\begin{lemma}\label{tr:lem:slash}
+Let $M_1,M_2$ be integer matrices with $\det M_i=l_i\ge1$.
+\begin{enumerate}
+\item[(i)] $\varphi\|_{k,m}(M_1M_2)=(\varphi\|_{k,m}M_1)\|_{k,ml_1}M_2$. In particular $|_{k,m}$ is a right action of $SL_2(\ZZ)$, $-I$ acts by $\varphi(\tau,z)\mapsto(-1)^k\varphi(\tau,-z)$, and for $k=0$, $m=1$ and $\gamma\in SL_2(\ZZ)$, $\varphi\|(\gamma M)=(\varphi|\gamma)\|M$ and $\varphi\|(MS)=(\varphi\|M)|_{0,l}S$.
+\item[(ii)] $(\varphi_1\varphi_2)\|_{k_1+k_2,m_1+m_2}M=(\varphi_1\|_{k_1,m_1}M)(\varphi_2\|_{k_2,m_2}M)$.
+\item[(iii)] If $\varphi$ satisfies the elliptic law of index $m$, so does $\varphi|_{k,m}\gamma$ for every $\gamma\in SL_2(\ZZ)$; if $\varphi$ is even in $z$, so is $\varphi\|_{k,m}M$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Write $M_i=\begin{psmallmatrix}a_i&b_i\\c_i&d_i\end{psmallmatrix}$, $j_i(\tau)=c_i\tau+d_i$, and $M_1M_2=\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}$, so $c=c_1a_2+d_1c_2$, and $j(\tau)=c\tau+d=j_1(M_2\tau)j_2(\tau)$, since $j_1(M_2\tau)j_2(\tau)=c_1(a_2\tau+b_2)+d_1(c_2\tau+d_2)$.
+
+(i) By definition
+\[
+\begin{aligned}
+\big((\varphi\|M_1)\|M_2\big)(\tau,z)&=j_2^{-k}j_1(M_2\tau)^{-k}\,\e\Big(-\frac{ml_1l_2c_2z^2}{j_2}-\frac{ml_1c_1l_2^2z^2}{j_2^2j_1(M_2\tau)}\Big)\\
+&\qquad\times\varphi\Big(M_1M_2\tau,\frac{l_1l_2z}{j_2j_1(M_2\tau)}\Big).
+\end{aligned}
+\]
+The weight factor is $j^{-k}$, the second argument is $l_1l_2z/j$, and the exponent is $-ml_1l_2z^2X/j$ with
+\[
+X=c_2j_1(M_2\tau)+\frac{c_1l_2}{j_2}=\frac{c_1c_2(a_2\tau+b_2)+c_1(a_2d_2-b_2c_2)}{j_2}+c_2d_1=c_1a_2+c_2d_1=c.
+\] This is $\varphi\|_{k,m}(M_1M_2)$. For $-I$: $c=0$, $d=-1$. The last two identities are the cases $M_1=\gamma$, $l_1=1$, and $M_2=S$, $l_2=1$.
+
+(ii) The weight factors and the exponentials multiply, and the arguments agree.
+
+(iii) Evenness is clear, as $z\mapsto-z$ commutes with $z\mapsto lz/(c\tau+d)$. Let $\gamma=\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}$, $j=c\tau+d$, $\lambda,\mu\in\ZZ$, and $(\lambda',\mu')=(\lambda,\mu)\gamma^{-1}\in\ZZ^2$, i.e.\ $\lambda=\lambda'a+\mu'c$, $\mu=\lambda'b+\mu'd$. Put $w=z+\lambda\tau+\mu$. Then $w/j=z/j+\lambda'\gamma\tau+\mu'$, and expanding both sides (with $ad-bc=1$) gives the identity
+\[
+\frac{cw^2}j+\lambda'^2\gamma\tau+\frac{2\lambda'z}j=\frac{cz^2}j+\lambda^2\tau+2\lambda z+\big(ab\lambda'^2+2bc\lambda'\mu'+cd\mu'^2\big).
+\]
+Hence, by the elliptic law of $\varphi$ at $(\gamma\tau,z/j)$,
+\[
+(\varphi|\gamma)(\tau,w)=j^{-k}\e\Big(-\frac{mcw^2}j\Big)\e\Big(-m\Big(\lambda'^2\gamma\tau+\frac{2\lambda'z}j\Big)\Big)\varphi\Big(\gamma\tau,\frac zj\Big)=\e\big(-m(\lambda^2\tau+2\lambda z)\big)(\varphi|\gamma)(\tau,z),
+\]
+the bracket $ab\lambda'^2+2bc\lambda'\mu'+cd\mu'^2$ being an integer.
+\end{proof}
+
+With $k=0$ and $m=1$, $\|M$ is the operator $F\mapsto F|[M]$ of Section~\ref{sec:polar0}, and (i) contains the two identities $F|[\gamma M]=(F|\gamma)|[M]$ and $F|[MS]=(F|[M])|_{0,l}S$ used there in the proof of Lemma~\ref{lem:LlS}.
+
+\medskip\noindent Besides \cite{EZ85} and \cite{Ahl79}, the proofs below rest on three groups of facts.
+\begin{enumerate}
+\item[(P)] From Section~\ref{sec:setup}: the genera \eqref{eq:genera}, the products $g$ and \eqref{eq:beta}, the function $\varphi_{-1}=1/(g(\sigma/2)A)$ of \eqref{eq:phim1}, the functions $L_l$ defined by the second line of \eqref{eq:Ll}, Lemma~\ref{lem:modular}, and the polar part \eqref{eq:polar}. By \eqref{eq:genera} and \cite[Theorem~9.3]{EZ85}, each $F^{(r,s)}$ is even in $z$, satisfies the elliptic law of index one, and is a series $\sum_{n\in\frac12\ZZ_{\ge0}}\sum_jc(n,j)q^n\zeta^j$ ($\fE(\tau/2)$ and $\fE((\tau+1)/2)$ are series in $q^{1/2}$ without negative powers); $\pA$ is a weak Jacobi form of weight $-2$ and index one for $SL_2(\ZZ)$.
+\item[(Q)] From Section~\ref{sec:polarinf}: Proposition~\ref{prop:identification}(b)--(d).
+\item[(R)] From Section~\ref{sec:polar0}: Lemma~\ref{lem:generaS} ($F^{(r,s)}|\gamma=F^{(r,s)\gamma}$), and Proposition~\ref{prop:PhiS}(iii) with the function $\varphi'_m$ of Proposition~\ref{prop:PhiS}(ii); its proof uses Lemmas~\ref{lem:generaS}, \ref{lem:LlS} and \ref{lem:modular}, $\pA|_{-2,1}S=\pA$, $g(-1/2\sigma)=16\sigma^8g(\sigma)$ and Lemma~\ref{tr:lem:slash}.
+\end{enumerate}
+No statement about Siegel modular forms is used, and the product \eqref{eq:product} enters only through (Q), (R).
+
+\subsection{The functions $\psi_m$ and the three frames}\label{tr:frames}
+Following Proposition~\ref{prop:identification}(b) define, on $\HH\times\CC$,
+\begin{equation}\label{tr:psim}
+\psi_m=\varphi_{-1}\,P_m(L_1,\dots,L_{m+1})=\frac{B_{m+1}}{g(\sigma/2)\,\pA},\qquad B_{m+1}=\sum_{k\ge1}\frac1{k!}\sum_{l_1+\dots+l_k=m+1}L_{l_1}\cdots L_{l_k},
+\end{equation}
+where $\exp(\sum_{l\ge1}L_lX^l)=\sum_{k\ge0}P_{k-1}X^k$, so that $P_m=B_{m+1}$. By Proposition~\ref{prop:identification}(b), $\psi_m$ is the coefficient of $\e(m\rho)$ in the expansion of $1/\Phit_6$ in the Fourier--Jacobi region, i.e.\ the function $\varphi_m$ of Section~\ref{sec:setup}; we write $\psi_m$ to avoid a clash with the frame index. We write $\mathcal A=\mathcal A_{2,m}$ for the Appell--Lerch sum of \eqref{eq:polar}; note that $\pA$ (denoted $A$ in Section~\ref{sec:setup}) and $\mathcal A$ are different functions. Finally put
+\[
+\varphi'_m=\frac{P_m(L'_1,\dots,L'_{m+1})}{g(\sigma)\,\pA},\qquad L'_l=\sum_{td=l}\frac1{2dt}\sum_{r,s\in\{0,1\}}(-1)^{rt}\sum_{u=0}^{2d-1}F^{(r,s)}\Big(\frac{t\sigma+u}d,tv\Big),
+\]
+as in Lemma~\ref{lem:LlS} and Proposition~\ref{prop:PhiS}(ii).
+
+\begin{lemma}\label{tr:lem:gamma02}
+$\Gamma^0(2)=\{\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}\in SL_2(\ZZ):b\equiv0\bmod2\}$ is generated by $T^2$, $U=\begin{psmallmatrix}1&0\\1&1\end{psmallmatrix}$ and $-I$.
+\end{lemma}
+
+\begin{proof}
+The three elements lie in $\Gamma^0(2)$. Let $\gamma\in\Gamma^0(2)$ with first row $(a,b)$; $b$ is even, so $a$ is odd. Right multiplication by $T^{2k}$ replaces $b$ by $b+2ka$, and by $U^k$ replaces $a$ by $a+kb$; both preserve $\Gamma^0(2)$. If $b\ne0$ and $|b|>|a|$, choose $k$ with $|b+2ka|\le|a|$; as $b+2ka$ is even and $a$ odd, $|b+2ka|<|a|$. If $0<|b|<|a|$, choose $k$ with $|a+kb|\le|b|/2<|b|$; $a+kb$ stays odd. So $\max(|a|,|b|)$ decreases strictly until $b=0$; then $a=\pm1$, and the matrix is $\pm\begin{psmallmatrix}1&0\\c'&1\end{psmallmatrix}=\pm U^{c'}$. Hence $\gamma\in\langle T^2,U,-I\rangle$.
+\end{proof}
+
+\begin{proposition}\label{tr:prop:jacobi}
+\begin{enumerate}
+\item[(i)] $\psi_m$ is meromorphic on $\HH\times\CC$, holomorphic off $\ZZ\sigma+\ZZ$, with at most double poles on $v\in\ZZ\sigma+\ZZ$; it is even in $v$, satisfies the elliptic law of index $m$, and $\psi_m|_{-6,m}\gamma=\psi_m$ for $\gamma\in\Gamma^0(2)$.
+\item[(ii)] Near $v=0$, $\psi_m(\sigma,v)=G_I(\sigma)\,(2\pi iv)^{-2}+O(1)$ with $G_I(\sigma)=\hat f(m)/g(\sigma/2)$.
+\item[(iii)] Put $\psi_F=\psi_m|_{-6,m}R_F$ \textup($F\in\{I,T,S\}$\textup). Then $\psi_F$ has the properties in \textup{(i)} \textup(with $\Gamma^0(2)$ replaced by $R_F^{-1}\Gamma^0(2)R_F$\textup), $\psi_S=\frac1{16}\varphi'_m$, and $\psi_F(\sigma,v)=G_F(\sigma)(2\pi iv)^{-2}+O(1)$ near $v=0$, where $G_F=G_I|_{-8}R_F$:
+\[
+G_T(\tau)=G_I(\tau+1),\qquad G_S(\tau)=\tau^8G_I(-1/\tau)=\frac{\hat f(m)}{16\,g(\tau)} .
+\]
+\item[(iv)] For $N=N_{\gamma,\delta}$ and $F=F(\gamma,\delta)$, $\psi_m=\psi_F|_{-6,m}N^{-1}$, and $G_I(N\tau)=j(\tau)^{-8}G_F(\tau)$; this is property \textup{(T2a)} of Section~\ref{circ:input}, with $\lambda_{\gamma,\delta}=1$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+(i) Meromorphy, the location and order of the poles, evenness and the elliptic law are Proposition~\ref{prop:identification}(c): the $L_l$ are holomorphic, even and of index $l$ (Lemma~\ref{lem:modular}), $P_m$ is weighted homogeneous of weight $m+1$, $\pA=-\theta_1^2/\eta^6$ has index one and its zeros are double zeros along $\ZZ\sigma+\ZZ$, and $g(\sigma/2)$ has no zeros on $\HH$. By Lemma~\ref{tr:lem:slash}(i) the set of $\gamma$ with $\psi_m|_{-6,m}\gamma=\psi_m$ is a group, so by Lemma~\ref{tr:lem:gamma02} it suffices to treat $-I$, $T^2$ and $U^{-1}$.
+
+$-I$: $\psi_m|_{-6,m}(-I)(\sigma,v)=(-1)^{-6}\psi_m(\sigma,-v)=\psi_m(\sigma,v)$ by evenness.
+
+$T^2$: $\psi_m(\sigma+2,v)=\psi_m(\sigma,v)$. Indeed $g(\sigma/2)=x\prod(1-x^n)^8(1-x^{2n})^8$ and $\pA$ have period $2$, and in the term $(t,d,u)$ of \eqref{eq:Ll}, with the sign $(-1)^{sd+ru}$, the substitution $\sigma\mapsto\sigma+2$ replaces $u$ by $u+2t$, which permutes the residues modulo $2d$ and multiplies the sign by $(-1)^{2rt}=1$; so each $L_l$ has period $2$.
+
+$U^{-1}$: by Proposition~\ref{prop:PhiS}(iii), $\psi_m|_{-6,m}S=\frac1{16}\varphi'_m$. The function $\varphi'_m$ has period $1$ in $\sigma$: $g(\sigma)$ and $\pA$ have period $1$, and in the term $(t,d)$ of $L'_l$, $\sigma\mapsto\sigma+1$ replaces $u$ by $u+t$, which permutes the residues modulo $2d$, while the sign $(-1)^{rt}$ does not depend on $u$; here $F^{(r,s)}$ has period $2$ in $\tau$, by (P). Hence $(\psi_m|S)|T=\psi_m|S$, i.e.\ $\psi_m|STS^{-1}=\psi_m$, and $STS^{-1}=\begin{psmallmatrix}1&0\\-1&1\end{psmallmatrix}=U^{-1}$.
+
+(ii) By Proposition~\ref{prop:identification}(d), $\psi_m=-d_1(m)/(4\pi^2g(\sigma/2)v^2)+O(1)$, and $d_1(m)=\hat f(m)$ by \eqref{eq:d1}; as $(2\pi iv)^{-2}=-1/(4\pi^2v^2)$, this is (ii).
+
+(iii) Slashing preserves evenness, the elliptic law (Lemma~\ref{tr:lem:slash}(iii)) and meromorphy, and maps the lattice $\ZZ\sigma+\ZZ$ to itself; since $|_{-6,m}$ is an action, $\psi_F|_{-6,m}R_F^{-1}hR_F=\psi_F$ for $h\in\Gamma^0(2)$. $\psi_S=\frac1{16}\varphi'_m$ is Proposition~\ref{prop:PhiS}(iii). Near $v=0$, for $\gamma=\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}$, $(\psi_m|_{-6,m}\gamma)(\sigma,v)=(c\sigma+d)^6(1+O(v^2))\big[G_I(\gamma\sigma)(2\pi iv)^{-2}(c\sigma+d)^2+O(1)\big]$, so the coefficient is $(c\sigma+d)^8G_I(\gamma\sigma)=(G_I|_{-8}\gamma)(\sigma)$, and evenness excludes a $v^{-1}$ term. For $R_T$ this is $G_I(\tau+1)$; for $R_S$ it is $\tau^8\hat f(m)/g(-1/2\tau)$, and $\eta(-1/w)=(w/i)^{1/2}\eta(w)$ gives $g(-1/2\tau)=\eta(-1/2\tau)^8\eta(-1/\tau)^8=(2\tau/i)^4\eta(2\tau)^8(\tau/i)^4\eta(\tau)^8=16\tau^8g(\tau)$.
+
+(iv) $NR_F^{-1}\in\Gamma^0(2)$, so $\psi_m|N=\psi_m|R_F=\psi_F$ and $\psi_m=\psi_F|N^{-1}$. By (i) and the computation in (iii), $G_I|_{-8}h=G_I$ for $h\in\Gamma^0(2)$, so $G_I|_{-8}N=G_I|_{-8}R_F=G_F$, i.e.\ $G_F(\tau)=j(\tau)^8G_I(N\tau)$ ($j(\tau)=-\gamma\tau+\alpha$ is the automorphy factor of $N$).
+\end{proof}
+
+\begin{remark}\label{tr:rem:G}
+$1/g(\tau/2)=\sum_{j\ge0}\beta(j)x^{j-1}$ by \eqref{eq:beta}, with $\beta(0)=1$. Hence $G_I=\hat f(m)\e(-\tau/2)+\sum_{j\ge1}\hat f(m)\beta(j)\e((j-1)\tau/2)$, $G_T(\tau)=G_I(\tau+1)$ has the coefficients multiplied by $(-1)^{j-1}$, and $G_S=\frac{\hat f(m)}{16}q^{-1}\prod(1-q^n)^{-8}(1-q^{2n})^{-8}$. So $G_F=c_F\e(-\mu_F\tau)+\cdots$ with $c_I=\hat f(m)$, $\mu_I=\frac12$; $c_T=-\hat f(m)$, $\mu_T=\frac12$; $c_S=\hat f(m)/16$, $\mu_S=1$; the remaining exponents lie in $\frac12\ZZ_{\ge0}$, $\frac12\ZZ_{\ge0}$, $\ZZ_{\ge0}$, and the series converge absolutely on $\HH$. None of the $G_F$ vanishes identically, and $g(\tau/2)$ has weight $8$ and trivial character on $\Gamma^0(2)$ by Proposition~\ref{tr:prop:jacobi}(iii) applied to $h\in\Gamma^0(2)$.
+\end{remark}
+
+\subsection{The Appell--Lerch sum and its completion}\label{tr:appell}
+Recall
+\[
+\mathcal A(\tau,z)=\sum_{s\in\ZZ}q^{ms^2+s}y^{2ms+1}(1-q^sy)^{-2}.
+\]
+This series converges absolutely and locally uniformly off its poles, which are double, at $z\in\ZZ\tau+\ZZ$.
+
+\begin{lemma}\label{tr:lem:Aprops}
+$\mathcal A$ is even in $z$, $\mathcal A(\tau+1,z)=\mathcal A(\tau,z)$, it satisfies the elliptic law of index $m$, and $\mathcal A(\tau,z)=(2\pi iz)^{-2}+O(1)$ near $z=0$.
+\end{lemma}
+
+\begin{proof}
+Replacing $z$ by $-z$ in the term $s$ gives $q^{ms^2+s-2s}y^{1-2ms}(1-q^{-s}y)^{-2}$, the term $-s$. The exponents $ms^2+s$ are integers. Under $z\mapsto z+\tau$ the term $s$ becomes $p_s=q^{ms^2+s+2ms+1}y^{2ms+1}(1-q^{s+1}y)^{-2}$, and $ms^2+s+2ms+1=m(s+1)^2+(s+1)-m$, so $\mathcal A(\tau,z+\tau)=q^{-m}y^{-2m}\mathcal A(\tau,z)$; $z\mapsto z+1$ is clear. Near $z=0$ only the term $s=0$ is singular, and $y(1-y)^{-2}=(4\sinh^2(\pi iz))^{-1}=(2\pi iz)^{-2}+O(1)$.
+\end{proof}
+
+\begin{lemma}[Fourier expansion in a strip]\label{tr:lem:Afourier}
+For $-\operatorname{Im}\tau<\operatorname{Im}z<0$ $\mathcal A(\tau,z)$ is the absolutely convergent series $\sum_{r\in\ZZ}q^{r^2/4m}a(r)\,y^r$, where $a(0)=0$ and
+\[
+a(r)=\sum_{\substack{0<n<r\\ n\equiv r\,(2m)}}n\,q^{-n^2/4m}\quad(r>0),\qquad a(r)=-\sum_{\substack{r\le n<0\\ n\equiv r\,(2m)}}n\,q^{-n^2/4m}\quad(r<0).
+\]
+\end{lemma}
+
+\begin{proof}
+In the strip $|q^sy|<1$ for $s\ge1$ and $|q^sy|>1$ for $s\le0$. Expand $(1-w)^{-2}=\sum_{k\ge0}(k+1)w^k$ for $s\ge1$ and $(1-w)^{-2}=\sum_{k\ge0}(k+1)w^{-k-2}$ for $s\le0$; the resulting double series converge absolutely. For $s\ge1$ the coefficient of $y^r$ is $(r-2ms)q^{rs-ms^2}$ when $r\ge2ms+1$; for $s\le0$ it is $(2ms-r)q^{rs-ms^2}$ when $r\le2ms-1$. With $n=r-2ms$ one has $rs-ms^2=(r^2-n^2)/4m$, and the conditions become $0<n<r$, resp.\ $r\le n<0$, with $n\equiv r\bmod2m$.
+\end{proof}
+
+For $0\le\ell<2m$ put $\vartheta_{m,\ell}(\tau,z)=\sum_{r\equiv\ell\,(2m)}\e(r^2\tau/4m+rz)$ (as in Section~\ref{circ:conv}) and $\vartheta_\ell(\tau)=\vartheta_{m,\ell}(\tau,0)$, and
+\[
+\tilde P_\ell(\tau)=\int_0^{i\infty}\vartheta_\ell(u)(u+\tau)^{-3/2}du\qquad(\tau\in\HH),
+\]
+along the imaginary axis; it converges absolutely ($|\vartheta_\ell(it)|\le Ct^{-1/2}$ for $t\le1$ by Lemma~\ref{tr:lem:theta} below with $z=0$, and $\vartheta_\ell(it)$ is bounded for $t\ge1$) and is holomorphic in $\tau$. The same bound holds in every sector $|\Arg u-\frac\pi2|\le\frac\pi2-\epsilon$, so the path may be replaced by any path to $0$ inside such a sector.
+
+\begin{lemma}[Theta transformation]\label{tr:lem:theta}
+Let $M=\begin{psmallmatrix}\alpha&\beta\\\gamma&\delta\end{psmallmatrix}\in SL_2(\ZZ)$ with $\gamma\ge1$ and $\alpha$ as in Section~\ref{circ:conv} \textup(so $M=M_{\gamma,\delta}$\textup), and $J=\gamma\tau+\delta$. Then for $0\le\tilde\ell<2m$
+\[
+\vartheta_{m,\tilde\ell}\Big(M\tau,\frac zJ\Big)=J^{1/2}\e\Big(\frac{m\gamma z^2}J\Big)\sum_{\ell=0}^{2m-1}W_{\gamma,\delta}(\tilde\ell,\ell)\,\vartheta_{m,\ell}(\tau,z),
+\]
+with $W_{\gamma,\delta}$ as in \eqref{eq:weil}. In particular \textup($\gamma=1$, $\delta=0$\textup)
+\[
+\vartheta_{m,\ell}(-1/\tau,z/\tau)=(\tau/2mi)^{1/2}\e(mz^2/\tau)\sum_{\ell'}\e(-\ell\ell'/2m)\vartheta_{m,\ell'}(\tau,z).
+\]
+\end{lemma}
+
+\begin{proof}
+$M\tau=\frac\alpha\gamma-\frac1{\gamma J}$. Write $r\equiv\tilde\ell\bmod 2m$ as $r=x+2m\gamma p$ with $x=\tilde\ell-2mT$, $0\le T<\gamma$, $p\in\ZZ$. Then $\e(\alpha r^2/4m\gamma)=\e(\alpha x^2/4m\gamma)$, and
+\[
+\vartheta_{m,\tilde\ell}(M\tau,z/J)=\sum_{T}\e\Big(\frac{\alpha x^2}{4m\gamma}\Big)\sum_{p}\Phi(x+2m\gamma p),\qquad \Phi(s)=\e\Big(-\frac{s^2}{4m\gamma J}+\frac{sz}J\Big).
+\]
+Since $\operatorname{Im}(-1/J)>0$, $\Phi$ is a Schwartz function, with
+\[
+\hat\Phi(\xi)=\int\Phi(s)\e(-s\xi)\,ds=(2m\gamma J/i)^{1/2}\,\e\big(m\gamma(z-\xi J)^2/J\big)
+\]
+(the Gaussian integral $\int\exp(\pi iAs^2+2\pi iBs)ds=(-iA)^{-1/2}\exp(-\pi iB^2/A)$, $\operatorname{Im}A>0$). Poisson summation,
+\[
+\sum_p\Phi(x+2m\gamma p)=\frac1{2m\gamma}\sum_k\hat\Phi\Big(\frac k{2m\gamma}\Big)\e\Big(\frac{kx}{2m\gamma}\Big),\qquad \frac{m\gamma}J\Big(z-\frac{kJ}{2m\gamma}\Big)^2=\frac{m\gamma z^2}J-kz+\frac{k^2\tau}{4m}+\frac{\delta k^2}{4m\gamma},
+\]
+and $k\mapsto-k$ give
+\[
+\vartheta_{m,\tilde\ell}(M\tau,z/J)=\frac{(J/i)^{1/2}}{\sqrt{2m\gamma}}\e\Big(\frac{m\gamma z^2}J\Big)\sum_{k\in\ZZ}\Big[\sum_T\mathcal S(x,k)\Big]\e\Big(\frac{k^2\tau}{4m}+kz\Big),
+\]
+where $\mathcal S(x,k)=\e\big((\alpha x^2-2kx+\delta k^2)/4m\gamma\big)$,
+all sums converging absolutely. $\mathcal S(x,k)$ depends on $x$ only modulo $2m\gamma$, and $\mathcal S(x+2m\delta,k+2m)=\mathcal S(x,k)$ because the difference of the arguments is $4m(\alpha\delta-1)(x+m\delta)/4m\gamma=\beta(x+m\delta)\in\ZZ$; as $x\mapsto x+2m\delta$ permutes the classes $\tilde\ell-2mT$ modulo $2m\gamma$, $\sum_T\mathcal S(x,k)$ depends only on $k\bmod2m$. Grouping $k\equiv\ell\bmod2m$ gives the claim, since $(J/i)^{1/2}(2m\gamma)^{-1/2}=J^{1/2}(2m\gamma i)^{-1/2}$ for $J\in\HH$.
+\end{proof}
+
+\begin{lemma}[Mordell integral]\label{circ:lem:mordell}
+Let $\gamma\ge1$, $g\in\ZZ$, and $\theta_{\gamma,g}(t)=\sum_{p\in\ZZ}\exp(-\pi(g+2m\gamma p)^2t/2m)$ for $t>0$. For $\operatorname{Re}X>0$,
+\[
+\int_0^\infty\theta_{\gamma,g}(t)\,(t+X)^{-3/2}\,dt=\frac{2\,\mathbf 1_{2m\gamma\mid g}}{\sqrt X}-\frac1{\sqrt{2m}\,\pi\gamma^2X}\int_{\RR}e^{-2\pi mXu^2}f_{\gamma,g}(u)\,du ,
+\]
+all integrals converging absolutely.
+\end{lemma}
+
+\begin{proof}
+Write $a_p=g+2m\gamma p$ and $\lambda_p=\pi a_p^2/2m$. If $a_{p_0}=0$ for some (unique) $p_0$, which happens exactly when $2m\gamma\mid g$, its term contributes $\int_0^\infty(t+X)^{-3/2}dt=2X^{-1/2}$. For the terms with $a_p\ne0$ we use, for $\operatorname{Re}s>0$, $\int_\RR v^2e^{-sv^2}dv=\frac{\sqrt\pi}2s^{-3/2}$ (true for $s>0$, and both sides are holomorphic), with $s=t+X$:
+\[
+\begin{aligned}
+\int_0^\infty e^{-\lambda_pt}(t+X)^{-3/2}dt&=\frac2{\sqrt\pi}\int_\RR\frac{v^2e^{-Xv^2}}{\lambda_p+v^2}dv\\
+&=2\sqrt{2m}\int_\RR e^{-2\pi mXu^2}\frac{4m^2u^2}{a_p^2+4m^2u^2}du,
+\end{aligned}
+\]
+by Fubini (the double integral of $v^2e^{-t(\lambda_p+v^2)-v^2\operatorname{Re}X}$ is finite) and $v=\sqrt{2\pi m}\,u$. The last integral is at most $\frac{4m^2}{a_p^2}\int u^2e^{-2\pi m u^2\operatorname{Re}X}du$, which is summable over $p$; so summation over $p$ and integration over $t$ may be interchanged (also $\sum_p\int_0^\infty e^{-\lambda_pt}|t+X|^{-3/2}dt<\infty$). Now integrate by parts, using $ue^{-2\pi mXu^2}=-\frac1{4\pi mX}\frac d{du}e^{-2\pi mXu^2}$ and the vanishing at $\pm\infty$ of $\frac{4m^2u}{a_p^2+4m^2u^2}$:
+\[
+\begin{gathered}
+\int_\RR e^{-2\pi mXu^2}\frac{4m^2u^2}{a_p^2+4m^2u^2}du=\frac1{4\pi mX}\int_\RR e^{-2\pi mXu^2}\frac d{du}\frac{4m^2u}{a_p^2+4m^2u^2}du,\\
+\frac d{du}\frac{4m^2u}{a_p^2+4m^2u^2}=2m^2\Big(\frac1{(a_p+2miu)^2}+\frac1{(a_p-2miu)^2}\Big).
+\end{gathered}
+\]
+The last expression is bounded by $4m^2/a_p^2$, which is summable, so we may sum over $p$ under the integral. With $\pi^2/\sin^2(\pi w)=\sum_{p\in\ZZ}(w+p)^{-2}$ for $w\notin\ZZ$ \cite[Chapter~5, \S2.1]{Ahl79}, $a_p\pm2miu=2m\gamma(p+\frac g{2m\gamma}\pm\frac{iu}\gamma)$, and $\sin(\pi(c\pm\frac{iu}\gamma))=\pm i\sinh(\frac{\pi u}\gamma\mp\pi ic)$, one finds, for $2m\gamma\nmid g$ and $c=g/2m\gamma$,
+\[
+\sum_{p}\frac1{(a_p\pm2miu)^2}=-\frac{1}{4m^2\gamma^2}\,f_{\gamma,g}(\pm u),
+\]
+and for $2m\gamma\mid g$, summing over $p\ne p_0$ and subtracting the term $p'=0$ from $\sum_{p'}(p'\pm iu/\gamma)^{-2}$, the same identity with $f_{\gamma,0}$ (even) for $u\ne0$, and by continuity at $u=0$. Hence in both cases
+\[
+\begin{aligned}
+\sum_{a_p\ne0}\int_0^\infty e^{-\lambda_pt}(t+X)^{-3/2}dt&=\frac{2\sqrt{2m}}{4\pi mX}\int_\RR e^{-2\pi mXu^2}\cdot2m^2\cdot\Big(-\frac{f_{\gamma,g}(u)+f_{\gamma,g}(-u)}{4m^2\gamma^2}\Big)du\\
+&=-\frac{1}{\sqrt{2m}\,\pi\gamma^2X}\int_\RR e^{-2\pi mXu^2}f_{\gamma,g}(u)\,du,
+\end{aligned}
+\]
+using that $e^{-2\pi mXu^2}$ is even. Absolute convergence holds because $f_{\gamma,g}$ is bounded, by \eqref{eq:fsum}, and $\operatorname{Re}X>0$.
+\end{proof}
+
+For $0\le\ell<2m$ and $\tau\in\HH$ put
+\begin{equation}\label{circ:kappa}
+\kappa_m=-\sqrt{\frac m{4\pi}}\Big(\frac i{2\pi}\Big)^{1/2}=-\frac{e^{\pi i/4}\sqrt m}{2\sqrt2\,\pi},\qquad
+E_\ell(\tau)=\int_{-\bar\tau}^{i\infty}\vartheta_\ell(w)\,(w+\tau)^{-3/2}\,dw,
+\end{equation}
+the integral along the vertical ray. Integrating term by term along $w=-\bar\tau+it$, $t\ge0$, and writing $\Gamma(s,x)=\int_x^\infty e^{-t}t^{s-1}\,dt$,
+\[
+E_\ell(\tau)=e^{-\pi i/4}\Big(\frac{2\,\delta_{\ell\equiv0\,(2m)}}{\sqrt{2\tau_2}}+\sum_{\substack{r\equiv\ell\,(2m)\\ r\ne0}}\sqrt{\frac{\pi r^2}{2m}}\;\Gamma\Big(-\frac12,\frac{\pi r^2\tau_2}m\Big)\,\e\Big(-\frac{r^2\tau}{4m}\Big)\Big),
+\]
+so $E_\ell$ is a non-holomorphic Eichler integral of $\vartheta_\ell$; the constant $\kappa_m$ is the one forced by the invariance in the next proposition.
+
+\begin{proposition}[Completion of $\mathcal A$]\label{tr:prop:Ahat}
+With $\kappa_m$ and $E_\ell$ as in \eqref{circ:kappa}, put
+\[
+\widehat{\mathcal A}(\tau,z)=\mathcal A(\tau,z)-\kappa_m\sum_{\ell=0}^{2m-1}E_\ell(\tau)\,\vartheta_{m,\ell}(\tau,z).
+\]
+Then $\widehat{\mathcal A}|_{2,m}\gamma=\widehat{\mathcal A}$ for every $\gamma\in SL_2(\ZZ)$, and $\widehat{\mathcal A}$ satisfies the elliptic law of index $m$.
+\end{proposition}
+
+\begin{proof}
+The elliptic law holds for $\mathcal A$ (Lemma~\ref{tr:lem:Aprops}) and for each $\vartheta_{m,\ell}$. Since $SL_2(\ZZ)$ is generated by $T=\begin{psmallmatrix}1&1\\0&1\end{psmallmatrix}$ and $S$, it suffices to treat these. Put $\mathcal R=\sum_\ell E_\ell\vartheta_{m,\ell}$.
+
+\emph{$T$.} $\mathcal A(\tau+1,z)=\mathcal A(\tau,z)$. Substituting $w\mapsto w-1$ in $E_\ell(\tau+1)=\int_{-\bar\tau-1}^{i\infty}\vartheta_\ell(w)(w+\tau+1)^{-3/2}dw$ and using $\vartheta_\ell(w-1)=\e(-\ell^2/4m)\vartheta_\ell(w)$ gives $E_\ell(\tau+1)=\e(-\ell^2/4m)E_\ell(\tau)$, while $\vartheta_{m,\ell}(\tau+1,z)=\e(\ell^2/4m)\vartheta_{m,\ell}(\tau,z)$; so $\mathcal R(\tau+1,z)=\mathcal R(\tau,z)$.
+
+\emph{$S$, the correction term.} We show $\mathcal R|_{2,m}S=\mathcal R-\sum_\ell\tilde P_\ell\vartheta_{m,\ell}$. By Lemma~\ref{tr:lem:theta},
+\[
+(\mathcal R|_{2,m}S)(\tau,z)=\tau^{-3/2}\sum_{\ell'}\Big[\sum_\ell W_{1,0}(\ell,\ell')E_\ell(-1/\tau)\Big]\vartheta_{m,\ell'}(\tau,z)\qquad(\tau^{-2}\tau^{1/2}=\tau^{-3/2}).
+\] In $E_\ell(-1/\tau)=\int_{1/\bar\tau}^{i\infty}\vartheta_\ell(w)(w-1/\tau)^{-3/2}dw$ substitute $w=-1/u$: $u$ runs from $-\bar\tau$ to $0$ (within a sector as above), $dw=u^{-2}du$, $\vartheta_\ell(-1/u)=(u/2mi)^{1/2}\sum_{\ell''}\e(-\ell\ell''/2m)\vartheta_{\ell''}(u)$, and
+\[
+\Big(-\frac1u-\frac1\tau\Big)^{-3/2}=\Big(-\frac{u+\tau}{u\tau}\Big)^{-3/2}=e^{-3\pi i/2}(u+\tau)^{-3/2}u^{3/2}\tau^{3/2}=i\,(u+\tau)^{-3/2}u^{3/2}\tau^{3/2}
+\]
+(the arguments satisfy $\Arg(-\frac{u+\tau}{u\tau})=\Arg(u+\tau)-\Arg u-\Arg\tau+\pi$: both sides are continuous on $\HH\times\HH$, congruent modulo $2\pi$, and agree at $u=\tau=i$). With $(u/2mi)^{1/2}=(2m)^{-1/2}e^{-\pi i/4}u^{1/2}$ and $u^{1/2}u^{3/2}u^{-2}=1$,
+\[
+E_\ell(-1/\tau)=\frac{e^{\pi i/4}\tau^{3/2}}{\sqrt{2m}}\sum_{\ell''}\e\Big(-\frac{\ell\ell''}{2m}\Big)\int_{-\bar\tau}^{0}\vartheta_{\ell''}(u)(u+\tau)^{-3/2}du .
+\]
+Since $W_{1,0}(\ell,\ell')=(2m)^{-1/2}e^{-\pi i/4}\e(-\ell\ell'/2m)$, $\sum_\ell\e(-\ell(\ell'+\ell'')/2m)=2m\,\mathbf 1_{\ell''\equiv-\ell'}$ and $\vartheta_{-\ell'}=\vartheta_{\ell'}$,
+\[
+\tau^{-3/2}\sum_\ell W_{1,0}(\ell,\ell')E_\ell(-1/\tau)=\int_{-\bar\tau}^0\vartheta_{\ell'}(u)(u+\tau)^{-3/2}du=E_{\ell'}(\tau)-\tilde P_{\ell'}(\tau).
+\]
+
+\emph{$S$, the sum $\mathcal A$.} Let $\mathcal D=\mathcal A|_{2,m}S-\mathcal A$. Both terms are even, satisfy the elliptic law of index $m$, are holomorphic off $\ZZ\tau+\ZZ$ and equal $(2\pi iz)^{-2}+O(1)$ at $z=0$ (for $\mathcal A|_{2,m}S$: $\tau^{-2}\e(-mz^2/\tau)(2\pi iz/\tau)^{-2}(1+O(z^2))$). So $\mathcal D$ is holomorphic at $0$, hence on $\HH\times\CC$ by the elliptic law, and $\mathcal D=\sum_\ell d_\ell(\tau)\vartheta_{m,\ell}(\tau,z)$ with $d_\ell$ holomorphic \cite[Theorem~5.1]{EZ85} (the proof there uses only the elliptic law and holomorphy). We show $d_\ell=c_\ell$, $c_\ell:=\frac{\sqrt{2m}}{4\pi}e^{\pi i/4}\tilde P_\ell$.
+
+\emph{Unfolding.} With $\e(-mz^2/\tau)\,q'^{ms^2+s}y'^{2ms+1}=\e\big((-m(z-s)^2+(z-s))/\tau\big)$ for $q'=\e(-1/\tau)$, $y'=\e(z/\tau)$, and $\e(u)(1-\e(u))^{-2}=-(4\sin^2\pi u)^{-1}=-\frac1{4\pi^2}\sum_k(u-k)^{-2}$,
+\[
+(\mathcal A|_{2,m}S)(\tau,z)=\sum_{s\in\ZZ}\Phi(z-s),\qquad \Phi(w)=\frac1{(2\pi i)^2}\e\Big(-\frac{mw^2}\tau\Big)\sum_{k\in\ZZ}(w-k\tau)^{-2}.
+\]
+On every horizontal line, $|\e(-mw^2/\tau)|=\exp(-2\pi m(\operatorname{Re}w)^2\tau_2/|\tau|^2+O(|\operatorname{Re}w|))$, and $\sum_k(w-k\tau)^{-2}$ is bounded on the line away from its poles $w\in\ZZ\tau$. So for $-\tau_2<c<0$ the Fourier coefficient of $\mathcal A|_{2,m}S$ on $\operatorname{Im}z=c$ is
+\[
+g_r=\int_{\operatorname{Im}z=c}\Phi(z)\e(-rz)\,dz=\frac{q^{r^2/4m}}{(2\pi i)^2}\sum_{k}K_{c'}(\nu_k),\qquad \nu_k=k+\frac r{2m},\ c'=c+\frac{r\tau_2}{2m},
+\]
+where $K_h(\nu)=\int_{\operatorname{Im}w=h}\e(-mw^2/\tau)(w-\nu\tau)^{-2}dw$ for $h\ne\nu\tau_2$; we completed the square, $-mz^2/\tau-rz=-m(z+r\tau/2m)^2/\tau+r^2\tau/4m$, substituted $w=z+r\tau/2m$, and exchanged $\sum_k$ and $\int$ (uniform convergence on the line, Gaussian decay). The line $\operatorname{Im}w=c'$ meets no pole, as $c/\tau_2\notin\ZZ$.
+
+\emph{Moving the line.} Let $h_0=0$ if $2m\nmid r$ and $h_0=-\epsilon$ with $0<\epsilon<\tau_2$ if $2m\mid r$; no pole $\nu_k\tau$ lies on $\operatorname{Im}w=h_0$. The residue of $\e(-mw^2/\tau)(w-\nu\tau)^{-2}$ at $\nu\tau$ is $-4\pi im\nu\,q^{-m\nu^2}$, and the Gaussian decay allows moving lines, so $K_{c'}(\nu)=K_{h_0}(\nu)-8\pi^2m\nu q^{-m\nu^2}$ if $h_0<\nu\tau_2<c'$, $K_{c'}(\nu)=K_{h_0}(\nu)+8\pi^2m\nu q^{-m\nu^2}$ if $c'<\nu\tau_2<h_0$, and $K_{c'}=K_{h_0}$ otherwise. With $n=2m\nu_k\equiv r\bmod2m$ and $2mc/\tau_2\in(-2m,0)$, the first case is $0\le n<r$ and the second is $r\le n<0$ (the term $n=0$ has residue $0$). Each crossed pole contributes $\mp4\pi^2nq^{-n^2/4m}$ to $\sum_kK_{c'}(\nu_k)$, i.e.\ $\pm nq^{-n^2/4m}$ to $g_rq^{-r^2/4m}$; by Lemma~\ref{tr:lem:Afourier} these contributions add up to exactly $a(r)$. Since $\mathcal D$ has Fourier coefficients $g_r-q^{r^2/4m}a(r)=q^{r^2/4m}d_\ell$ ($r\equiv\ell$),
+\[
+d_\ell(\tau)=-\frac1{4\pi^2}\sum_kK_{h_0}\Big(k+\frac r{2m}\Big)=-\frac1{4\tau^2}\int_{\operatorname{Im}w=h_0}\frac{\e(-mw^2/\tau)}{\sin^2\big(\pi(w/\tau-\frac r{2m})\big)}dw,
+\]
+by $\sum_k(w-(k+\frac r{2m})\tau)^{-2}=\tau^{-2}\pi^2/\sin^2(\pi(w/\tau-\frac r{2m}))$ \cite[Chapter~5, \S2.1]{Ahl79}.
+
+\emph{Evaluation on the imaginary axis.} Both sides being holomorphic in $\tau$, take $\tau=it$, $t>0$, and $w=tu$. Then $\e(-mw^2/\tau)=e^{-2\pi mtu^2}$, and $\sin(\pi(-iu-\frac r{2m}))^2=-\sinh^2(\pi u-\frac{\pi ir}{2m})$, so in the notation of Section~\ref{circ:conv} ($\gamma=1$), for $2m\nmid r$,
+\[
+d_\ell(it)=-\frac1{4\pi^2t}\int_\RR e^{-2\pi mtu^2}f_{1,r}(u)\,du .
+\]
+For $2m\mid r$ the integrand is $e^{-2\pi mtu^2}\pi^2/\sinh^2(\pi u)=e^{-2\pi mtu^2}(f_{1,0}(u)+u^{-2})$ on the line $\operatorname{Im}u=-\epsilon/t$; $f_{1,0}$ is holomorphic in $|\operatorname{Im}u|<1$, so its part may be moved to $\RR$, and integration by parts gives $\int_{\operatorname{Im}u=-\epsilon/t}e^{-au^2}u^{-2}du=-2a\int_\RR e^{-au^2}du=-2\sqrt{\pi a}$, $a=2\pi mt$. Hence $d_0(it)=-\frac1{4\pi^2t}\big(\int_\RR e^{-2\pi mtu^2}f_{1,0}du-2\pi\sqrt{2mt}\big)$. In both cases Lemma~\ref{circ:lem:mordell} with $\gamma=1$, $g=r$, $X=t$, and $\theta_{1,r}(s)=\vartheta_\ell(is)$, gives
+\[
+d_\ell(it)=\frac{\sqrt{2m}}{4\pi}\int_0^\infty\vartheta_\ell(is)(s+t)^{-3/2}ds=\frac{\sqrt{2m}}{4\pi}e^{\pi i/4}\tilde P_\ell(it),
+\]
+the last step by $u=is$ in $\tilde P_\ell$ and $(i(s+t))^{-3/2}=i^{-3/2}(s+t)^{-3/2}$. So $d_\ell=c_\ell$ on $i\RR_{>0}$, hence on $\HH$.
+
+\emph{Conclusion.} $\widehat{\mathcal A}|_{2,m}S-\widehat{\mathcal A}=\mathcal D-\kappa_m(\mathcal R|_{2,m}S-\mathcal R)=\sum_\ell\big(c_\ell+\kappa_m\tilde P_\ell\big)\vartheta_{m,\ell}=0$, because $\kappa_m=-\frac{\sqrt{2m}}{4\pi}e^{\pi i/4}$.
+\end{proof}
+
+\subsection{Theta decomposition and the transformation law}\label{tr:T2}
+For each frame put $\psi^F_F=\psi_F-G_F\mathcal A$.
+
+\begin{lemma}\label{tr:lem:thetadec}
+$\psi^F_F$ is holomorphic on $\HH\times\CC$, even, satisfies the elliptic law of index $m$, and $\psi^F_F=\sum_{\ell=0}^{2m-1}h_{F,\ell}(\tau)\vartheta_{m,\ell}(\tau,z)$ with $h_{F,\ell}$ holomorphic on $\HH$. For $F=I$, $\psi^F_I$ is the finite part $\varphi^F_m$ of \eqref{eq:polar} and
+\begin{equation}\label{circ:T1}
+h_{I,\ell}(\tau)=\sum_{n\in\ZZ}c^F_m(n,\ell)\,\e\Big(\frac{(2mn-\ell^2)\tau}{4m}\Big);
+\end{equation}
+ $\psi^F_T(\tau,z)=\psi^F_I(\tau+1,z)$, so $h_{T,\ell}(\tau)=\e(\ell^2/4m)h_{I,\ell}(\tau+1)$; and $h_{F,\ell}(\tau)\e(\ell^2\tau/4m)$ has period $2$ for $F=I,T$ and period $1$ for $F=S$.
+\end{lemma}
+
+\begin{proof}
+By Proposition~\ref{tr:prop:jacobi} and Lemma~\ref{tr:lem:Aprops}, $\psi_F$ and $G_F\mathcal A$ are even, of index $m$, holomorphic off the lattice, and have the same principal part $G_F(2\pi iz)^{-2}$ at $z=0$; so the difference is holomorphic at $0$ and, by the elliptic law, everywhere. Expand $\psi^F_F(\tau,z)=\sum_rA_r(\tau)\e(rz)$ (period $1$ in $z$); the elliptic law with $\lambda=1$ gives $A_{r+2m}(\tau)=\e(((r+2m)^2-r^2)\tau/4m)A_r(\tau)$, so $h_{F,\ell}:=\e(-r^2\tau/4m)A_r$ depends only on $r\equiv\ell\bmod2m$, which is the theta decomposition. For $F=I$, $G_I\mathcal A$ is the polar part \eqref{eq:polar} (Proposition~\ref{tr:prop:jacobi}(ii)), and inserting $\varphi^F_m=\sum c^F_m(n,\ell)x^ny^\ell$ gives \eqref{circ:T1}. For $F=T$ use $\mathcal A(\tau+1,z)=\mathcal A(\tau,z)$ and $\vartheta_{m,\ell}(\tau+1,z)=\e(\ell^2/4m)\vartheta_{m,\ell}(\tau,z)$. The periods: $\psi_I$ is invariant under $\tau\mapsto\tau+2$ ($\begin{psmallmatrix}1&2\\0&1\end{psmallmatrix}\in\Gamma^0(2)$), and so is $G_I\mathcal A$; for $S$, $STS^{-1}=\begin{psmallmatrix}1&0\\-1&1\end{psmallmatrix}\in\Gamma^0(2)$ gives $\psi_S(\tau+1,z)=\psi_S(\tau,z)$, and $G_S$, $\mathcal A$ have period $1$.
+\end{proof}
+
+Put
+\begin{equation}\label{circ:T2b}
+\hh_{F,\ell}(\tau)=h_{F,\ell}(\tau)+h^-_{F,\ell}(\tau),\qquad h^-_{F,\ell}(\tau)=\kappa_m\,G_F(\tau)\,E_\ell(\tau),
+\end{equation}
+with $\kappa_m$ and $E_\ell$ as in \eqref{circ:kappa}; these are the theta coefficients of the completion $\widehat\psi_F=\psi_F-G_F\widehat{\mathcal A}$.
+
+\begin{theorem}[Transformation law]\label{tr:thm:T2}
+Put $\widehat\psi_F=\psi_F-G_F\widehat{\mathcal A}=\sum_\ell\hh_{F,\ell}\vartheta_{m,\ell}$. Then $\widehat\psi_F|_{-6,m}N^{-1}=\widehat\psi_I$ for $N=N_{\gamma,\delta}$, $F=F(\gamma,\delta)$, and for $0\le\ell<2m$, $\tau\in\HH$,
+\[
+\hh_{I,\ell}(N\tau)=j(\tau)^{-13/2}\sum_{\ell'=0}^{2m-1}W_{\gamma,\delta}(\ell',\ell)\,\hh_{F,\ell'}(\tau).
+\]
+Together with Proposition~\ref{tr:prop:jacobi}(iv) this is property \textup{(T2)} of Section~\ref{circ:input}, with $\lambda_{\gamma,\delta}=1$.
+\end{theorem}
+
+\begin{proof}
+By Proposition~\ref{tr:prop:jacobi}(iv), Proposition~\ref{tr:prop:Ahat} and Lemma~\ref{tr:lem:slash}(ii),
+\[
+\widehat\psi_F|_{-6,m}N^{-1}=\psi_F|N^{-1}-(G_F|_{-8}N^{-1})(\widehat{\mathcal A}|_{2,m}N^{-1})=\psi_m-G_I\widehat{\mathcal A}=\widehat\psi_I.
+\] Now $N^{-1}=M_{\gamma,\delta}=M$; with $J=\gamma\tau+\delta$ and Lemma~\ref{tr:lem:theta},
+\[
+\begin{aligned}
+\widehat\psi_I(\tau,z)&=J^6\e\Big(-\frac{m\gamma z^2}J\Big)\sum_{\ell'}\hh_{F,\ell'}(M\tau)\vartheta_{m,\ell'}\Big(M\tau,\frac zJ\Big)\\&=J^{13/2}\sum_\ell\Big[\sum_{\ell'}W_{\gamma,\delta}(\ell',\ell)\hh_{F,\ell'}(M\tau)\Big]\vartheta_{m,\ell}(\tau,z)
+\end{aligned}
+\]
+($J^6J^{1/2}=J^{13/2}$, $J\in\HH$). The $\vartheta_{m,\ell}(\tau,\cdot)$, $0\le\ell<2m$, have disjoint Fourier supports in $z$, so $\hh_{I,\ell}(\tau)=J^{13/2}\sum_{\ell'}W(\ell',\ell)\hh_{F,\ell'}(M\tau)$. Replace $\tau$ by $N\tau$: $M N\tau=\tau$ and $J(N\tau)\,j(\tau)=1$ (cocycle of $MN=1$). As $j(\tau)$ lies in the lower half-plane, $\Arg(1/j)=-\Arg j$ and $(1/j)^{13/2}=j^{-13/2}$.
+\end{proof}
+
+\begin{remark}
+The completion $\widehat\psi_F$ is not holomorphic: $\partial_{\bar\tau}\hh_{F,\ell}=\kappa_mG_F\overline{\vartheta_\ell}(2i\tau_2)^{-3/2}$ (see the proof of Lemma~\ref{circ:lem:theta}), so the shadow of $\psi^F_F$ is $\kappa_mG_F$ times the vector $(\overline{\vartheta_\ell})$.
+\end{remark}
+
+\subsection{Growth and finiteness of the polar parts}\label{tr:growth}
+With the operators $\|M$ of Section~\ref{tr:conv} (weight $0$, index one), so \eqref{eq:Ll} reads
+\begin{equation}\label{tr:Ll}
+L_l=\sum_{td=l}\frac1{2dt}\sum_{r,s}(-1)^{sd}\sum_{u=0}^{2d-1}(-1)^{ru}F^{(r,s)}\|M_{t,u,d}.
+\end{equation}
+
+\begin{lemma}\label{tr:lem:Lbound}
+For $\gamma\in SL_2(\ZZ)$ and $l\ge1$ there is $C$ such that $|(L_l|_{0,l}\gamma)(\sigma,v)|\le Ce^{\pi l\operatorname{Im}\sigma}$ on $\operatorname{Im}v=-\frac12\operatorname{Im}\sigma$, $\operatorname{Im}\sigma\ge l$.
+\end{lemma}
+
+\begin{proof}
+For each term of \eqref{tr:Ll}, $M_{t,u,d}\gamma=\gamma'M'$ with $\gamma'\in SL_2(\ZZ)$ and $M'=\begin{psmallmatrix}t'&u'\\0&d'\end{psmallmatrix}$, $d'\ge1$, $t'd'=l$ (Hermite normal form; replace $\gamma'$ by $-\gamma'$ if necessary, $F^{(r,s)}$ being even). So $F^{(r,s)}\|M_{t,u,d}|_{0,l}\gamma=F^{(r,s)}\|(\gamma'M')=(F^{(r,s)}|_{0,1}\gamma')\|M'=F^{(r',s')}((t'\sigma+u')/d',t'v)$ by Lemma~\ref{tr:lem:slash}(i) and Lemma~\ref{lem:generaS}. Let $F$ be a genus, $F=h_0\vartheta_{1,0}+h_1\vartheta_{1,1}$ its theta decomposition; by (P) $h_\mu=\sum_{n\ge0}c(n,\mu)q^{n-\mu^2/4}$, so $|h_\mu(\tau')|\le Ce^{\pi\operatorname{Im}\tau'/2}$ for $\operatorname{Im}\tau'\ge1$. With $T=\operatorname{Im}\tau'$, $Y=\operatorname{Im}z'$, $|\vartheta_{1,\mu}(\tau',z')|\le e^{2\pi Y^2/T}\sum_r e^{-\frac{\pi T}2(r+2Y/T)^2}\le(1+\sqrt{2/T})e^{2\pi Y^2/T}$. At $\tau'=(t'\sigma+u')/d'$, $z'=t'v$: $T=t'\tau_2/d'\in[\tau_2/l,l\tau_2]$ and $Y^2/T=l\tau_2/4$, so each term is at most $Ce^{\pi l\tau_2/2+\pi l\tau_2/2}$.
+\end{proof}
+
+\begin{theorem}[Finiteness of the polar parts]\label{tr:thm:polar}
+For each frame $F$ and $0\le\ell<2m$, $h_{F,\ell}(\tau)\e(\ell^2\tau/4m)$ is a Laurent series in $\e(\tau/w_F)$ \textup($w_I=w_T=2$, $w_S=1$\textup) with finitely many negative powers, converging absolutely and locally uniformly on $\HH$. Consequently property \textup{(T1)} of Section~\ref{circ:input} holds, and $h_{F,\ell}(\tau)=\sum_\lambda b(\lambda)\e(\lambda\tau)$ with $\lambda\in\frac1{4m}\ZZ$, only finitely many $\lambda<0$, absolutely convergent on $\HH$; in particular at $\operatorname{Im}\tau=\frac12$. With Remark~\ref{tr:rem:G} this is property \textup{(T3)} with finite sets $P_F$ \textup($\tilde\nu\in\frac12\ZZ$ for $F=I,T$, $\tilde\nu\in\ZZ$ for $F=S$\textup).
+\end{theorem}
+
+\begin{proof}
+By Lemma~\ref{tr:lem:thetadec}, $H(\tau)=h_{F,\ell}(\tau)\e(\ell^2\tau/4m)$ is holomorphic with period $w_F$, so it is an absolutely and locally uniformly convergent Laurent series $\sum_nb_n\e(n\tau/w_F)$ on $\HH$ (Laurent expansion on $0<|\e(\tau/w_F)|<1$). It suffices to show $|H(\tau)|\le Ce^{C'\tau_2}$ for $\tau_2\ge\tau_0$, uniformly in $\tau_1$: then $|b_{-n}|=|\frac1{w_F}\int_0^{w_F}H(\tau)\e(n\tau/w_F)d\tau_1|\le Ce^{(C'-2\pi n/w_F)\tau_2}\to0$ for $n>C'w_F/2\pi$.
+
+Shift the coefficient integral to the line $\operatorname{Im}z=-\tau_2/2$ ($\psi^F_F$ is entire and $1$-periodic in $z$): $h_{F,\ell}(\tau)\e(\ell^2\tau/4m)=\int_0^1\psi^F_F(\tau,x_0-i\tau_2/2)\e(-\ell(x_0-i\tau_2/2))dx_0$, and $|\e(-\ell z)|=e^{-\pi\ell\tau_2}$ there. On this line:
+
+(a) $|\mathcal A|\le C$ for $\tau_2\ge1$: $|y|=e^{\pi\tau_2}$, the term $s$ has modulus $e^{-2\pi\tau_2(ms(s-1)+s-\frac12)}|1-q^sy|^{-2}$ and $|q^sy|=e^{\pi\tau_2(1-2s)}$; the terms $s=0,1$ are $O(e^{-\pi\tau_2})$ and the others are smaller.
+
+(b) $|G_F(\tau)|\le Ce^{2\pi\tau_2}$ by Remark~\ref{tr:rem:G}.
+
+(c) $|\psi_F|\le Ce^{C'\tau_2}$. By \eqref{tr:psim}, $\psi_m=B_{m+1}/(g(\sigma/2)\pA)$, with $B_{m+1}$ of weight $0$ and index $m+1$. Hence, by Lemma~\ref{tr:lem:slash}(ii),
+\[
+\psi_F=\frac{B_{m+1}|_{0,m+1}R_F}{(g(\sigma/2)|_8R_F)\,(\pA|_{-2,1}R_F)},
+\]
+with $\pA|_{-2,1}R_F=\pA$, $g(\sigma/2)|_8R_T=g((\sigma+1)/2)$ and $g(\sigma/2)|_8R_S=16g(\sigma)$ (proof of Proposition~\ref{tr:prop:jacobi}(iii)). $B_{m+1}|R_F$ is a polynomial in the $L_l|_{0,l}R_F$, bounded by Lemma~\ref{tr:lem:Lbound}; $1/|g|\le Ce^{2\pi\tau_2}$; and from the product $\theta_1(\tau,z)=-iq^{1/8}y^{1/2}\prod_{n\ge1}(1-q^n)(1-q^ny)(1-q^{n-1}y^{-1})$, $|q^ny|,|q^{n-1}y^{-1}|\le e^{-\pi(2n-1)\tau_2}$ on the line, so $|\theta_1|\ge ce^{\pi\tau_2/4}$, $|\eta|^6\le Ce^{-\pi\tau_2/2}$ and $|\pA|=|\theta_1|^2/|\eta|^6\ge ce^{\pi\tau_2}$ for $\tau_2\ge1$.
+
+So $|\psi^F_F|\le Ce^{C'\tau_2}$ on the line, for $\tau_2\ge m+1$, uniformly in $\tau_1$, and the claim follows. The exponents of $h_{F,\ell}$ are $(2mn-\ell^2)/4m$ ($F=I,T$, $n\in\ZZ$) and $(4mn-\ell^2)/4m$ ($F=S$), in $\frac1{4m}\ZZ$; finitely many are negative, and these form $P_F$ with $\tilde\nu=n/2$, resp.\ $n$.
+\end{proof}
+

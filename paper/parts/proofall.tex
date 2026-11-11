@@ -3,15 +3,15 @@
 Let $\epsilon(m,x_0)=\epsilon_{\rm main}+\epsilon_{\rm miss}+\epsilon_{rs}+\epsilon_T+\epsilon_{\gamma\ge2}+\epsilon_{K_2}+\epsilon_{K_3}$ be the sum of the bounds of Section~\ref{sec:errors}, where $\epsilon_{K_j}$ denote the right sides of \eqref{eq:XK2} and \eqref{eq:XK3} with the tails included.
 
 \begin{theorem}\label{thm:cert}
-Put $x_0(m)=\sqrt{500}/m$ for $3\le m\le7$ and $x_0(m)=1$ for $8\le m\le100$. Then
+Put $x_0(1)=4$, $x_0(2)=3$, $x_0(m)=\sqrt{500}/m$ for $3\le m\le7$ and $x_0(m)=1$ for $m\ge8$. Then
 \[
-\epsilon\big(m,x_0(m)\big)\le0.347\qquad(3\le m\le100),
+\epsilon\big(m,x_0(m)\big)\le0.347\qquad(1\le m\le100),
 \]
-with the largest value at $m=8$; for $3\le m\le7$ one has $\epsilon\le0.0025$.
+with the largest value at $m=8$. Moreover $\epsilon(1,4)\le0.304$, $\epsilon(2,3)\le0.105$, and $\epsilon\le0.0025$ for $3\le m\le7$.
 \end{theorem}
 
 \begin{proof}
-Every term of $\epsilon(m,x_0)$ is a finite sum of explicit quantities, which we evaluate in ball arithmetic with $96$ bits \cite{Joh17}. Bessel functions are evaluated by Arb's certified routines, the suprema in \eqref{eq:Xmain} by the exact critical points, and the solutions of \eqref{eq:deltaeq} are enclosed as described after \eqref{eq:XT}. The values are listed in Appendix~\ref{app:margins} and plotted in Figure~\ref{fig:certificate}; the computation takes about twelve minutes.
+Every term of $\epsilon(m,x_0)$ is a finite sum of explicit quantities, which we evaluate in ball arithmetic with $96$ bits \cite{Joh17}. Bessel functions are evaluated by Arb's certified routines, the suprema in \eqref{eq:Xmain} by the exact critical points, and the solutions of \eqref{eq:deltaeq} are enclosed as described after \eqref{eq:XT}. The values are listed in Appendix~\ref{app:margins} and plotted in Figure~\ref{fig:certificate}; the computation takes about twelve minutes.\footnote{At $m=1$ and $m=2$ the largest pieces are the leading family and the two shadow terms: $\epsilon_{\rm main}=0.126$, $\epsilon_{K_2}=0.058$, $\epsilon_{K_3}=0.121$ at $m=1$, and $0.070$, $0.007$, $0.028$ at $m=2$. The thresholds $x_0=4,3$ are far below the values $x\ge\sqrt{800}/m$ needed in the proof of Theorem~\ref{thm:all}.}
 \end{proof}
 
 \begin{theorem}\label{thm:analytic}
@@ -43,15 +43,15 @@ at $m=101$. Each bound decreases in $m$: in Lemma~\ref{lem:rsbig} the factor $(2
 \end{figure}
 
 \begin{proof}[Proof of Theorem~\textup{\ref{thm:all}}]
-By Proposition~\ref{prop:reduction} it suffices to prove $d^*(m,n,\ell)>0$ for reduced charges. For $m=1,2$ this is Theorem~\ref{thm:main}. Let $m\ge3$. If $m\le7$ and $D\le500$, it is Theorem~\ref{thm:bounded}. Otherwise $x=\sqrt D/m\ge x_0(m)$, with $x_0(m)$ as in Theorem~\ref{thm:cert} for $m\le100$ and $x_0=1$ for $m\ge101$. By \eqref{eq:decomp} and the bounds of Section~\ref{sec:errors}, which are uniform in $x\ge x_0$ and in $\ell$,
+The published input is \cite[Theorem~5.4(a)]{BSS25}: for a charge in the set $\mathcal A$ of \eqref{eq:setA} the single-centred index is the finite-part coefficient, $d^*=(-1)^{\ell+1}c^F_m(n,\ell)$, as recorded in \eqref{eq:dstar}. By Proposition~\ref{prop:reduction}, which rests on it and on the $\Gamma_1(2)$ invariance of $d^*$, it suffices to prove $d^*(m,n,\ell)>0$ for reduced charges. If $D\le\Dexact$, this is Theorem~\ref{thm:bounded}. Let $D>\Dexact$. Then $x=\sqrt D/m\ge x_0(m)$: for $m\le7$ because $\sqrt{\Dexact}\ge4$, $\sqrt{\Dexact}/2\ge3$ and $\Dexact>500$, and for $m\ge8$ because a reduced charge has $D=2mn-\ell^2\ge2m^2-m^2=m^2$. Theorem~\ref{thm:rad} expresses $c^F_m(n,\ell)$ by the convergent series \eqref{eq:hypR}, and by \eqref{eq:decomp} and the bounds of Section~\ref{sec:errors}, which are uniform in $x\ge x_0$ and in $\ell$,
 \[
-\frac{d^*(m,n,\ell)}{\mathcal E(D,m)}\ \ge\ |P(z)|^2-\epsilon(m,x_0)\ \ge\ 0.53816-0.347>0
+\frac{d^*(m,n,\ell)}{\mathcal E(D,m)}\ \ge\ |P(z)|^2-\epsilon\big(m,x_0(m)\big)\ \ge\ 0.53816-0.347>0
 \]
 by Proposition~\ref{prop:pmin} (note $|z|=e^{-\pi x}\le e^{-\pi}$) and Theorems~\ref{thm:cert} and~\ref{thm:analytic}. Since $\mathcal E(D,m)>0$, $d^*(m,n,\ell)>0$.
 \end{proof}
 
 \begin{corollary}\label{cor:asym}
-Under Hypothesis~\textup{\ref{hyp:R}}, for every reduced charge with $m\ge3$,
+For every reduced charge with $x\ge x_0(m)$,
 \[
 0.19\,\mathcal E(D,m)\ \le\ d^*(m,n,\ell)\ \le\ 2.51\,\mathcal E(D,m).
 \]
@@ -63,6 +63,6 @@ The lower bound is the proof above. For the upper bound, $|P(z)|^2\le P(e^{-\pi}
 \end{proof}
 
 \begin{remark}\label{rem:sharp}
-The minimum $0.5389$ of Proposition~\ref{prop:pmin} is reached in the limit: as $m\to\infty$ along charges with $x=1$ and $\ell=m$ odd, $z=-e^{-\pi}$, and the bounds in the proof of Theorem~\ref{thm:analytic} tend to $0$, since $\varphi(S,m)\to0$ for each fixed $S$. So, under Hypothesis~\ref{hyp:R}, $d^*/\mathcal E$ comes arbitrarily close to $0.5389$, and the factor of the leading family cannot be replaced by a single term; the dominance argument of \cite{Ros24}, with one dominant term, does not carry over to level two without the resummation of Theorem~\ref{thm:model}.
+The minimum $0.5389$ of Proposition~\ref{prop:pmin} is reached in the limit: as $m\to\infty$ along charges with $x=1$ and $\ell=m$ odd, $z=-e^{-\pi}$, and the bounds in the proof of Theorem~\ref{thm:analytic} tend to $0$, since $\varphi(S,m)\to0$ for each fixed $S$. So $d^*/\mathcal E$ comes arbitrarily close to $0.5389$, and the factor of the leading family cannot be replaced by a single term: an argument with one dominant term, which suffices at level one, does not reach level two without the resummation of Theorem~\ref{thm:model}.
 For moderate charges the picture is already accurate: at $Q^2=3$, $P^2/2=10$, $Q\cdot P=3$ the exact index gives $d^*/\mathcal E=0.9485$ while $|P(z)|^2=0.9910$, and at $Q^2=4$, $P^2/2=58$, $Q\cdot P=4$ the two numbers are $0.99990$ and $0.99999$.
 \end{remark}
